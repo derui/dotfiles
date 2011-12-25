@@ -1,0 +1,15 @@
+ISO8859_1=-paw16a-fixed-medium-r-normal--16-*-75-75-c-*-jisx0201.1976-0;
+ISO8859_1_BOLD=-paw16a-fixed-medium-r-normal--16-*-75-75-c-*-jisx0201.1976-0;
+ISO10646_1=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+ISO10646_1_BIWIDTH=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+ISO10646_1_BOLD=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+ISO10646_UCS4_1=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+ISO10646_UCS4_1_BIWIDTH=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+ISO10646_UCS4_1_BOLD=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+JISX0201_ROMAN=-paw16a-fixed-medium-r-normal--16-*-75-75-c-*-jisx0201.1976-0;
+JISX0201_ROMAN_BOLD=-paw16a-fixed-medium-r-normal--16-*-75-75-c-*-jisx0201.1976-0;
+JISX0201_KATA=-paw16a-fixed-medium-r-normal--16-*-75-75-c-*-jisx0201.1976-0;
+JISX0201_KATA_BOLD=-paw16a-fixed-medium-r-normal--16-*-75-75-c-*-jisx0201.1976-0;
+JISX0208_1983=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+JISX0208_1983_BOLD=-paw16k-fixed-medium-r-normal--16-*-75-75-c-*-jisx0208.1983-0;
+

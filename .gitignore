@@ -1,0 +1,6 @@
+*.elc
+.emacs.d/auto-save-list/
+_darcs/
+hyperspec/
+.svn/
+*.png

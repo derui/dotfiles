@@ -1,0 +1,22 @@
+keycode 102 = Meta_L
+!keycode 129 = Super_L
+!spaceの横をひらがな/カタカナにして、元のひらがな/カタカナをsuperとして扱う。
+keycode 101 = Super_L
+clear mod5
+add mod1 = Meta_L
+!keycode 36 = Eisu_toggle
+keycode 97 = underscore backslash kana_RO
+
+!数字部分はShift時と通常時を逆にする。
+keycode 10 = 1 exclam 1 exclam
+keycode 11 = 2 asterisk 2 asterisk
+keycode 12 = 3 numbersign 3 numbersign
+keycode 13 = 4 dollar 4 dollar
+keycode 14 = 5 percent 5 percent
+keycode 15 = 6 ampersand 6 ampersand
+keycode 16 = 7 plus 7 plus 
+keycode 17 = 8 bar 8 bar
+keycode 18 = 9 parenleft 9 parenleft
+keycode 19 = 0 parenright 0 parenright
+keycode 47 = semicolon apostrophe
+keycode 48 = colon quotedbl

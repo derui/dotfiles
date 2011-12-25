@@ -1,0 +1,67 @@
+termtype=xterm
+
+# 結合文字列を処理する。
+use_combining=false
+
+# 結合文字列を動的に合成する。
+use_dynamic_comb=false
+
+# フォント関連
+fontsize=16
+
+# フォントのレンダリングエンジンはxft
+type_engine=xcore
+
+# unicodeの記号の文字幅を2文字にする。
+col_size_of_width_a=2
+col_size_of_width=1
+
+line_space=0
+
+# 可変長の列幅を利用する。
+use_variable_column_width=false
+
+# 複数幅の文字を利用する。
+use_multi_column_char=true
+
+# 貼り付けられた文字列の変換時にunicodeを介して変換する
+receive_string_via_ucs=true
+
+# アンチエイリアシングフォントを使用する。
+use_anti_alias=false
+# use_anti_alias=true
+# アンチエイリアス(xft)時、jixs0208のunicode変換時にcp932の変換テーブルを使う。
+use_cp932_ucs_for_xft=true
+
+# 全ての文字をunicodeフォントだけを使って表示する。
+# only_use_unicode_font=false
+# not_use_unicode_font=true
+only_use_unicode_font=false
+not_use_unicode_font=true
+
+# 背景透過を行う。
+# use_transbg=true
+
+# スクロールバーは利用しない。
+use_scrollbar=false
+
+# 端末画面の前景色、背景色
+fg_color=white
+bg_color=darkgreen
+
+# 背景の透過率
+brightness=80
+
+# XIMを利用する。
+use_xim=true
+
+im=xim-skk
+
+# 起動時にXIMを開く
+xim_open_in_startup=true
+
+tabsize=4
+
+logsize=500
+
+mod_meta_mode = esc

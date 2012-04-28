@@ -1,4 +1,4 @@
-path=($HOME/.gem/ruby/1.9.1/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
+path=($HOME/.npm/bin $HOME/.gem/ruby/1.9.1/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \
     /bin /usr/local/bin /usr/bin \
     /usr/local/X11R6/bin /usr/X11R6/bin)
@@ -11,7 +11,7 @@ export COLORTERM=rxvt-256unicode
 # export TERM=mlterm
 
 # for w3m
-export HTTP_HOME="http://www.google.co.jp/"
+export HTTP_HOME="http://duckduckgo.com/"
 
 # エディタはすでに開かれているEmacsを利用する。
 export GNUCLIENT=-F
@@ -19,6 +19,7 @@ export GNUDOITW=-F
 export EDITOR="emacsclient"
 export HREF_DATADIR="/usr/local/share/href"
 
-export STOW_DIR=/usr/local/stow
+export NODE_PATH=$HOME/.npm/lib:$PATH
+export MANPATH=$HOME/.npm/man:$MANPATH
 
 source $HOME/.zshrc

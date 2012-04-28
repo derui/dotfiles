@@ -22,7 +22,7 @@
 (setq mew-refile-auto-refile-skip-any-mark t)
 
 ;; メールのシグネチャは末尾につける。
-(setq mew-signature-insert-last t)
+(setq mew-signature-insert-last nil)
 
 ;; 未読のメールにはUマークが付くように
 (setq mew-use-unread-mark t)
@@ -50,17 +50,11 @@
          ("name"        . "高橋 裕也")
          ("user"        . "derutakayu")
          ("mail-domain" . "gmail.com")
-         ;; ("pop-ssl"      . t)
-         ;; ("pop-ssl-port" . "995")
-         ;; ("pop-user"    . "derutakayu")
-         ;; ("pop-server"  . "pop.gmail.com")
-         ;; ("pop-delete"  . nil)
-
          ;; IMAPを利用するための設定
          ("proto" . "%")
          ("imap-server" . "imap.gmail.com")
          ("imap-ssl" . t)
-         ("imap-ssl-port" . "993") 
+         ("imap-ssl-port" . "993")
          ("imap-delete" . nil)
          ("imap-user" . "derutakayu@gmail.com")
          ("imap-auth" . t)
@@ -83,6 +77,21 @@
          ("smtp-ssl-port" . "465")
          ("smtp-user"    . "derutakayu")
          ("smtp-server" . "smtp.mail.yahoo.co.jp")
+         ("prog-ssl" . "stunnel"))
+        ("hotmail"
+         ("pop-ssl"      . t)
+         ("pop-ssl-port" . "995")
+         ("name"        . "高橋 裕也")
+         ("user"        . "derutakayu")
+         ("mail-domain" . "hotmail.com")
+         ("pop-user"    . "derutakayu@hotmail.com")
+         ("pop-server"  . "pop3.live.com")
+         ("smtp-ssl"     . t)
+         ("pop-delete"  . nil)
+         ("smtp-ssl-port" . "25")
+         ("smtp-user"    . "derutakayu@hotmail.com")
+         ("smtp-port" . "587")
+         ("smtp-server" . "smtp.live.com")
          ("prog-ssl" . "stunnel"))))
 
 ;; メールの自動取得に対応させる。
@@ -127,9 +136,6 @@
     (mew-mark-exec-refile folder msgs)
     )
   )
-
-
-
 
 ;; ローカルのフィルタに学習させる。
 (setq mew-spam-prog "bogo")

@@ -55,12 +55,15 @@ if [ -d /usr/X11/lib/X11/xinit/xinitrc.d ] ; then
  	done
  	unset f
 fi
-#/usr/bin/xv -root -quit ~/.wallpaper/kara_024.jpg &
-# /usr/bin/display -window root ~/.wallpaper/kara_024.jpg &
+
+# modify xset's
+xset s off
+xset s noblank
+xset -dpms
 
 # for transparents
 xcompmgr -n &
-# /usr/bin/hsetroot -full ~/.wallpaper/kara_024.jpg &
+nitrogen --restore
 
 exec /home/derui/bin/xmonad
 

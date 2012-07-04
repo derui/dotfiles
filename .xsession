@@ -44,7 +44,7 @@ export QT_IM_MODULE="ibus"
 ibus-daemon -d -x
 
 # for gnome/kde like task tray
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x191970 --heighttype pixel --height 16 &
+trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x191970 --heighttype pixel --height 16 --monitor primary &
 
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8

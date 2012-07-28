@@ -195,9 +195,14 @@ setopt notify                # バックグラウンドジョブが終了した�
 setopt complete_aliases
 
 # エイリアス群
-alias ls="ls --color=always"
-alias lsn="ls --color=never"
-alias ll="ls -laF --color | lv -c"
+if [[ "`uname`" = "Linux" ]]; then
+    alias ls="ls --color=always"
+    alias lsn="ls --color=never"
+    alias ll="ls -laF --color | lv -c"
+else
+    alias ls="ls -C"
+    alias ll="ls -lCaF | lv -c"
+fi
 alias df="df -h"
 
 alias asdf="xmodmap ~/.dvorak"

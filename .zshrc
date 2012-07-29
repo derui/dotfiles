@@ -200,8 +200,8 @@ if [[ "`uname`" = "Linux" ]]; then
     alias lsn="ls --color=never"
     alias ll="ls -laF --color | lv -c"
 else
-    alias ls="ls -C"
-    alias ll="ls -lCaF | lv -c"
+    alias ls="ls -G"
+    alias ll="ls -lGaF | lv -c"
 fi
 alias df="df -h"
 

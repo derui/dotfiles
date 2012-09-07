@@ -1,4 +1,4 @@
-path=($HOME/.npm/bin $HOME/.gem/ruby/1.9.1/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
+path=($HOME/local/bin $HOME/.npm/bin $HOME/.gem/ruby/1.9.1/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \
     /bin /usr/local/bin /usr/bin \
     /usr/local/X11R6/bin /usr/X11R6/bin)

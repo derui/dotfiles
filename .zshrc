@@ -30,7 +30,7 @@ zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'b
 zstyle ':completion:*:default' menu select=1
 
 # shellの単語分割を無効にする
-unsetopt sh_wordsplit 
+unsetopt sh_wordsplit
 
 # --prefix=/usrなどの時にも補完を有効にする。
 setopt magic_equal_subst
@@ -230,4 +230,10 @@ else
     # remote shell
     PROMPT="%U%{${fg[red]}%}[%n@%m]%{${reset_color}%}%u(%j) %~
 %# "
-fi 
+fi
+
+# loading `autojump' if it exists
+if [ -e $HOME/local/etc/profile.d/autojump.zsh ]; then
+    source $HOME/local/etc/profile.d/autojump.zsh
+fi
+fpath=($fpath $HOME/local/functions(N))

@@ -1,5 +1,3 @@
+*.log
 *.elc
-.emacs.d/auto-save-list/
-_darcs/
-hyperspec/
-.svn/
+.emacs.d/auto-save-list

@@ -22,4 +22,7 @@ export HREF_DATADIR="/usr/local/share/href"
 export NODE_PATH=$HOME/.npm/lib:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 
+export PERL_CPANM_OPT="--local-lib=~/perl"
+export PERL5LIB="$HOME/perl/lib/perl5:$PERL5LIB"
+
 source $HOME/.zshrc

@@ -31,9 +31,9 @@ if [ -f "$userresources" ]; then
 
 fi
 
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
+#if [ -f "$usermodmap" ]; then
+#    xmodmap "$usermodmap"
+#fi
 
 # start some nice programs
 # for use skk-uim setting
@@ -44,7 +44,7 @@ export QT_IM_MODULE="ibus"
 ibus-daemon -d -x
 
 # for gnome/kde like task tray
-trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x191970 --heighttype pixel --height 16 --monitor primary &
+#trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x191970 --heighttype pixel --height 16 --monitor primary &
 
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
@@ -65,7 +65,11 @@ xset -dpms
 xcompmgr -n &
 nitrogen --restore
 
-exec /home/derui/bin/xmonad
+# running dropbox
+$HOME/.dropbox-dist/dropboxd &
+
+#exec /home/derui/bin/xmonad
+exec /usr/bin/awesome
 
 # xclock -geometry 50x50-1+1 &
 # xterm -geometry 80x50+494+51 &

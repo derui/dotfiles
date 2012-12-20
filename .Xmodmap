@@ -1,7 +1,10 @@
 keycode 102 = Meta_L
 !keycode 129 = Super_L
-!spaceの横をひらがな/カタカナにして、元のひらがな/カタカナをsuperとして扱う。
-keycode 101 = Super_L
+!spaceの横をSuperにして、元々のかなキーを変換として使う。
+keycode 100 = Super_L
+keycode 101 = Henkan_Mode
+!Realforce用に、Escと全角半角を取り替える。
+keysym Zenkaku_Hankaku = Escape
 clear mod5
 add mod1 = Meta_L
 !keycode 36 = Eisu_toggle
@@ -14,9 +17,18 @@ keycode 12 = 3 numbersign 3 numbersign
 keycode 13 = 4 dollar 4 dollar
 keycode 14 = 5 percent 5 percent
 keycode 15 = 6 ampersand 6 ampersand
-keycode 16 = 7 plus 7 plus 
+keycode 16 = 7 plus 7 plus
 keycode 17 = 8 bar 8 bar
 keycode 18 = 9 parenleft 9 parenleft
 keycode 19 = 0 parenright 0 parenright
 keycode 47 = semicolon apostrophe
 keycode 48 = colon quotedbl
+
+! CapsLockとControlの入れ替え
+! 2回適用すると元に戻る
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+add Lock = Caps_Lock
+add Control = Control_L

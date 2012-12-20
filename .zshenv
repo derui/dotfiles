@@ -25,4 +25,8 @@ export MANPATH=$HOME/.npm/man:$MANPATH
 export PERL_CPANM_OPT="--local-lib=~/perl"
 export PERL5LIB="$HOME/perl/lib/perl5:$PERL5LIB"
 
+if [ -x `which opam` ] then
+    eval `opam config env --root $HOME/.opam`
+fi
+
 source $HOME/.zshrc

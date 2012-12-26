@@ -88,85 +88,6 @@ install-zshhelp () {
 
 bindkey "^Q" quoted-insert
 
-# --- anything風に履歴を検索するためのメニュー。
-
-## 各固定値
-typeset -A HISTORY_DICISION_KEYS
-set -A HISTORY_DICISION_KEYS A 1 S 2 D 3 F 4 G 5 H 6 J 7 K 8 L 9 Q 10 \
-    W 11 E 12 R 13 T 14 Y 15 U 16 I 17 O 18 P 19 Z 20 X 21 C 22 V 23 B 24 N 25 M 26
-
-ISHR_MENU_LENGTH=26
-ISHR_FILENAME="/tmp/.azh-tmp-file"
-
-function ishr-search-history-from-anything() {
-    emulate -L zsh
-    local key=$1
-
-    # 特定キーが押されたら、該当する位置の履歴をバッファに表示する。
-    if [[ -n "${HISTORY_DICISION_KEYS[$key]}" && -n "$BUFFER" ]]; then
-        zle -A .self-insert self-insert
-
-        emacsclient --eval "(azhzle/dicision-history ${HISTORY_DICISION_KEYS[$key]})"
-        BUFFER=`cat $ISHR_FILENAME`
-        zle -R -c
-
-        zle accept-line
-        return 1
-    fi
-    return 0
-}
-
-function ishr-update-status() {
-    emacsclient --eval "(azhzle/input \"$BUFFER\")" &> /dev/null
-    zle -M "`cat $ISHR_FILENAME`"
-    zle -R
-}
-
-function ishr-self-insert() {
-    emulate -L zsh
-    LBUFFER+=${KEYS[-1]}
-    ishr-search-history-from-anything ${KEYS[-1]}
-    (( ! $? )) && ishr-update-status
-}
-
-function ishr-backward-delete-char() {
-    emulate -L zsh
-    zle .backward-delete-char
-    ishr-update-status
-}
-
-#######################################
-# incremental-search-history-menu本体 #
-#######################################
-
-zle -N incremental-search-history-menu
-function incremental-search-history-menu() {
-    # インクリメンタル履歴検索を行えるように準備等を行う。
-    emulate -L zsh
-    integer stat
-
-    # 各種必要な変数の初期化。
-    emacsclient --eval "(anything-zsh-history-from-zle-init)" &> /dev/null
-    ishr-update-status
-
-    zle -N self-insert ishr-self-insert
-    zle -N backward-delete-char ishr-backward-delete-char
-    zle recursive-edit
-    stat=$?
-    zle -A .self-insert self-insert
-    zle -A .backward-delete-char backward-delete-char
-
-    # 各種終了処理
-    rm -f $ISHR_FILENAME
-    zle -R -c
-
-    (( stat )) && zle send-break
-
-    return $?
-}
-
-bindkey "^R" incremental-search-history-menu
-
 ###############################
 # zle以外のユーティリティ関数 #
 ###############################
@@ -237,3 +158,6 @@ if [ -e $HOME/local/etc/profile.d/autojump.zsh ]; then
     source $HOME/local/etc/profile.d/autojump.zsh
 fi
 fpath=($fpath $HOME/local/functions(N))
+
+source ${HOME}/.zsh/modules/zaw/zaw.zsh
+bindkey '^R' zaw-history

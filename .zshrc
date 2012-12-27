@@ -161,3 +161,4 @@ fpath=($fpath $HOME/local/functions(N))
 
 source ${HOME}/.zsh/modules/zaw/zaw.zsh
 bindkey '^R' zaw-history
+bindkey '^[@' zaw-cdr

@@ -1,3 +1,4 @@
 *.log
 *.elc
-.emacs.d/auto-save-list
+el-get/
+dict/

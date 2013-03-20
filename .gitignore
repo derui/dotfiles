@@ -1,5 +1,4 @@
 *.log
 *.elc
-.emacs.d/auto-save-list
-.emacs.d/el-get/recipes
-.emacs.d/etc/dict
+el-get/
+dict/

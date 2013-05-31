@@ -49,9 +49,6 @@ setopt auto_cd
 
 # 直前と同じコマンドラインはヒストリに追加しない
 setopt hist_ignore_all_dups
-setopt share_history            # 履歴は共有する。
-setopt append_history
-setopt extended_history
 
 # 自動的にpushdを実行するようになる。cd -[TAB]で移動履歴が出る。
 setopt auto_pushd

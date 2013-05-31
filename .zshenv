@@ -1,4 +1,8 @@
-path=($HOME/perl/bin $HOME/local/bin $HOME/.npm/bin $HOME/.gem/ruby/1.9.1/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
+export ANDROID_SDK=$HOME/develop/android/android-sdk-linux
+export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
+
+path=($ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin $HOME/.npm/bin \
+    $HOME/.gem/ruby/1.9.1/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \
     /bin /usr/local/bin /usr/bin \
     /usr/local/X11R6/bin /usr/X11R6/bin)

@@ -44,7 +44,7 @@ use_scrollbar=false
 
 # 端末画面の前景色、背景色
 fg_color=white
-bg_color=darkgreen
+bg_color=black
 
 # 背景の透過率
 brightness=80

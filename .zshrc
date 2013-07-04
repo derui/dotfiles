@@ -19,6 +19,8 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^N' history-incremental-pattern-search-froward
 
 # プロンプトのカラー表示を有効
 autoload -U colors
@@ -156,9 +158,29 @@ if [ -e $HOME/local/etc/profile.d/autojump.zsh ]; then
 fi
 fpath=($fpath $HOME/local/functions(N))
 
+# zaw
 source ${HOME}/.zsh/modules/zaw/zaw.zsh
-bindkey '^R' zaw-history
-bindkey '^[@' zaw-cdr
+
+# ^でcd ..する
+# http://shakenbu.org/yanagi/d/?date=20120301
+cdup() {
+    if [ -z "$BUFFER" ]; then
+echo
+cd ..
+        if type precmd > /dev/null 2>&1; then
+precmd
+        fi
+local precmd_func
+        for precmd_func in $precmd_functions; do
+            $precmd_func
+        done
+zle reset-prompt
+    else
+zle self-insert '^'
+    fi
+}
+zle -N cdup
+bindkey '\^' cdup
 
 # ディレクトリを移動する度にlsを実行する
 chpwd() {

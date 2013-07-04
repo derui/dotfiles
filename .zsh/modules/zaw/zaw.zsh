@@ -139,7 +139,9 @@ function zaw() {
                 ;;
         esac
 
-        "${action}" "${(@)selected}"
+        if [[ -n "${action}" ]]; then
+            "${action}" "${(@)selected}"
+        fi
     fi
 }
 
@@ -191,15 +193,21 @@ function zaw-callback-append-to-buffer() {
 function zaw-callback-edit-file() {
     local -a args
     args=("${(@q)@}")
-    BUFFER="${EDITOR} ${args}"
+
+    if [ ! ${ZAW_EDITOR} ]; then
+      ZAW_EDITOR=${EDITOR}
+    fi
+
+    BUFFER="${ZAW_EDITOR} ${args}"
     zle accept-line
 }
 
 
 # load zaw sources
+setopt local_options extended_glob
 local src_dir="${cur_dir}/sources" f
 if [[ -d "${src_dir}" ]]; then
-    for f ("${src_dir}"/*) source "${f}"
+    for f ("${src_dir}"/^*.zwc) source "${f}"
 fi
 
 # dummy function

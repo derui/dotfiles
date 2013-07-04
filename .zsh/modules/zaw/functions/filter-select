@@ -85,7 +85,9 @@
 #   ':filter-select:highlight' selected
 #   ':filter-select:highlight' matched
 #   ':filter-select:highlight' title
+#   ':filter-select:highlight' error
 #   ':filter-select' max-lines
+#   ':filter-select' rotate-list
 #   ':filter-select' case-insensitive
 #   ':filter-select' extended-search
 #
@@ -93,6 +95,7 @@
 #     zstyle ':filter-select:highlight' matched fg=yellow,standout
 #     zstyle ':filter-select' max-lines 10 # use 10 lines for filter-select
 #     zstyle ':filter-select' max-lines -10 # use $LINES - 10 for filter-select
+#     zstyle ':filter-select' rotate-list yes # enable rotation for filter-select
 #     zstyle ':filter-select' case-insensitive yes # enable case-insensitive search
 #     zstyle ':filter-select' extended-search yes # enable extended search regardless of the case-insensitive style
 #
@@ -131,14 +134,18 @@ function filter-select() {
     integer offset display_bottom_line selected_num rev=0 ret=0 enum=0
     integer mark_idx markable=0 is_marked
 
-    local hi_selected hi_matched hi_marked hi_title
+    local hi_selected hi_matched hi_marked hi_title hi_error
     zstyle -s ':filter-select:highlight' selected hi_selected || hi_selected='standout'
     zstyle -s ':filter-select:highlight' matched hi_matched || hi_matched='fg=magenta,underline'
     zstyle -s ':filter-select:highlight' marked hi_marked || hi_marked='fg=blue,standout'
     zstyle -s ':filter-select:highlight' title hi_title || hi_title='bold'
+    zstyle -s ':filter-select:highlight' error hi_error || hi_error='fg=white,bg=red'
 
     integer max_lines
     zstyle -s ':filter-select' max-lines max_lines || max_lines=0
+
+    local rotate_list
+    zstyle -b ':filter-select' rotate-list rotate_list
 
     _filter-select-init-keybind
 
@@ -311,7 +318,12 @@ function filter-select() {
             if (( display_head_line < 1 )); then
                 (( display_head_line = 1 ))
             fi
-            (( cursor_line = 1 ))
+            if [[ $rotate_list == "yes" ]] && (( selected_num <= 1 )); then
+                (( cursor_line = bottom_lines ))
+                (( display_head_line = desc_num - bottom_lines + 1 ))
+            else
+                (( cursor_line = 1 ))
+            fi
 
         elif (( bottom_lines == 0 )); then
             (( display_head_line = 1 ))
@@ -322,7 +334,12 @@ function filter-select() {
             if (( display_head_line > desc_num - bottom_lines + 1 )); then
                 (( display_head_line = desc_num - bottom_lines + 1 ))
             fi
-            (( cursor_line = bottom_lines ))
+            if [[ $rotate_list == "yes" ]] && (( selected_num >= desc_num )); then
+                (( cursor_line = 1 ))
+                (( display_head_line = 1 ))
+            else
+                (( cursor_line = bottom_lines ))
+            fi
         fi
 
         if (( ! PENDING )); then
@@ -436,7 +453,7 @@ function filter-select() {
                     msg='pattern not found'
                 fi
                 POSTDISPLAY+="${msg}"
-                region_highlight+="${offset} $(( offset + ${#msg} + 1 )) fg=white,bg=red"
+                region_highlight+="${offset} $(( offset + ${#msg} + 1 )) ${hi_error}"
             fi
 
             POSTDISPLAY+="${(F)displays}"$'\n'"[${selected_num}/${desc_num}]"

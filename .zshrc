@@ -4,8 +4,6 @@ bindkey -e
 # Emacsから利用するときは、zleを停止する。
 [[ $EMACS = t ]] && unsetopt zle
 
-setopt transient_rprompt                    # 右プロンプトに入力がきたら消す
-
 # 履歴の設定
 HISTFILE=~/.zsh_history
 HISTSIZE=10000000
@@ -20,7 +18,7 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^N' history-incremental-pattern-search-froward
+bindkey '^S' history-incremental-pattern-search-forward
 
 # プロンプトのカラー表示を有効
 autoload -U colors
@@ -46,17 +44,33 @@ setopt no_beep
 # 補完時にヒストリを自動的に展開する。
 setopt hist_expand
 
-# ディレクトリ名だけで移動できる。
-setopt auto_cd
-
 # 直前と同じコマンドラインはヒストリに追加しない
 setopt hist_ignore_all_dups
+
+# ディレクトリ名だけで移動できるように
+setopt auto_cd
 
 # 自動的にpushdを実行するようになる。cd -[TAB]で移動履歴が出る。
 setopt auto_pushd
 
+# ディレクトリスタックに同じディレクトリを追加しないようになる
+setopt pushd_ignore_dups
+
 # 自動的に末尾のslashを取り除く。
 setopt auto_remove_slash
+
+setopt print_eight_bit
+# Ctrl+Q や Ctrl+Sによるフロー制御を行わないようにする
+setopt no_flow_control
+
+# 改行の無い出力をプロンプトで上書きするのを防ぐ
+setopt no_prompt_cr
+
+# glob展開時に大文字小文字を無視
+setopt no_case_glob
+
+# 右プロンプトに入力がきたら消す
+setopt transient_rprompt
 
 # エディタでコマンドラインを編集できる。
 autoload -U edit-command-line
@@ -85,7 +99,7 @@ install-zshhelp () {
     "$@" >& $dest
 }
 
-bindkey "^Q" quoted-insert
+bindkey "^V" quoted-insert
 
 ###############################
 # zle以外のユーティリティ関数 #
@@ -142,16 +156,6 @@ fi
 # 各種設定のまとめ
 source ~/.zsh/common.zsh
 
-if [[ -z "${REMOTEHOST}${SSH_CONNECTION}" ]]; then
-    # local shell
-    PROMPT="%U%{${fg[green]}%}[%n@%m]%{${reset_color}%}%u(%j) %~
-%# "
-else
-    # remote shell
-    PROMPT="%U%{${fg[red]}%}[%n@%m]%{${reset_color}%}%u(%j) %~
-%# "
-fi
-
 # loading `autojump' if it exists
 if [ -e $HOME/local/etc/profile.d/autojump.zsh ]; then
     source $HOME/local/etc/profile.d/autojump.zsh
@@ -165,18 +169,11 @@ source ${HOME}/.zsh/modules/zaw/zaw.zsh
 # http://shakenbu.org/yanagi/d/?date=20120301
 cdup() {
     if [ -z "$BUFFER" ]; then
-echo
-cd ..
-        if type precmd > /dev/null 2>&1; then
-precmd
-        fi
-local precmd_func
-        for precmd_func in $precmd_functions; do
-            $precmd_func
-        done
-zle reset-prompt
+        echo
+        cd ..
+        zle reset-prompt
     else
-zle self-insert '^'
+        zle self-insert '^'
     fi
 }
 zle -N cdup
@@ -220,16 +217,66 @@ ls_abbrev() {
 }
 
 # enterでls と git statusを実行するように
+# http://d.hatena.ne.jp/kei_q/20110406/1302091565
 function do_enter() {
-    zle accept-line
-    if [ -z "$BUFFER" ]; then
-        echo ''
-        ls_abbrev
-        if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
-            echo -e "\e[0;33m--- git status ---\e[0m"
-            git status -sb
-        fi
+    if [ -n "$BUFFER" ]; then
+        zle accept-line
+        return 0
     fi
+    echo
+    ls_abbrev
+    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+        echo
+        echo -e "\e[0;33m--- git status ---\e[0m"
+        git status -sb 2> /dev/null
+    fi
+    zle reset-prompt
+    return 0
 }
 zle -N do_enter
 bindkey '^m' do_enter
+
+# themeを設定する
+ZSH_THEME='yonchu'
+
+# Remove any right prompt from display when accepting a command line.
+# This may be useful with terminals with other cut/paste methods.
+#setopt transient_rprompt
+
+# Certain escape sequences may be recognised in the prompt string.
+# e.g. Environmental variables $WINDOW
+setopt prompt_subst
+
+# Certain escape sequences that start with `%' are expanded.
+#setopt prompt_percent
+
+if [ ${UID} -eq 0 ]; then
+    # Prompt for "root" user (all red characters).
+    # Note: su - or sudo -s を行った場合は環境変数が引き継がれない
+    PROMPT="${reset_color}${fg[red]}[%n@%m:%~]%#${reset_color} "
+    PROMPT2="${reset_color}${fg[red]}%_>${reset_color} "
+    SPROMPT="${reset_color}${fg[red]}%r is correct? [n,y,a,e]:${reset_color} "
+else
+    # Prompt for "normal" user.
+    # Loading theme
+    if [ -f ~/.zsh/themes/"$ZSH_THEME".zsh-theme ]; then
+echo "Loading theme: $ZSH_THEME"
+        source ~/.zsh/themes/"$ZSH_THEME".zsh-theme
+    else
+echo "Error: could not load the theme '$ZSH_THEME'"
+    fi
+fi
+# }}}
+
+### Source configuration files {{{
+#
+# pluginの読み込み
+#
+if [ -d ~/.zsh/modules ]; then
+    for plugin in ~/.zsh/modules/*.zsh; do
+        if [ -f "$plugin" ]; then
+            echo "Loading plugin: ${plugin##*/}"
+            source "$plugin"
+        fi
+    done
+fi

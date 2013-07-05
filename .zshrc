@@ -237,7 +237,9 @@ zle -N do_enter
 bindkey '^m' do_enter
 
 # themeを設定する
-ZSH_THEME='yonchu'
+# emacsから起動されるときは、余計な情報は表示しないようにする
+if [ -z "$EMACS" ]; then
+    ZSH_THEME='yonchu'
 
 # Remove any right prompt from display when accepting a command line.
 # This may be useful with terminals with other cut/paste methods.
@@ -245,38 +247,40 @@ ZSH_THEME='yonchu'
 
 # Certain escape sequences may be recognised in the prompt string.
 # e.g. Environmental variables $WINDOW
-setopt prompt_subst
+    setopt prompt_subst
 
 # Certain escape sequences that start with `%' are expanded.
 #setopt prompt_percent
 
-if [ ${UID} -eq 0 ]; then
+    if [ ${UID} -eq 0 ]; then
     # Prompt for "root" user (all red characters).
     # Note: su - or sudo -s を行った場合は環境変数が引き継がれない
-    PROMPT="${reset_color}${fg[red]}[%n@%m:%~]%#${reset_color} "
-    PROMPT2="${reset_color}${fg[red]}%_>${reset_color} "
-    SPROMPT="${reset_color}${fg[red]}%r is correct? [n,y,a,e]:${reset_color} "
-else
+        PROMPT="${reset_color}${fg[red]}[%n@%m:%~]%#${reset_color} "
+        PROMPT2="${reset_color}${fg[red]}%_>${reset_color} "
+        SPROMPT="${reset_color}${fg[red]}%r is correct? [n,y,a,e]:${reset_color} "
+    else
     # Prompt for "normal" user.
     # Loading theme
-    if [ -f ~/.zsh/themes/"$ZSH_THEME".zsh-theme ]; then
-echo "Loading theme: $ZSH_THEME"
-        source ~/.zsh/themes/"$ZSH_THEME".zsh-theme
-    else
-echo "Error: could not load the theme '$ZSH_THEME'"
+        if [ -f ~/.zsh/themes/"$ZSH_THEME".zsh-theme ]; then
+            echo "Loading theme: $ZSH_THEME"
+            source ~/.zsh/themes/"$ZSH_THEME".zsh-theme
+        else
+            echo "Error: could not load the theme '$ZSH_THEME'"
+        fi
     fi
-fi
 # }}}
 
 ### Source configuration files {{{
 #
 # pluginの読み込み
 #
-if [ -d ~/.zsh/modules ]; then
-    for plugin in ~/.zsh/modules/*.zsh; do
-        if [ -f "$plugin" ]; then
-            echo "Loading plugin: ${plugin##*/}"
-            source "$plugin"
-        fi
-    done
+    if [ -d ~/.zsh/modules ]; then
+        for plugin in ~/.zsh/modules/*.zsh; do
+            if [ -f "$plugin" ]; then
+                echo "Loading plugin: ${plugin##*/}"
+                source "$plugin"
+            fi
+        done
+    fi
+
 fi

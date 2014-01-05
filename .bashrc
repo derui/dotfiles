@@ -26,4 +26,6 @@ export PATH=~/bin:$PATH;
 
 export PATH=/mnt/home/derui/bin/Sencha/Cmd/3.0.2.288:$PATH
 
-export SENCHA_CMD_3_0_0="/mnt/home/derui/bin/Sencha/Cmd/3.0.2.288"
+export SENCHA_CMD_3_0_0="/home/derui/bin/Sencha/Cmd/4.0.0.203"
+
+export PATH=/home/derui/bin/Sencha/Cmd/4.0.0.203:$PATH

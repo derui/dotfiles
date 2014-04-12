@@ -1,7 +1,13 @@
+export JAVA_HOME=/usr/lib/jvm/oracle-jdk-bin-1.7/
 export ANDROID_SDK=$HOME/develop/android/android-sdk-linux
 export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
 
-path=($ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin $HOME/.npm/bin \
+export GOROOT=$HOME/work/go
+export GOPATH=$HOME/develop/go-workspace
+
+OCAML_PATH=$(dirname `which ocamlc`)
+
+path=($GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin $HOME/.npm/bin \
     /opt/VirtualBox \
     $HOME/.gem/ruby/1.9.1/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \

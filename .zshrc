@@ -1,3 +1,4 @@
+
 # Emacs style key binding
 bindkey -e
 
@@ -17,8 +18,6 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
 
 # プロンプトのカラー表示を有効
 autoload -U colors
@@ -122,6 +121,10 @@ setopt no_hup                # ログアウト時にバックグラウンドジ�
 setopt no_checkjobs          # ログアウト時にバックグラウンドジョブを確認しない
 setopt notify                # バックグラウンドジョブが終了したら(プロンプトの表示を待たずに)すぐに知らせる
 
+# 各種設定のまとめ
+source ~/.zsh/common.zsh
+bindkey "^r" peco-select-history
+
 ####################
 # エイリアスの設定 #
 ####################
@@ -147,14 +150,6 @@ alias -s mp3=mplayer
 alias -s mp4=mplayer
 alias -s flv=mplayer
 alias -s avi=mplayer
-
-# ゴミ箱が利用できる場合にはrmをゴミ箱として利用できるようにする。
-if `which trash-put &>/dev/null` ; then
-    alias rm=trash-put
-fi
-
-# 各種設定のまとめ
-source ~/.zsh/common.zsh
 
 # loading `autojump' if it exists
 if [ -e $HOME/local/etc/profile.d/autojump.zsh ]; then
@@ -235,6 +230,18 @@ function do_enter() {
 }
 zle -N do_enter
 bindkey '^m' do_enter
+
+function peco-src() {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi 
+    zle clear-screen
+}
+
+zle -N peco-src
+bindkey '^S' peco-src
 
 # themeを設定する
 # emacsから起動されるときは、余計な情報は表示しないようにする

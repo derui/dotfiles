@@ -26,9 +26,11 @@ export PATH=~/bin:$PATH;
 
 export PATH=/mnt/home/derui/bin/Sencha/Cmd/3.0.2.288:$PATH
 
-export SENCHA_CMD_3_0_0="/home/derui/bin/Sencha/Cmd/4.0.0.203"
+export SENCHA_CMD_3_0_0="/home/derui/bin/Sencha/Cmd/5.0.0.160"
 
 export GOROOT=$HOME/work/go
 export GOPATH=$HOME/develop/go-workspace
 
 export PATH=$GOROOT/bin:$GOPATH/bin:/home/derui/bin/Sencha/Cmd/4.0.0.203:$PATH
+
+export PATH=/home/derui/bin/Sencha/Cmd/5.0.0.160:$PATH

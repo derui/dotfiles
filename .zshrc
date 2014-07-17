@@ -141,6 +141,7 @@ else
     alias ll="ls -lGaF | lv -c"
 fi
 alias df="df -h"
+alias e="emacsclient"
 
 alias asdf="xmodmap ~/.dvorak"
 alias aoeu="xmodmap ~/.qwerty"

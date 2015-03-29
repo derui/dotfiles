@@ -1,7 +1,7 @@
 termtype=xterm-256color
 
 # 結合文字列を処理する。
-use_combining=true
+use_combinig=true
 
 # 結合文字列を動的に合成する。
 use_dynamic_comb=false
@@ -43,8 +43,8 @@ not_use_unicode_font=true
 use_scrollbar=false
 
 # 端末画面の前景色、背景色
-fg_color=white
-bg_color=black
+fg_color = #bea492
+bg_color = #1b2023
 
 # 背景の透過率
 brightness=80

@@ -9,7 +9,7 @@ OCAML_PATH=$(dirname `which ocamlc`)
 
 path=($HOME/bin/Sencha/Cmd/5.0.0.160 $HOME/.cask/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin $HOME/.npm/bin \
     /opt/VirtualBox \
-    $HOME/.gem/ruby/2.0.0/bin $HOME/.cabal/bin $HOME/bin /usr/local/bin /usr/local/sbin \
+    $HOME/.gem/ruby/2.0.0/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \
     /bin /usr/local/bin /usr/bin \
     /usr/local/X11R6/bin /usr/X11R6/bin)

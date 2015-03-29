@@ -4,13 +4,13 @@ termtype=xterm-256color
 use_combinig=true
 
 # 結合文字列を動的に合成する。
-use_dynamic_comb=false
+use_dynamic_comb=true
 
 # フォント関連
 fontsize=16
 
 # フォントのレンダリングエンジンはxft
-type_engine=xft
+type_engine=cairo
 
 # unicodeの記号の文字幅を2文字にする。
 col_size_of_width_a=2
@@ -19,10 +19,10 @@ col_size_of_width=1
 line_space=0
 
 # 可変長の列幅を利用する。
-use_variable_column_width=false
+use_variable_column_width=true
 
 # 複数幅の文字を利用する。
-use_multi_column_char=true
+use_multi_column_char=false
 
 # 貼り付けられた文字列の変換時にunicodeを介して変換する
 receive_string_via_ucs=true
@@ -33,8 +33,8 @@ use_anti_alias=true
 use_cp932_ucs_for_xft=true
 
 # 全ての文字をunicodeフォントだけを使って表示する。
-# only_use_unicode_font=true
-not_use_unicode_font=true
+only_use_unicode_font=true
+# not_use_unicode_font=false
 
 # 背景透過を行う。
 # use_transbg=true

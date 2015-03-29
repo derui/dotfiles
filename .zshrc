@@ -282,6 +282,10 @@ if [ -z "$EMACS" ]; then
 #
 # pluginの読み込み
 #
+    if [ -x powerline-daemon ]; then
+        powerline-daemon -q
+        source "/usr/lib/python3.3/site-packages/powerline/bindings/zsh/powerline.zsh"
+    fi
     if [ -d ~/.zsh/modules ]; then
         for plugin in ~/.zsh/modules/*.zsh; do
             if [ -f "$plugin" ]; then

@@ -1,4 +1,6 @@
-export JAVA_HOME=/usr/lib/jvm/oracle-jdk-bin-1.7/
+if [ -x /usr/bin/java-config ]; then
+  export JAVA_HOME=`java-config -O`
+fi
 export ANDROID_SDK=$HOME/develop/android/android-sdk-linux
 export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
 
@@ -7,7 +9,7 @@ export GOPATH=$HOME/develop/go-workspace
 
 OCAML_PATH=$(dirname `which ocamlc`)
 
-path=($HOME/bin/Sencha/Cmd/5.0.0.160 $HOME/.cask/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin $HOME/.npm/bin \
+path=($HOME/.nodebrew/current/bin $HOME/.cask/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin $HOME/.npm/bin \
     /opt/VirtualBox \
     $HOME/.gem/ruby/2.0.0/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \

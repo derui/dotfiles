@@ -13,16 +13,16 @@ fontsize=16
 type_engine=cairo
 
 # unicodeの記号の文字幅を2文字にする。
-col_size_of_width_a=2
+col_size_of_width_a=1
 col_size_of_width=1
 
 line_space=0
 
 # 可変長の列幅を利用する。
-use_variable_column_width=true
+use_variable_column_width=false
 
 # 複数幅の文字を利用する。
-use_multi_column_char=false
+use_multi_column_char=true
 
 # 貼り付けられた文字列の変換時にunicodeを介して変換する
 receive_string_via_ucs=true

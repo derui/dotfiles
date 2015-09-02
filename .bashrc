@@ -34,3 +34,4 @@ export GOPATH=$HOME/develop/go-workspace
 export PATH=$GOROOT/bin:$GOPATH/bin:/home/derui/bin/Sencha/Cmd/4.0.0.203:$PATH
 
 export PATH=/home/derui/bin/Sencha/Cmd/5.0.0.160:$PATH
+export PATH=~/.npm/bin:$PATH

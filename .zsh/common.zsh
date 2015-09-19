@@ -3,3 +3,4 @@ source ~/.zsh/term.zsh
 
 source ~/.zsh/sources/peco.zsh
 source ~/.zsh/sources/enhancd.sh
+source ~/.zsh/sources/golang.zsh

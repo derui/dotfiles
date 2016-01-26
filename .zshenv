@@ -9,7 +9,7 @@ export GOPATH=$HOME/develop/go-workspace
 
 OCAML_PATH=$(dirname `which ocamlc`)
 
-path=($HOME/.nodebrew/current/bin $HOME/.cask/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin $HOME/.npm/bin \
+path=( $HOME/.npm/bin $HOME/.nodebrew/current/bin $HOME/.cask/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin \
     /opt/VirtualBox \
     $HOME/.gem/ruby/2.0.0/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \
@@ -43,6 +43,10 @@ if [[ -x `which opam` ]]; then
     PREV_MANPATH=$MANPATH
     eval `opam config env --root $HOME/.opam`
     export MANPATH=$MANPATH:$PREV_MANPATH
+fi
+
+if [[ -e $HOME/.zshenv_local ]]; then
+    . $HOME/.zshenv_local
 fi
 
 source $HOME/.zshrc

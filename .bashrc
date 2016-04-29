@@ -24,14 +24,8 @@ export PERL5LIB="/home/derui/perl5/lib/perl5/i686-linux:/home/derui/perl5/lib/pe
 export PATH="/home/derui/perl5/bin:$PATH";
 export PATH=~/bin:$PATH;
 
-export PATH=/mnt/home/derui/bin/Sencha/Cmd/3.0.2.288:$PATH
-
-export SENCHA_CMD_3_0_0="/home/derui/bin/Sencha/Cmd/5.0.0.160"
-
 export GOROOT=$HOME/work/go
 export GOPATH=$HOME/develop/go-workspace
 
-export PATH=$GOROOT/bin:$GOPATH/bin:/home/derui/bin/Sencha/Cmd/4.0.0.203:$PATH
-
-export PATH=/home/derui/bin/Sencha/Cmd/5.0.0.160:$PATH
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 export PATH=~/.npm/bin:$PATH

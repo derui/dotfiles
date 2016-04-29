@@ -9,7 +9,9 @@ export GOPATH=$HOME/develop/go-workspace
 
 OCAML_PATH=$(dirname `which ocamlc`)
 
-path=( $HOME/.npm/bin $HOME/.nodebrew/current/bin $HOME/.cask/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/perl/bin $HOME/local/bin \
+path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
+    $HOME/.cargo/bin \
+    /opt/rust-bin-1.8.0/bin \
     /opt/VirtualBox \
     $HOME/.gem/ruby/2.0.0/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \
@@ -21,10 +23,6 @@ export LC_ALL=ja_JP.UTF-8
 export XMODIFIERS="@im=uim"
 export SKKSERVER="localhost"
 export COLORTERM=rxvt-256unicode
-# export TERM=mlterm
-
-# for w3m
-export HTTP_HOME="http://duckduckgo.com/"
 
 # エディタはすでに開かれているEmacsを利用する。
 export GNUCLIENT=-F

@@ -73,9 +73,6 @@ nitrogen --restore
 # running dropbox
 $HOME/.dropbox-dist/dropboxd &
 
-# running growthforecast
-$HOME/perl/bin/growthforecast.pl --data-dir $HOME/growthforecast &
-
 # running local fluentd
 $HOME/.gem/ruby/1.9.1/bin/fluentd -c $HOME/conf/fluentd.conf &
 

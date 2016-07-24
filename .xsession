@@ -31,14 +31,14 @@ if [ -f "$userresources" ]; then
 
 fi
 
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-
-    # Enable SandS with using xcape.
-    if [ -x `which xcape` ]; then
-        xmodmap -e 'keycode 255=space'; xmodmap -e 'keycode 65=Shift_L'; xcape -e '#65=space'
-    fi
-fi
+#if [ -f "$usermodmap" ]; then
+#    xmodmap "$usermodmap"
+#
+#    # Enable SandS with using xcape.
+#    if [ -x `which xcape` ]; then
+#        xmodmap -e 'keycode 255=space'; xmodmap -e 'keycode 65=Shift_L'; xcape -e '#65=space'
+#    fi
+#fi
 
 # start some nice programs
 # for use skk-uim setting

@@ -39,7 +39,7 @@ export PERL5LIB="$HOME/perl/lib/perl5:$PERL5LIB"
 if [[ -x `which opam` ]]; then
     # $MANPATH is overwrited by opam config..., so it back up and restore.
     PREV_MANPATH=$MANPATH
-    eval `opam config env --root $HOME/.opam`
+    eval `opam config env`
     export MANPATH=$MANPATH:$PREV_MANPATH
 fi
 

@@ -103,10 +103,6 @@ bindkey "^V" quoted-insert
 ###############################
 # zle以外のユーティリティ関数 #
 ###############################
-psgrep () {
-    [[ -n "$1" ]] && ps aux | grep $1
-}
-
 cabal-haddock () {
     local CABALMODULES=$1
     cabal hscolour $CABALMODULES

@@ -40,17 +40,6 @@ fi
 #    fi
 #fi
 
-# start some nice programs
-# for use skk-uim setting
-export XMODIFIERS="@im=ibus"
-export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="ibus"
-# uim-xim &
-ibus-daemon -d -x
-
-# for gnome/kde like task tray
-#trayer-srg --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --tint 0x191970 --heighttype pixel --height 16 --monitor primary &
-
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
@@ -72,9 +61,6 @@ nitrogen --restore
 
 # running dropbox
 $HOME/.dropbox-dist/dropboxd &
-
-# running local fluentd
-$HOME/.gem/ruby/1.9.1/bin/fluentd -c $HOME/conf/fluentd.conf &
 
 #exec /home/derui/bin/xmonad
 exec /usr/bin/awesome

@@ -2,10 +2,16 @@
 
 autoload -Uz zmv
 
-echo "Start installing dotfiles to $HOME."
+echo "[$fg[blue]info$reset_color ] Start installing dotfiles to $HOME."
 
 current=$(pwd)
 
 zmv -L -s "$(pwd)/dot.(*)" "$HOME/.\$1"
 
-echo "Finish installing dotfiles to $HOME."
+if [[ ! $? ]]; then
+    printf "[$fg[red]error$reset_color] $fg_bold[red] Failed to install dotfiles. Please see above messages.$reset_color\n"
+else
+    echo "[$fg[blue]info$reset_color ] Finish installing dotfiles to $HOME."
+fi
+
+ln -s $current/bin $HOME/bin

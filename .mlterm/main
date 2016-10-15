@@ -36,27 +36,22 @@ use_cp932_ucs_for_xft=true
 only_use_unicode_font=true
 # not_use_unicode_font=false
 
-# 背景透過を行う。
-# use_transbg=true
-
 # スクロールバーは利用しない。
 use_scrollbar=false
-
-# 端末画面の前景色、背景色
-fg_color = #bea492
-bg_color = #1b2023
-
-# 背景の透過率
-brightness=80
-
-# XIMを利用する。
-use_xim=true
-
-# 起動時にXIMを開く
-xim_open_in_startup=true
 
 tabsize=4
 
 logsize=500
 
 mod_meta_mode = esc
+
+#####Recognize ANSI color change escape sequences.
+use_ansi_colors=true
+
+fg_color=#839496
+bg_color=#002b36
+cursor_bg_color=#586e75
+cursor_fg_color=#93a1a1
+bd_color=#9f87ff
+it_color=#171422
+ul_color=#493d70

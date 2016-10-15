@@ -8,29 +8,29 @@ sysmodmap=/usr/X11/lib/X11/xinit/.Xmodmap
 
 # merge in defaults and keymaps
 
-if [ -f $sysresources ]; then
+#if [ -f $sysresources ]; then
+#
+#    if [ -x /usr/bin/cpp ] ; then
+#        xrdb -merge $sysresources
+#    else
+#        xrdb -nocpp -merge $sysresources
+#    fi
+#
+#fi
 
-    if [ -x /usr/bin/cpp ] ; then
-        xrdb -merge $sysresources
-    else
-        xrdb -nocpp -merge $sysresources
-    fi
+#if [ -f $sysmodmap ]; then
+#    xmodmap $sysmodmap
+#fi
 
-fi
-
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
-fi
-
-if [ -f "$userresources" ]; then
-    if [ -x /usr/bin/cpp ] ; then
-        xrdb -merge "$userresources"
-    else
-        xrdb -nocpp -merge "$userresources"
-    fi
-
-fi
-
+#if [ -f "$userresources" ]; then
+#    if [ -x /usr/bin/cpp ] ; then
+#        xrdb -merge "$userresources"
+#    else
+#        xrdb -nocpp -merge "$userresources"
+#    fi
+#
+#fi
+#
 #if [ -f "$usermodmap" ]; then
 #    xmodmap "$usermodmap"
 #
@@ -39,16 +39,22 @@ fi
 #        xmodmap -e 'keycode 255=space'; xmodmap -e 'keycode 65=Shift_L'; xcape -e '#65=space'
 #    fi
 #fi
+if [ -f "$HOME/.xprofile" ]; then
+    source $HOME/.xprofile
+fi
+
+eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fcitx -d &
 
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
-if [ -d /usr/X11/lib/X11/xinit/xinitrc.d ] ; then
-	for f in /usr/X11/lib/X11/xinit/xinitrc.d/*.sh ; do
- 		[ -x "$f" ] && . "$f"
- 	done
- 	unset f
-fi
+#if [ -d /usr/X11/lib/X11/xinit/xinitrc.d ] ; then
+#	for f in /usr/X11/lib/X11/xinit/xinitrc.d/*.sh ; do
+# 		[ -x "$f" ] && . "$f"
+# 	done
+# 	unset f
+#fi
 
 # modify xset's values
 xset s off
@@ -62,10 +68,8 @@ nitrogen --restore
 # running dropbox
 $HOME/.dropbox-dist/dropboxd &
 
-#exec /home/derui/bin/xmonad
 exec /usr/bin/awesome
 
 # xclock -geometry 50x50-1+1 &
 # xterm -geometry 80x50+494+51 &
 # xterm -geometry 80x20+494-0 &
-# exec xterm -geometry 80x66+0+0 -name login

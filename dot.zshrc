@@ -3,10 +3,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-if [[ ! -d "$HOME/.zplug" ]]; then
-    curl -sL zplug.sh/installer | zsh
-fi
-
 if [[ -f ~/.zplug/init.zsh ]]; then
     export ZPLUG_LOADFILE="$HOME/.zsh/zplug.zsh"
     source ~/.zplug/init.zsh

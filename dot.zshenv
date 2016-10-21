@@ -1,4 +1,4 @@
-if [ -x $(which java-config) ]; then
+if [[ -x $(which java-config) ]]; then
   export JAVA_HOME=`java-config -O`
 fi
 export ANDROID_SDK=$HOME/develop/android/android-sdk-linux
@@ -6,6 +6,7 @@ export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
 
 export GOROOT=$HOME/work/go
 export GOPATH=$HOME/develop/go-workspace
+export GHQ_ROOT=$HOME/develop/ghq
 
 OCAML_PATH=$(dirname $(which ocamlc))
 

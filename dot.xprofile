@@ -2,6 +2,8 @@
 export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
+export LANG=ja
+export LC_ALL=ja_JP.UTF-8
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap

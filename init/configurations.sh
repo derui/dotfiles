@@ -8,6 +8,6 @@ is_linux () {
     return $?
 }
 
-if [ \( -d "$HOME/.config" \) \( ! -L "$HOME/.config/awesome" \) -a is_linux ]; then
+if [ \( -d "$HOME/.config" \) -a \( ! -L "$HOME/.config/awesome" \) -a is_linux ]; then
     ln -s $HOME/dotfiles/configurations/awesome $HOME/.config/awesome
 fi

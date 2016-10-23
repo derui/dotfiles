@@ -14,35 +14,37 @@ local wibox = require("wibox")
 --beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 beautiful.init("/home/derui/.config/awesome/theme/theme.lua")
 
+graph_height = 23
+
 -- Create CPU Widget
 -- Initialize widget
 cpuwidget = awful.widget.graph()
 -- Graph properties
 cpuwidget:set_width(50)
-cpuwidget:set_height(23)
+cpuwidget:set_height(graph_height)
 cpuwidget:set_background_color("#494B4F")
 cpuwidget:set_color("#FF5656")
 -- Register widget
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
 
 -- Network widget
-netwidget = wibox.widget.textbox()
+netwidget = awful.widget.graph()
 
-netwidget_t = awful.tooltip({ objects = { netwidget }})
+-- Graph properties
+netwidget:set_width(50)
+netwidget:set_height(graph_height)
+netwidget:set_background_color("#494B4F")
+netwidget:set_color("#FF5656")
 
 -- Register network widget
-vicious.register(netwidget, vicious.widgets.net,
-                 function (widget, args)
-                    netwidget_t:set_text("Network download: " .. args["{eth0 down_mb}"] .. "mb/s")
-                    return args["{eth0 down_mb}"] .. " MB/s"
-                 end)
+vicious.register(netwidget, vicious.widgets.net, "$1")
 
 -- Create Memory Usega Widget
 -- Initialize widget
 memwidget = awful.widget.progressbar()
 -- Progressbar properties
 memwidget:set_width(8)
-memwidget:set_height(23)
+memwidget:set_height(graph_height)
 memwidget:set_vertical(true)
 memwidget:set_background_color("#494B4F")
 memwidget:set_border_color(nil)
@@ -436,16 +438,6 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    -- For hengband
-    { rule = { name = "Hengband" },
-      properties = { tag = tags[2][6] } },
-    { rule = { name = "Term-1" },
-      properties = { tag = tags[2][6] } },
-    { rule = { name = "Term-2" },
-      properties = { tag = tags[2][6] } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
 }
 -- }}}
 

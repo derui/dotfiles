@@ -26,8 +26,15 @@ xset s noblank
 xset -dpms
 
 # for transparents
-xcompmgr -n &
-nitrogen --restore
+if [ -x `which xcompmgr` ]; then
+    xcompmgr -n &
+fi
+
+if [ -x `which nitrogen` ]; then
+    nitrogen --restore
+fi
 
 # running dropbox
-$HOME/.dropbox-dist/dropboxd &
+if [ -x `$HOME/.dropbox-dist/dropboxd`]; then
+    $HOME/.dropbox-dist/dropboxd &
+fi

@@ -12,7 +12,7 @@ local wibox = require("wibox")
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 --beautiful.init("/usr/share/awesome/themes/default/theme.lua")
-beautiful.init("/home/derui/.config/awesome/theme/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme/theme.lua")
 
 graph_height = 23
 

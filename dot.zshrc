@@ -1,3 +1,4 @@
+# -*- mode:shell-script -*-
 # 履歴の設定
 HISTFILE=~/.zsh_history
 HISTSIZE=10000000

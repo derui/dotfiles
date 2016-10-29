@@ -11,7 +11,7 @@ zmv -L -s "${current}/dot.(*)" "$HOME/.\$1"
 if [[ ! $? ]]; then
     printf "[$fg[red]error$reset_color] $fg_bold[red] Failed to install dotfiles. Please see above messages.$reset_color\n"
 else
-    priNTF "[$FG[blue]info$reset_color ] Finish installing dotfiles to $HOME.\n"
+    printf "[$FG[blue]info$reset_color ] Finish installing dotfiles to $HOME.\n"
 fi
 
 if [[ ! -L "${HOME}/bin" ]]; then

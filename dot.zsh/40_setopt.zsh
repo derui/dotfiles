@@ -12,6 +12,9 @@ setopt magic_equal_subst
 # 先頭がスペースならヒストリーに追加しない。
 setopt hist_ignore_space
 
+# ヒストリを共有する
+setopt share_history
+
 # ベルを鳴らさない。
 setopt no_beep
 

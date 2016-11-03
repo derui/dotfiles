@@ -21,9 +21,6 @@ setopt no_beep
 # 補完時にヒストリを自動的に展開する。
 setopt hist_expand
 
-# Share histories all zsh process
-setopt share_history
-
 # 直前と同じコマンドラインはヒストリに追加しない
 setopt hist_ignore_all_dups
 

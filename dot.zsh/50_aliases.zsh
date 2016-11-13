@@ -10,11 +10,12 @@ setopt complete_aliases
 if [[ "`uname`" = "Linux" ]]; then
     alias ls="ls --color=always"
     alias lsn="ls --color=never"
-    alias ll="ls -laF --color | lv -c"
+    alias ll="ls -laF --color | less -R"
 else
     alias ls="ls -G"
-    alias ll="ls -lGaF | lv -c"
+    alias ll="ls -lGaF | less -R"
 fi
+
 alias df="df -h"
 alias e="emacsclient"
 

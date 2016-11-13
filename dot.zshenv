@@ -33,7 +33,12 @@ export COLORTERM=rxvt-256unicode
 # エディタはすでに開かれているEmacsを利用する。
 export GNUCLIENT=-F
 export GNUDOITW=-F
-export EDITOR="emacsclient"
+
+if [[ -x emacsclient ]]; then
+    export EDITOR="emacsclient"
+else
+    export EDITOR="vim"
+fi
 
 export NODE_PATH=$HOME/.npm/lib:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH

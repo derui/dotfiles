@@ -35,6 +35,6 @@ if [ -x `which nitrogen` ]; then
 fi
 
 # running dropbox
-if [ -x `$HOME/.dropbox-dist/dropboxd`]; then
+if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
     $HOME/.dropbox-dist/dropboxd &
 fi

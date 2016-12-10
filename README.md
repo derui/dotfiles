@@ -17,7 +17,7 @@ Dotfiles managed in this repository are there.
 
 1. clone this repository to $HOME
 2. ``cd dotfiles``
-3. ``./init.sh``
+3. ``./bootstrap.sh``
 
 Then you should change login shell to zsh, and re-login. You will look installing zsh plugins automatically.
 

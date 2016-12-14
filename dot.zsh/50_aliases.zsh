@@ -17,7 +17,9 @@ else
 fi
 
 alias df="df -h"
-alias e="emacsclient"
+if [[ -x "$(which emacsclient)" ]]; then
+    alias e="emacsclient"
+fi
 
 # 拡張子別の実行
 alias -s mp3=mplayer

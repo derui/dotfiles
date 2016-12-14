@@ -50,13 +50,14 @@ bindkey '^N' history-substring-search-down
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 
+autoload -U modify-current-argument
 # Surround a forward word by single quote
 _quote-previous-word-in-single() {
     modify-current-argument '${(qq)${(Q)ARG}}'
     zle vi-forward-blank-word
 }
 zle -N _quote-previous-word-in-single
-bindkey -M viins '^Q' quote-previous-word-in-single
+bindkey -M viins '^Q' _quote-previous-word-in-single
 
 # Surround a forward word by double quote
 _quote-previous-word-in-double() {

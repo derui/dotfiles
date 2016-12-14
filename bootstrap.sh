@@ -18,7 +18,7 @@ if [[ ! -L "${HOME}/bin" ]]; then
     ln -s $current/bin $HOME/bin
 fi
 
-for i in $(ls $current/init/**/*.sh); do
+for i in $(ls $current/init.d/**/*.sh); do
     printf "[$fg[blue]info$reset_color ] Execute $i ...\n"
     sh $i
 done

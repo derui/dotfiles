@@ -20,7 +20,7 @@ path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOROOT/bin $GOPATH/bin $OCAML_
     $HOME/.cargo/bin \
     /opt/rust-bin-1.8.0/bin \
     /opt/VirtualBox \
-    $HOME/.gem/ruby/2.0.0/bin $HOME/bin /usr/local/bin /usr/local/sbin \
+    $HOME/.gem/ruby/2.1.0/bin $HOME/bin /usr/local/bin /usr/local/sbin \
     /usr/sbin /sbin \
     /bin /usr/local/bin /usr/bin \
     /usr/local/X11R6/bin /usr/X11R6/bin)

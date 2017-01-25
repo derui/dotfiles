@@ -47,8 +47,8 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 
-bindkey -M vicmd 'j' history-substring-search-up
-bindkey -M vicmd 'k' history-substring-search-down
+bindkey -M vicmd 'j' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
 
 autoload -U modify-current-argument
 # Surround a forward word by single quote

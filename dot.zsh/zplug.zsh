@@ -13,8 +13,10 @@ zplug "~/.zsh", \
 # install zsh plugins
 zplug "zsh-users/zsh-history-substring-search"
 
-zplug "b4b4r07/enhancd", use:init.sh
-
 zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "zsh-users/zsh-completions"
+
+zplug "direnv/direnv", as:command, use:direnv, hook-build:"make"
+
+zplug "b4b4r07/enhancd", use:init.sh

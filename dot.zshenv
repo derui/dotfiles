@@ -34,7 +34,7 @@ export COLORTERM=rxvt-256unicode
 export GNUCLIENT=-F
 export GNUDOITW=-F
 
-if [[ -x emacsclient ]]; then
+if [[ -x $(which emacsclient) ]]; then
     export EDITOR="emacsclient"
 else
     export EDITOR="vim"

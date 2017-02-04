@@ -51,6 +51,10 @@ if [[ -x $(which opam) ]]; then
     export MANPATH=$MANPATH:$PREV_MANPATH
 fi
 
+if [[ -f ~/.virtualenv/bin/activate ]]; then
+    source ~/.virtualenv/bin/activate
+fi
+
 if [[ -e "$HOME/.zshenv_local" ]]; then
     source $HOME/.zshenv_local
 fi

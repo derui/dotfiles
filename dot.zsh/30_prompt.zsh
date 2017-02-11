@@ -21,19 +21,19 @@ add-zsh-hook preexec left_down_prompt_preexec
 function zle-keymap-select zle-line-init zle-line-finish {
     case $KEYMAP in
         main|viins)
-            PROMPT_2="$fg[cyan]-- INSERT --$reset_color"
+            PROMPT_MODE="%{$fg[cyan]%}I%{$reset_color%}"
             ;;
         vicmd)
-            PROMPT_2="$fg[white]-- NORMAL --$reset_color"
+            PROMPT_MODE="%{$fg[white]%}N%{$reset_color%}"
             ;;
         vivis|vivli)
-            PROMPT_2="$fg[yellow]-- VISUAL --$reset_color"
+            PROMPT_MODE="%{$fg[yellow]%}V%{$reset_color%}"
             ;;
         virep)
-            PROMPT_2="$fg[red]-- REPLACE --$reset_color"
+            PROMPT_MODE="%{$fg[red]%}R%{$reset_color%}"
             ;;
     esac
-    PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[red]}%})${HOST}%{${reset_color}%}]%# "
+    build_prompts
     zle reset-prompt
 }
 zle -N zle-line-init
@@ -41,12 +41,12 @@ zle -N zle-line-finish
 zle -N zle-keymap-select
 zle -N edit-command-line
 
-PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[red]}%})${HOST}%{${reset_color}%}]%# "
+function build_left_prompt() {
+    echo -n "[$PROMPT_MODE] < "
+}
 
 # Right PROMPT
-#
-
-r-prompt() {
+function build_right_prompt() {
     if has '__git_ps1'; then
         export GIT_PS1_SHOWDIRTYSTATE=1
         export GIT_PS1_SHOWSTASHSTATE=1
@@ -56,14 +56,30 @@ r-prompt() {
         export GIT_PS1_SHOWCOLORHINTS=0
         local gitps
         gitps=`echo $(__git_ps1 "(%s)")|sed -e s/%/%%/|sed -e s/%%%/%%/|sed -e 's/\\$/\\\\$/'`
-        RPROMPT="%{${fg[red]}%}${gitps}%{${reset_color}%}"
-        RPROMPT+=" at %{${fg[blue]}%}[%~]%{${reset_color}%}"
-        RPROMPT+="${p_buffer_stack}"
-    else
-        RPROMPT="[%{$fg[blue]%}%~%{$reset_color%}]"
+        echo -n "%{${fg[red]}%}${gitps}%{${reset_color}%}"
+        echo -n "${p_buffer_stack}"
     fi
 }
-add-zsh-hook precmd r-prompt
+
+# Build whole prompt
+function build_prompts() {
+    PROMPT=$(build_left_prompt)
+    RPROMPT=$(build_right_prompt)
+}
+
+# make prompts each side first
+build_prompts
+
+build_additional_prompts() {
+    local preprompt_left="[%(?.%{${fg[green]}%}.%{${fg[red]}%})${HOST}%{${reset_color}%}] %{${fg[blue]}%}%~%{${reset_color}%}"
+    local preprompt_right=""
+    local invisible='%([BSUbfksu]|([FK]|){*})'
+    local leftwidth=${#${(S%%)preprompt_left//$~invisible/}}
+    local rightwidth=${#${(S%%)preprompt_right//$~invisible/}}
+    local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
+    print -P $'\n'"$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
+}
+add-zsh-hook precmd build_additional_prompts
 
 # Other PROMPT
 #

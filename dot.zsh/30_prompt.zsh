@@ -12,12 +12,6 @@ zstyle ':completion:*:default' menu select=1
 # プロンプト設定
 # PROMPT
 #
-terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
-left_down_prompt_preexec() {
-    print -rn -- $terminfo[el]
-}
-
-add-zsh-hook preexec left_down_prompt_preexec
 function zle-keymap-select zle-line-init zle-line-finish {
     case $KEYMAP in
         main|viins)
@@ -42,6 +36,13 @@ zle -N zle-keymap-select
 zle -N edit-command-line
 
 function build_left_prompt() {
+    local preprompt_left="[%(?.%{${fg[green]}%}.%{${fg[red]}%})${HOST}%{${reset_color}%}] %{${fg[blue]}%}%~%{${reset_color}%}"
+    local preprompt_right=""
+    local invisible='%([BSUbfksu]|([FK]|){*})'
+    local leftwidth=${#${(S%%)preprompt_left//$~invisible/}}
+    local rightwidth=${#${(S%%)preprompt_right//$~invisible/}}
+    local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
+    echo "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
     echo -n "[$PROMPT_MODE] < "
 }
 
@@ -69,17 +70,6 @@ function build_prompts() {
 
 # make prompts each side first
 build_prompts
-
-build_additional_prompts() {
-    local preprompt_left="[%(?.%{${fg[green]}%}.%{${fg[red]}%})${HOST}%{${reset_color}%}] %{${fg[blue]}%}%~%{${reset_color}%}"
-    local preprompt_right=""
-    local invisible='%([BSUbfksu]|([FK]|){*})'
-    local leftwidth=${#${(S%%)preprompt_left//$~invisible/}}
-    local rightwidth=${#${(S%%)preprompt_right//$~invisible/}}
-    local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
-    print -P $'\n'"$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
-}
-add-zsh-hook precmd build_additional_prompts
 
 # Other PROMPT
 #

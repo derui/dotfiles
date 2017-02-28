@@ -272,7 +272,7 @@ globalkeys = awful.util.table.join(
     -- simulate tag swap...
     awful.key({ modkey,           }, "s",
        function ()
-          local current_screen = mouse.screen
+          local current_screen = screen.primary
           local target_screen = 0
 
           if screen.count() == 1 then

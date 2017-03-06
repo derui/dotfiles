@@ -2,12 +2,12 @@
 
 zplug "~/.zsh/modules", \
     from:local, \
-    nice:1, \
+    defer:1, \
     use:"*.(sh|zsh)"
 
 zplug "~/.zsh", \
     from:local, \
-    nice:2, \
+    defer:2, \
     use:"<->_*.zsh"
 
 # install zsh plugins

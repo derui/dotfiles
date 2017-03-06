@@ -68,15 +68,16 @@ zle -N _quote-previous-word-in-double
 bindkey -M viins '^Xq' _quote-previous-word-in-double
 
 # pecoで検索する
-function _peco-select-history() {
+function _select-history() {
 
-    BUFFER=$(history -nr 1 | peco --query "$LBUFFER")
+    local finder=$(select-finder)
+    BUFFER=$(history -nr 1 | $finder --query "$LBUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
 }
 
-zle -N _peco-select-history
-bindkey "^r" _peco-select-history
+zle -N _select-history
+bindkey "^r" _select-history
 
 # 一つ上のディレクトリに上がる
 # http://shakenbu.org/yanagi/d/?date=20120301
@@ -118,8 +119,9 @@ zle -N my-show-ls-and-git
 bindkey '^m' my-show-ls-and-git
 
 # ghqのソース一覧をpecoで閲覧する
-function my-peco-ghq-src() {
-    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+function _select-ghq-src() {
+    local finder=$(select-finder)
+    local selected_dir=$(ghq list --full-path | $finder --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
         BUFFER="cd ${selected_dir}"
         zle accept-line
@@ -127,5 +129,5 @@ function my-peco-ghq-src() {
     zle clear-screen
 }
 
-zle -N my-peco-ghq-src
-bindkey '^S' my-peco-ghq-src
+zle -N _select-ghq-src
+bindkey '^S' _select-ghq-src

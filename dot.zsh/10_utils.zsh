@@ -81,6 +81,21 @@ my-ls-abbrev() {
     fi
 }
 
+select-finder() {
+    local finders
+    typeset -a finders
+    finders=('fzf' 'peco')
+
+    for f in $finders; do
+        if has $f; then
+            echo "$f"
+            return 0
+        fi
+    done
+
+    return 1
+}
+
 # has_command returns true if $1 as a shell command exists
 has.command() {
     (( $+commands[${1:?too few argument}] ))

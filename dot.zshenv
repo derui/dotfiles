@@ -43,6 +43,8 @@ fi
 export NODE_PATH=$HOME/.npm/lib:$PATH
 export MANPATH=$HOME/.npm/man:$MANPATH
 
+export FZF_DEFAULT_OPTS='--reverse --ansi --border --height 50%'
+
 # When opam is available, merge configurations generated from it.
 if [[ -x $(which opam) ]]; then
     # $MANPATH is overwrited by opam config..., so it back up and restore.

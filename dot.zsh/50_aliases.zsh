@@ -26,3 +26,5 @@ alias -s mp3=mplayer
 alias -s mp4=mplayer
 alias -s flv=mplayer
 alias -s avi=mplayer
+
+alias g="git"

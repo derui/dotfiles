@@ -1,7 +1,10 @@
 termtype=xterm-256color
 
+alpha=224
+depth=32
+
 # 結合文字列を処理する。
-use_combinig=true
+use_combinig=false
 
 # 結合文字列を動的に合成する。
 use_dynamic_comb=true

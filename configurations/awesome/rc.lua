@@ -421,8 +421,6 @@ awful.rules.rules = {
      properties = { floating = true } },
    { rule = { class = "gimp" },
      properties = { floating = true } },
-   { rule = { class = "mlterm" },
-     properties = { opacity = 0.9} },
 }
 -- }}}
 

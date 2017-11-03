@@ -312,8 +312,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
-    awful.key({ modkey, "Control" }, "n", awful.client.restore),
-
     -- Prompt
     --awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey },            "r",
@@ -345,12 +343,11 @@ clientkeys = awful.util.table.join(
    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
    awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
-   awful.key({ modkey,           }, "n",
-      function (c)
-         -- The client currently has the input focus, so it cannot be
-         -- minimized, since minimized clients can't have the focus.
-         c.minimized = true
-   end),
+   awful.key({ modkey,           }, "n", function (c) c.minimized = true end),
+   awful.key({ modkey, "Control" }, "n", awful.client.restore),
+   awful.key({ modkey,           }, ";", function (c) c.opacity = c.opacity + 0.01 end),
+   awful.key({ modkey,           }, ":", function (c) c.opacity = c.opacity - 0.01 end),
+   awful.key({ modkey, "Control" }, "n", awful.client.restore),
    awful.key({ modkey,           }, "m",
       function (c)
          c.maximized_horizontal = not c.maximized_horizontal
@@ -424,6 +421,8 @@ awful.rules.rules = {
      properties = { floating = true } },
    { rule = { class = "gimp" },
      properties = { floating = true } },
+   { rule = { class = "mlterm" },
+     properties = { opacity = 0.9} },
 }
 -- }}}
 

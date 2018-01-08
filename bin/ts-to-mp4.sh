@@ -9,10 +9,10 @@ VCODEC=libx264
 #CPU_CORES=0
 CPU_CORES=$(/usr/bin/getconf _NPROCESSORS_ONLN)
 
-X264_HIGH_HDTV=-f mp4 -vcodec ${VCODEC} \
+X264_HIGH_HDTV="-threads $CPU_CORES -vcodec $VCODEC \
     -fpre ${HOME}/bin/libx264-hq-ts.ffpreset \
     -vsync 1 -deinterlace \
-    -r 30000/1001 -aspect 16:9 -s 1440x1080 -bufsize 20000k -maxrate 25000k \
-    -acodec aac -ac 2 -ar 48000 -ab 128k -threads ${CPU_CORES} -map 0:0 -map 0:1
+    -r 30000/1001 -s 1280x720 -bufsize 20000k -maxrate 25000k \
+    -f mp4 -acodec aac -ac 2 -ar 48000 -ab 128k"
 
-ffmpeg -y -i "$TS" ${X264_HIGH_HDTV} "${BASE}.mp4"
+ffmpeg -y -i "$TS" ${=X264_HIGH_HDTV} "$BASE.mp4"

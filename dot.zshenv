@@ -10,13 +10,7 @@ export GOROOT=$HOME/work/go
 export GOPATH=$HOME/develop/go-workspace
 export GHQ_ROOT=$HOME/develop/ghq
 
-# fill path of ocaml toolchain if it exists.
-OCAML_PATH=
-if [[ -x ocamlc ]]; then
-    OCAML_PATH=$(dirname $(which ocamlc))
-fi
-
-path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOROOT/bin $GOPATH/bin $OCAML_PATH $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
+path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOROOT/bin $GOPATH/bin $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
     $HOME/.cargo/bin \
     /opt/rust-bin-1.8.0/bin \
     /opt/VirtualBox \
@@ -45,12 +39,9 @@ export MANPATH=$HOME/.npm/man:$MANPATH
 
 export FZF_DEFAULT_OPTS='--no-sort --reverse --ansi --border --height 50%'
 
-# When opam is available, merge configurations generated from it.
-if [[ -x $(which opam) ]]; then
-    # $MANPATH is overwrited by opam config..., so it back up and restore.
-    PREV_MANPATH=$MANPATH
-    eval $(opam config env)
-    export MANPATH=$MANPATH:$PREV_MANPATH
+# Load opam config if it exists
+if [[ -f ~/.opam/opam-init/init.zsh ]]; then
+    source ~/.opam/opam-init/init.zsh
 fi
 
 # Enable cargo with rustup

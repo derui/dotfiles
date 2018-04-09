@@ -22,3 +22,6 @@ fi
 # Display Zsh version and display number
 printf "\n$fg_bold[cyan]This is ZSH $fg_bold[red]${ZSH_VERSION}"
 printf "$fg_bold[cyan] - DISPLAY on $fg_bold[red]$DISPLAY$reset_color\n\n"
+
+# OPAM configuration
+. /home/vagrant/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

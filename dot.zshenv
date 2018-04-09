@@ -11,6 +11,7 @@ export GOPATH=$HOME/develop/go-workspace
 export GHQ_ROOT=$HOME/develop/ghq
 
 path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOROOT/bin $GOPATH/bin $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
+    $HOME/.roswell/bin \
     $HOME/.cargo/bin \
     /opt/rust-bin-1.8.0/bin \
     /opt/VirtualBox \

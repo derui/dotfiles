@@ -38,3 +38,5 @@ fi
 if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
     $HOME/.dropbox-dist/dropboxd &
 fi
+
+i3

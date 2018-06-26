@@ -11,4 +11,4 @@ eval "$(dbus-launch --sh-syntax --exit-with-session)"
 
 fcitx -d &
 
-awesome 
+i3

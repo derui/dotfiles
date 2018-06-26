@@ -1,0 +1,150 @@
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #55
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[settings]
+screenchange-reload = true
+
+[section/common]
+bottom = false
+modules-center = i3
+modules-right = cpu memory volume date
+width = 100%
+height = 16
+offset-x = 0
+offset-y = 0
+
+font-0 = Cica:size=12;1
+font-1 = Cica:size=6;-2
+font-2 = Cica:size=10;0
+font-3 = Cica:size=12;-1
+
+background = #000000
+foreground = ${colors.foreground}
+
+module-margin-left = 0
+module-margin-right = 2
+
+[bar/monitor1]
+inherit = section/common
+tray-position = left
+
+monitor = HDMI-0
+
+[bar/monitor2]
+inherit = section/common
+
+monitor = DVI-D-0
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = true
+strip-wsnumbers = true
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #0088CC
+
+label-unfocused-foreground = #555555
+label-unfocused-padding = 1
+
+label-visible-foregroud = #888888
+label-visible-padding = 1
+
+label-focused-foreground = #0088CC
+label-focused-padding = 2
+
+label-urgent-padding = 1
+
+label-dimmed-underline = ${BAR.background}
+label-focused-underline = #0088CC
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 4
+ramp-coreload-0-foreground = #0088CC
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 4
+ramp-coreload-1-foreground = #0088CC
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 4
+ramp-coreload-2-foreground = #0088CC
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 4
+ramp-coreload-3-foreground = #0088CC
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM
+;label-foreground = #0088CC
+
+bar-used-width = 10
+bar-used-gradient = true
+bar-used-foreground-0 = #0088CC
+bar-used-foreground-1 = #2f8419
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ed5456
+bar-used-indicator = █
+bar-used-indicator-font = 3
+bar-used-indicator-foreground = #fff
+bar-used-fill = █
+bar-used-fill-font = 3
+bar-used-empty = █
+bar-used-empty-font = 3
+bar-used-empty-foreground = #44
+
+[module/date]
+type = internal/date
+interval = 0.5
+
+date =
+date-alt = "%Y/%m/%d |"
+
+time = %Y/%m/%d | %H:%M:%S
+time-alt = %H:%M:%S
+
+format-prefix =
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = "Muted "
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = true
+bar-volume-indicator = │
+bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = #0088CC
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2

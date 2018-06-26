@@ -12,7 +12,7 @@ screenchange-reload = true
 
 [section/common]
 bottom = false
-modules-center = i3
+modules-left = i3
 modules-right = cpu memory volume date
 width = 100%
 height = 16
@@ -32,7 +32,9 @@ module-margin-right = 2
 
 [bar/monitor1]
 inherit = section/common
-tray-position = left
+tray-position = right
+tray-padding = 1
+tray-detached = false
 
 monitor = HDMI-0
 
@@ -52,19 +54,27 @@ pin-workspaces = true
 label-mode-padding = 2
 label-mode-foreground = #0088CC
 
+label-visible-foregroud = #888888
+label-dimmed-underline = ${BAR.background}
+
+label-focused = %index%
+label-focused-foreground = #0088CC
+label-focused-underline = #0088CC
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
 label-unfocused-foreground = #555555
 label-unfocused-padding = 1
 
-label-visible-foregroud = #888888
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-underline = #0088CC
 label-visible-padding = 1
 
-label-focused-foreground = #0088CC
-label-focused-padding = 2
-
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
 label-urgent-padding = 1
-
-label-dimmed-underline = ${BAR.background}
-label-focused-underline = #0088CC
 
 [module/cpu]
 type = internal/cpu
@@ -114,7 +124,7 @@ interval = 0.5
 date =
 date-alt = "%Y/%m/%d |"
 
-time = %Y/%m/%d | %H:%M:%S
+time = %Y/%m/%d | %H:%M
 time-alt = %H:%M:%S
 
 format-prefix =
@@ -144,7 +154,7 @@ bar-volume-gradient = true
 bar-volume-indicator = │
 bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = #0088CC
-bar-volume-fill = ─
+bar-volume-fill = │
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = -
 bar-volume-empty-font = 2

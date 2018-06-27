@@ -12,7 +12,7 @@ screenchange-reload = true
 
 [section/common]
 bottom = false
-modules-left = i3
+modules-left = i3 xwindow
 modules-right = cpu memory volume date
 width = 100%
 height = 24
@@ -43,6 +43,11 @@ monitor-fallback = VGA-1
 inherit = section/common
 
 monitor = ${env:MONITOR:DVI-D-0}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:150:...%
+format-foreground = ${colors.primary}
 
 [module/i3]
 type = internal/i3

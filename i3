@@ -161,3 +161,16 @@ bindsym $mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
+
+# 1 pixel decoration on new windows
+new_window 1pixel
+
+# never any borders on edge of screen
+hide_edge_borders both
+
+client.focused          #444444 #000000 #ffffff #2e9ef4   #444444
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff

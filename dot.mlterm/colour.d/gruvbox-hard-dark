@@ -22,10 +22,10 @@ hl_cyan=#c8ec07c
 white=#a89984
 hl_white=#ebdbb2
 
-fg_color=#a89984
+fg_color=#ebdbb2
 bg_color=#282828
-cursor_bg_color=#a89984
+cursor_bg_color=#ebdbb2
 cursor_fg_color=#282828
-bd_color=#e89984
-it_color=#e89984
+bd_color=#ebdbb2
+it_color=#ebdbb2
 ul_color=#488588

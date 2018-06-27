@@ -1,11 +1,21 @@
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #55
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+orange = #d79921
+darkgray = #8a8a8a
+white = #f9f5d7
+gray = #585858
+black = #090909
+red = #db3f3f
+blue = #95aec7
+yellow = #c7ae95
+green = #aec795
+aqua = #8ec07c
+background = #111313
+background-alt = #111313
+foreground = #f9f5d7
+foreground-alt = #f9f5d7
+primary = #111313
+secondary = #d79921
+alert = #db2f2f
 
 [settings]
 screenchange-reload = true
@@ -15,7 +25,7 @@ bottom = false
 modules-left = i3 xwindow
 modules-right = cpu memory volume date
 width = 100%
-height = 24
+height = 22
 offset-x = 0
 offset-y = 0
 
@@ -24,11 +34,13 @@ font-1 = Cica:size=6;-2
 font-2 = Cica:size=10;0
 font-3 = Cica:size=12;-1
 
-background = #000000
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 module-margin-left = 0
 module-margin-right = 2
+
+underline-size = 2
 
 [bar/monitor1]
 inherit = section/common
@@ -47,11 +59,12 @@ monitor = ${env:MONITOR:DVI-D-0}
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:150:...%
-format-foreground = ${colors.primary}
+format-foreground = ${colors.foreground}
+format-underline = ${colors.aqua}
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format = %{U}<label-state> <label-mode>%{U-}
 index-sort = true
 wrapping-scroll = true
 strip-wsnumbers = true
@@ -60,22 +73,20 @@ pin-workspaces = true
 label-mode-padding = 2
 label-mode-foreground = #0088CC
 
-label-visible-foregroud = #888888
-label-dimmed-underline = ${BAR.background}
-
 label-focused = %index%
-label-focused-foreground = #0088CC
-label-focused-underline = #0088CC
+label-focused-foreground = ${colors.white}
+label-focused-underline = ${colors.orange}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-foreground = #555555
+label-unfocused-foreground = ${colors.darkgray}
 label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-underline = #0088CC
+label-visible-foregroud = ${colors.gray}
+label-visible-underline = ${colors.orange}
 label-visible-padding = 1
 
 ; urgent = Workspace with urgency hint set
@@ -88,6 +99,7 @@ interval = 0.5
 
 format = <label> <ramp-coreload>
 label = CPU
+label-underline = ${colors.yellow}
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 4
@@ -106,7 +118,7 @@ ramp-coreload-3-foreground = #0088CC
 type = internal/memory
 format = <label> <bar-used>
 label = RAM
-;label-foreground = #0088CC
+label-underline = ${colors.green}
 
 bar-used-width = 10
 bar-used-gradient = true
@@ -127,14 +139,12 @@ bar-used-empty-foreground = #44
 type = internal/date
 interval = 0.5
 
-date =
-date-alt = "%Y/%m/%d |"
+date = "%Y/%m/%d"
 
-time = %Y/%m/%d | %H:%M
-time-alt = %H:%M:%S
+time = "%H:%M"
 
 format-prefix =
-format-underline = #0a6cf5
+format-underline = ${colors.blue}
 
 label = %date% %time%
 
@@ -144,9 +154,10 @@ type = internal/volume
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
+label-volume-underline = ${colors.red}
 
-format-muted-prefix = "Muted "
-label-muted = sound muted
+label-muted = "Muted"
+label-muted-underline = ${colors.red}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55

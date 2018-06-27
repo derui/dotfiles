@@ -15,7 +15,7 @@ bottom = false
 modules-left = i3
 modules-right = cpu memory volume date
 width = 100%
-height = 16
+height = 24
 offset-x = 0
 offset-y = 0
 
@@ -36,12 +36,13 @@ tray-position = right
 tray-padding = 1
 tray-detached = false
 
-monitor = HDMI-0
+monitor = ${env:MONITOR:HDMI-0}
+monitor-fallback = VGA-1
 
 [bar/monitor2]
 inherit = section/common
 
-monitor = DVI-D-0
+monitor = ${env:MONITOR:DVI-D-0}
 
 [module/i3]
 type = internal/i3

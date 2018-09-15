@@ -170,7 +170,7 @@ bindsym $mod+r mode "resize"
 new_window pixel 2
 
 # never any borders on edge of screen
-hide_edge_borders both
+#hide_edge_borders both
 
 client.focused          #444444 #000000 #ffffff #2e9ef4   #ff4444
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a

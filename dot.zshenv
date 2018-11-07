@@ -9,7 +9,7 @@ export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
 export GOPATH=$HOME/develop/ghq
 export GHQ_ROOT=$GOPATH/src
 
-path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOROOT/bin $GOPATH/bin $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
+path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOPATH/bin $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
     $HOME/.roswell/bin \
     $HOME/.cargo/bin \
     /opt/rust-bin-1.8.0/bin \

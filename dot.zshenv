@@ -6,7 +6,6 @@ fi
 export ANDROID_SDK=$HOME/develop/android/android-sdk-linux
 export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
 
-export GOROOT=$HOME/work/go
 export GOPATH=$HOME/develop/ghq
 export GHQ_ROOT=$GOPATH/src
 

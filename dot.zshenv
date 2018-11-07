@@ -7,8 +7,8 @@ export ANDROID_SDK=$HOME/develop/android/android-sdk-linux
 export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
 
 export GOROOT=$HOME/work/go
-export GOPATH=$HOME/develop/go-workspace
-export GHQ_ROOT=$HOME/develop/ghq
+export GOPATH=$HOME/develop/ghq
+export GHQ_ROOT=$GOPATH/src
 
 path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOROOT/bin $GOPATH/bin $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
     $HOME/.roswell/bin \

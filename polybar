@@ -22,8 +22,7 @@ screenchange-reload = true
 
 [section/common]
 bottom = false
-modules-left = powermenu i3
-modules-center = xwindow
+modules-left = powermenu i3 xwindow
 modules-right = cpu memory volume date
 width = 100%
 height = 22

@@ -1,6 +1,10 @@
 # -*- mode:shell-script -*-
-if [[ -x $(which java-config) ]]; then
-  export JAVA_HOME=`java-config -O`
+
+# use openjdk in gentoo
+if [[ -d /usr/lib64/openjdk-11 ]]; then
+    export JAVA_HOME=/usr/lib64/openjdk-11
+elif [[ -x $(which java-config) ]]; then
+    export JAVA_HOME=`java-config -O`
 fi
 
 export ANDROID_SDK=$HOME/develop/android/android-sdk-linux
@@ -9,7 +13,7 @@ export ANDROID_SDK_HOME=$HOME/develop/android/android-sdk-linux
 export GOPATH=$HOME/develop/ghq
 export GHQ_ROOT=$GOPATH/src
 
-path=($HOME/.npm/bin $HOME/.nodebrew/current/bin $GOPATH/bin $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
+path=($JAVA_HOME/bin $HOME/.npm/bin $HOME/.nodebrew/current/bin $GOPATH/bin $ANDROID_SDK/platform-tools $ANDROID_SDK/tools $HOME/local/bin \
     $HOME/.roswell/bin \
     $HOME/.cargo/bin \
     /opt/rust-bin-1.8.0/bin \

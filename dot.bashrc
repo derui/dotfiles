@@ -16,8 +16,7 @@ fi
 
 
 # Put your fun stuff here.
-export GOROOT=$HOME/work/go
-export GOPATH=$HOME/develop/go-workspace
+export GOPATH=$HOME/develop/ghq
 
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 export PATH=~/.npm/bin:$PATH

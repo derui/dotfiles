@@ -1,6 +1,6 @@
 # General
-set-option -g default-shell /bin/zsh
-set-option -g default-command /bin/zsh
+set-option -g default-shell /bin/fish
+set-option -g default-command /bin/fish
 set-option -s escape-time 0
 
 set-option -g prefix C-t
@@ -71,11 +71,11 @@ bind-key C-r source-file ~/.tmux.conf\; display-message "[tmux] $HOME/.tmux.conf
 #colon :
 bind-key : command-prompt
 
-# screen ^C c 
+# screen ^C c
 bind-key ^C new-window
 bind-key c new-window
 
-# copy ^[ [ 
+# copy ^[ [
 bind-key ^[ copy-mode
 bind-key [ copy-mode
 
@@ -85,18 +85,18 @@ bind-key ^D detach
 # title A
 bind-key A command-prompt "rename-window %%"
 
-# help ? 
+# help ?
 bind-key ? list-keys
 
-# windows ^W w 
+# windows ^W w
 bind-key ^W list-windows
 bind-key w list-windows
 
-# kill K k 
+# kill K k
 bind-key K kill-window
 bind-key k kill-window
 
-# redisplay l 
+# redisplay l
 bind-key l refresh-client
 
 # paste ] ^]
@@ -118,7 +118,7 @@ bind-key E select-layout even-vertical
 set-option -g default-terminal "screen-256color"
 set-option -g pane-active-border-bg colour235
 
-## Customize statusline 
+## Customize statusline
 # Length left
 set-option -g status-left-length 90
 set-option -g status-right-length 90

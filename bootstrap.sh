@@ -1,24 +1,31 @@
-#!/bin/zsh
+#!/bin/bash
 
-autoload -Uz zmv
-
-printf "[$fg[blue]info$reset_color ] Start installing dotfiles to $HOME.\n"
+printf "[info ] Start installing dotfiles to $HOME.\n"
 
 current=$(pwd)
 
-zmv -L -s "${current}/dot.(*)" "$HOME/.\$1"
+for f in $(find "${current}" -name "*.dot"); do
+    f_=$HOME/${f##*/}
+    f_=${f_%.dot}
+
+    if [[ (( -e $f_ )) || (( -L $f_ )) ]]; then
+        printf "[warn ] Already extsts $f as Symbolic link.\n"
+    else
+        ln -s $f $f_
+    fi
+done
 
 if [[ ! $? ]]; then
-    printf "[$fg[red]error$reset_color] $fg_bold[red] Failed to install dotfiles. Please see above messages.$reset_color\n"
+    printf "[error] Failed to install dotfiles. Please see above messages.\n"
 else
-    printf "[$FG[blue]info$reset_color ] Finish installing dotfiles to $HOME.\n"
+    printf "[info ] Finish installing dotfiles to $HOME.\n"
 fi
 
 if [[ ! -L "${HOME}/bin" ]]; then
     ln -s $current/bin $HOME/bin
 fi
 
-for i in $(ls $current/init.d/**/*.sh); do
-    printf "[$fg[blue]info$reset_color ] Execute $i ...\n"
+for i in $(find "$current/init.d" -name "*.sh"); do
+    printf "[info ] Execute $i ...\n"
     sh $i
 done

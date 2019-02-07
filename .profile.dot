@@ -1,0 +1,6 @@
+# -*- mode: sh -*-
+#
+export GOPATH=$HOME/develop/ghq
+export GHQ_ROOT=$GOPATH/src
+
+export PATH=$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.nodebrew/current/bin:$GOPATH/bin:$HOME/local/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH

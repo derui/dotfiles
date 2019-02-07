@@ -1,14 +1,5 @@
 #!/bin/sh
-export XMODIFIERS="@im=fcitx"
-export GTK_IM_MODULE="fcitx"
-export QT_IM_MODULE="fcitx"
 
-if [ -f "$HOME/.Xresources" ]; then
-    xrdb $HOME/.Xresources
-fi
-
-eval "$(dbus-launch --sh-syntax --exit-with-session)"
-
-fcitx -d &
-
-i3
+# Make sure this is before the 'exec' command or it won't be sourced.
+[ -f /etc/xprofile ] && source /etc/xprofile
+[ -f ~/.xprofile ] && source ~/.xprofile

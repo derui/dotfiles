@@ -3,7 +3,7 @@
     name = derui
     email = derutakayu@gmail.com
 [credential]
-    helper = cache --timeout 30000
+    helper = cache --timeout 300000
 [alias]
     co = checkout
     br = branch

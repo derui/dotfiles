@@ -1,0 +1,20 @@
+{
+  "common": {
+    "default_top_theme": "powerline",
+    "ambiwidth": 2
+  },
+  "ext": {
+    "tmux": {
+      "colorscheme": "default",
+      "theme": "default"
+    },
+    "shell": {
+      "colorscheme": "default",
+      "theme": "default"
+    },
+    "wm": {
+      "colorscheme": "default",
+      "theme": "default"
+    }
+  }
+}

@@ -29,10 +29,9 @@ fi
 if [[ ! -d ~/.virtualenv && -x `which python3` ]]; then
     python3 -m venv ~/.virtualenv
 
-    bash -c "~/.virtualenv/bin/activate; pip install powerline-status"
-    rm -rf $HOME/.config/powerline
-    mkdir -p $HOME/.config/powerline
-
-    ln -s $HOME/dotfiles/powerline.config.json $HOME/.config/powerline/config.json
-
 fi
+
+bash -c "source ~/.virtualenv/bin/activate; pip install powerline-status"
+rm -rf $HOME/.config/powerline
+
+ln -s $HOME/dotfiles/powerline $HOME/.config/powerline

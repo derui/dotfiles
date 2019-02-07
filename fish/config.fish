@@ -37,20 +37,22 @@ set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_funct
 set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
 
 for file in $fisher_path/conf.d/*.fish
-    builtin source $file 2> /dev/null
+    builtin source $file ^ /dev/null
 end
 
+# disable virtualenv's original prompt
+set -g VIRTUAL_ENV_DISABLE_PROMPT "1"
 # enable virtualenv if exists
-if test -x ~/.virtualenv/bin/activate
-    ~/.virtualenv/bin/activate
+if test -f ~/.virtualenv/bin/activate.fish
+    . ~/.virtualenv/bin/activate.fish
 end
 
 # Load opam config if it exists
 if test -f ~/.opam/opam-init/init.fish
-    fish ~/.opam/opam-init/init.fish
+    builtin source ~/.opam/opam-init/init.fish
 end
 
 # Enable cargo with rustup
 if test -f ~/.cargo/env
-    source ~/.cargo/env
+    builtin source ~/.cargo/env
 end

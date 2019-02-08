@@ -54,9 +54,6 @@
     ],
     "left": [
       {
-        "function": "powerline.segments.shell.mode"
-      },
-      {
         "function": "powerline.segments.shell.last_pipe_status",
         "priority": 10
       },

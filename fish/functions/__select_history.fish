@@ -1,5 +1,5 @@
 # pecoで検索する
-function __select-history
+function __select_history
 
     set finder (__select_finder)
 

@@ -11,4 +11,5 @@ function __select_history
         commandline "$history_selected"
     end
 
+    commandline -f repaint
 end

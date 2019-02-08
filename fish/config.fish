@@ -1,26 +1,26 @@
 # https://github.com/albertz/dotfiles/blob/master/.config/fish/config.fish
 egrep "^export " ~/.profile | while read e
-	set var (echo $e | sed -E "s/^export ([A-Z_]+)=(.*)\$/\1/")
-	set value (echo $e | sed -E "s/^export ([A-Z_]+)=(.*)\$/\2/")
+    set var (echo $e | sed -E "s/^export ([A-Z_]+)=(.*)\$/\1/")
+    set value (echo $e | sed -E "s/^export ([A-Z_]+)=(.*)\$/\2/")
 
-	# remove surrounding quotes if existing
-	set value (echo $value | sed -E "s/^\"(.*)\"\$/\1/")
+    # remove surrounding quotes if existing
+    set value (echo $value | sed -E "s/^\"(.*)\"\$/\1/")
 
-	if test $var = "PATH"
-		# replace ":" by spaces. this is how PATH looks for Fish
-		set value (echo $value | sed -E "s/:/ /g")
+    if test $var = "PATH"
+        # replace ":" by spaces. this is how PATH looks for Fish
+        set value (echo $value | sed -E "s/:/ /g")
 
-		# use eval because we need to expand the value
-		eval set -xg $var $value
+        # use eval because we need to expand the value
+        eval set -xg $var $value
 
-		continue
-	end
+        continue
+    end
 
-	# evaluate variables. we can use eval because we most likely just used "$var"
-	set value (eval echo $value)
+    # evaluate variables. we can use eval because we most likely just used "$var"
+    set value (eval echo $value)
 
-	#echo "set -xg '$var' '$value' (via '$e')"
-	set -xg $var $value
+    #echo "set -xg '$var' '$value' (via '$e')"
+    set -xg $var $value
 end
 
 # install fisher
@@ -57,9 +57,6 @@ if test -f ~/.cargo/env
     builtin source ~/.cargo/env
 end
 
-# enable vi-mode always
-fish_vi_key_bindings
-
 # enable powerline if extsts
 if test -x (which powerline)
     set _powerline_repository_root (pip show powerline-status | egrep "^Location: " | sed -e 's/Location: \+//')
@@ -70,4 +67,15 @@ if test -x (which powerline)
     end
 else
     echo "Powerline not found"
+end
+
+set -g fish_key_bindings my_key_bindings
+
+# default fzf option
+set -gx FZF_DEFAULT_OPTS "--no-sort --reverse --ansi --border --height 50%"
+
+if test -x (which emacsclient)
+    set -gx EDITOR "emacsclient"
+else
+    set -gx EDITOR "vim"
 end

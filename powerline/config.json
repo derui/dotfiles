@@ -1,7 +1,7 @@
 {
   "common": {
     "default_top_theme": "powerline",
-    "ambiwidth": 2
+    "ambiwidth": 1
   },
   "ext": {
     "tmux": {

@@ -16,3 +16,7 @@ elif [ -x $(which java-config) ]; then
 fi
 
 export PATH=$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.nodebrew/current/bin:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH
+
+if [ -f ~/.opam/opam-init/init.sh ]; then
+    source ~/.opam/opam-init/init.sh
+fi

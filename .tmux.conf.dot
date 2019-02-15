@@ -1,6 +1,5 @@
 # General
 set-option -g default-shell /bin/fish
-set-option -g default-command /bin/fish
 set-option -s escape-time 0
 
 set-option -g prefix C-t

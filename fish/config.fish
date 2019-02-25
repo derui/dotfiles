@@ -59,12 +59,12 @@ end
 
 # enable powerline if extsts
 if test -x (which powerline)
-    set _powerline_repository_root (pip show powerline-status | egrep "^Location: " | sed -e 's/Location: \+//')
-    set fish_function_path $fish_function_path "$_powerline_repository_root/powerline/bindings/fish"
-    powerline-setup
     if test (pgrep powerline | wc -l) -eq 0
         powerline-daemon -q
     end
+    set _powerline_repository_root (pip show powerline-status | egrep "^Location: " | sed -e 's/Location: \+//')
+    set fish_function_path $fish_function_path "$_powerline_repository_root/powerline/bindings/fish"
+    powerline-setup
 else
     echo "Powerline not found"
 end

@@ -14,11 +14,12 @@ if [ -f "$userresources" ]; then
     else
         xrdb -nocpp -merge "$userresources"
     fi
-
 fi
 
-eval "$(dbus-launch --sh-syntax --exit-with-session)"
-fcitx -d &
+if [[ ! -x `which systemctl` ]]; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+    fcitx -d &
+fi
 
 # modify xset's values
 xset s off

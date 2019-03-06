@@ -20,6 +20,9 @@ if [ is_linux ]; then
 
     chmod +x $HOME/dotfiles/polybar-launch.sh
 
+    mkdir -p $HOME/.config/dunst
+    ln -s $HOME/dotfiles/dunstrc $HOME/.config/dunst/dunstrc
+
     rm -rf $HOME/.config/fish
 
     ln -s $HOME/dotfiles/fish $HOME/.config/fish

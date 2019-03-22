@@ -31,7 +31,6 @@ fi
 # bootstrap for virtualenv of python3 and powerline
 if [[ ! -d ~/.virtualenv && -x `which python3` ]]; then
     python3 -m venv ~/.virtualenv
-
 fi
 
 bash -c "source ~/.virtualenv/bin/activate; pip install powerline-status"

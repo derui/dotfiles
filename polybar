@@ -100,7 +100,7 @@ interval = 1.0
 
 format = <label> <ramp-coreload>
 format-underline = ${colors.yellow}
-label = " %percentage%%"
+label = "%percentage%%"
 label-font = 4
 
 ramp-coreload-0 = ▁

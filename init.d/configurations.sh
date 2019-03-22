@@ -36,4 +36,6 @@ fi
 bash -c "source ~/.virtualenv/bin/activate; pip install powerline-status"
 rm -rf $HOME/.config/powerline
 
-ln -s $HOME/dotfiles/powerline $HOME/.config/powerline
+if [[ ! -L $HOME/.config/powerline ]]; then
+    ln -s $HOME/dotfiles/powerline $HOME/.config/powerline
+fi

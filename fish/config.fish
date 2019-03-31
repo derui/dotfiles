@@ -6,7 +6,7 @@ egrep "^export " ~/.profile | while read e
     # remove surrounding quotes if existing
     set value (echo $value | sed -E "s/^\"(.*)\"\$/\1/")
 
-    if test $var = "PATH"
+    if test $var = "PATH" -o $var = "MANPATH"
         # replace ":" by spaces. this is how PATH looks for Fish
         set value (echo $value | sed -E "s/:/ /g")
 

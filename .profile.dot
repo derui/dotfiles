@@ -1,3 +1,4 @@
+#!/bin/sh
 # -*- mode: sh -*-
 #
 export GOPATH=$HOME/develop/ghq
@@ -17,8 +18,7 @@ fi
 
 export NPM_PACKAGES=$HOME/.npm-packages
 
-unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-export MANPATH=$NPM_PACKAGES/share/man:`manpath`
+export MANPATH=$NPM_PACKAGES/share/man:$MANPATH
 
 export PATH=$NPM_PACKAGES/bin:$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.nodebrew/current/bin:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH
 

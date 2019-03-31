@@ -1,2 +1,4 @@
 *.log
 .mlterm.dot/challenge
+
+bin/idea/

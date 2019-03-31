@@ -8,7 +8,7 @@ export MONITOR=$(polybar -m | head -1 | sed -e 's/:.*$//g')
 polybar monitor1 &
 
 if [[ -x `which xrandr` && `xrandr -q | grep " connected" | wc -l` -eq "2" ]]; then
-    MONITOR=$(polybar -m | tail -1 | sed -e '/:.*$//g')
+    MONITOR=$(polybar -m | tail -1 | sed -e 's/:.*$//g')
     polybar monitor2 &
 fi
 

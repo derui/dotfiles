@@ -1,2 +1,4 @@
 functions/fisher.fish
-fisher-pkg/
+fisher-pkg/conf.d/
+fisher-pkg/functions/
+fisher-pkg/completions/

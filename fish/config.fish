@@ -47,6 +47,11 @@ if test -f ~/.virtualenv/bin/activate.fish
     . ~/.virtualenv/bin/activate.fish
 end
 
+# Enable direnv if exists
+if test -x (which direnv)
+    direnv hook fish | source
+end
+
 # Load opam config if it exists
 if test -f ~/.opam/opam-init/init.fish
     builtin source ~/.opam/opam-init/init.fish

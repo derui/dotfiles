@@ -26,6 +26,10 @@ if [ is_linux ]; then
     rm -rf $HOME/.config/fish
 
     ln -s $HOME/dotfiles/fish $HOME/.config/fish
+
+    mkdir -p $HOME/.config/alacritty/
+    rm -f $HOME/.config/alacritty/*
+    ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 fi
 
 # bootstrap for virtualenv of python3 and powerline

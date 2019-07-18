@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec mlterm
+bindsym $mod+Return exec alacritty
 
 # launch rofi as launcher
 bindsym $mod+semicolon exec "rofi -show run -font 'cica 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i'"

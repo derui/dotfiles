@@ -21,6 +21,7 @@ if [ is_linux ]; then
     chmod +x $HOME/dotfiles/polybar-launch.sh
 
     mkdir -p $HOME/.config/dunst
+    rm -f $HOME/.config/dunst/*
     ln -s $HOME/dotfiles/dunstrc $HOME/.config/dunst/dunstrc
 
     rm -rf $HOME/.config/fish
@@ -30,6 +31,10 @@ if [ is_linux ]; then
     mkdir -p $HOME/.config/alacritty/
     rm -f $HOME/.config/alacritty/*
     ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
+    mkdir -p $HOME/.config/compton/
+    rm -f $HOME/.config/comnton/compton.conf
+    ln -s $HOME/dotfiles/compton.conf $HOME/.config/compton/compton.conf
 fi
 
 # bootstrap for virtualenv of python3 and powerline

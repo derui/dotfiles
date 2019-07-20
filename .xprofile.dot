@@ -26,11 +26,6 @@ xset s off
 xset s noblank
 xset -dpms
 
-# for transparents
-if [ -x `which xcompmgr` ]; then
-    xcompmgr -n &
-fi
-
 if [ -x `which nitrogen` ]; then
     nitrogen --restore
 fi

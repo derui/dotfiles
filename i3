@@ -134,6 +134,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+exec --no-startup-id compton -b ~/.config/compton/compton.conf
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -171,6 +173,10 @@ new_window pixel 2
 
 # never any borders on edge of screen
 #hide_edge_borders both
+
+gaps inner 10
+gaps outer 2
+for_window [class="^."] border pixel 1
 
 client.focused          #444444 #000000 #ffffff #2e9ef4   #ff4444
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a

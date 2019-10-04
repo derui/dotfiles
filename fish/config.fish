@@ -67,7 +67,7 @@ if test -x (which powerline)
     if test (pgrep powerline | wc -l) -eq 0
         powerline-daemon -q
     end
-    set _powerline_repository_root (pip show powerline-status | egrep "^Location: " | sed -e 's/Location: \+//')
+    set -q _powerline_repository_root; or set -U _powerline_repository_root (pip show powerline-status | egrep "^Location: " | sed -e 's/Location: \+//')
     set fish_function_path $fish_function_path "$_powerline_repository_root/powerline/bindings/fish"
     powerline-setup
 else

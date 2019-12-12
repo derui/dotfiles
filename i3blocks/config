@@ -1,0 +1,23 @@
+[uptime]
+label=
+command=uptime | sed 's/.*up \([^,]*\),.*/\1/'
+color=#8fa1b3
+interval=60
+
+[memory]
+label=
+command=~/.config/i3blocks/scripts/memory.sh
+color=#8fa1b3
+interval=1
+
+[load average]
+label=
+command=echo "$(uptime | sed 's/.*load average: \(.*\)/\1/' | cut -d, -f1)/$(grep 'processor' /proc/cpuinfo | wc -l)"
+color=#8fa1b3
+interval=1
+
+[date]
+label=
+command=echo " $(date +'%Y/%m/%d %H:%M(%a)')"
+color=#8fa1b3
+interval=1

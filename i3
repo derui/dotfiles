@@ -30,7 +30,6 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec alacritty
 
 # launch rofi as launcher
@@ -133,7 +132,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 exec_always --no-startup-id /usr/bin/compton -b --config $HOME/.config/compton/compton.conf
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -161,11 +159,44 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command i3status
-#}
+# configurations from https://qiita.com/tayusa/items/f4f2e34560afd22e48a3
+set $background #2b303b
+set $foreground #c0c5ce
+set $secondary #3f4751
+set $black #2b303b
+set $red #bf616a
+set $green #a3be8c
+set $yellow #ebcb8b
+set $blue #8fa1b3
+set $magenta #b48ead
+set $cyan #96b5b4
+set $white #c0c5ce
+
+bar {
+    status_command i3blocks
+    font pango:Cica Regular 10.5
+    mode dock
+    position top
+    separator_symbol " │ "
+    workspace_buttons yes
+    strip_workspace_numbers yes
+    binding_mode_indicator yes
+    tray_output primary
+    tray_padding 0
+    colors {
+        background $background
+        focused_background $background
+        statusline $blue
+        focused_statusline $blue
+        separator $secondary
+        focused_separator $secondary
+        focused_workspace  $blue $blue $background
+        active_workspace $background $background $foreground
+        inactive_workspace $background $background $foreground
+        urgent_workspace   $red $red $background
+        binding_mode       $blue $blue $background
+    }
+}
 
 # 1 pixel decoration on new windows
 new_window pixel 2

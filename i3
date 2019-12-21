@@ -174,7 +174,7 @@ set $white #c0c5ce
 
 bar {
     status_command i3blocks
-    font pango:Cica Regular 10.5
+    font pango:Cica 10.5
     mode dock
     position top
     separator_symbol " │ "

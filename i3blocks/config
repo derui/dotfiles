@@ -1,3 +1,5 @@
+color=#8fa1b3
+
 [title]
 command=~/.config/i3blocks/scripts/title.sh
 interval=persist
@@ -5,23 +7,26 @@ interval=persist
 [uptime]
 label=
 command=uptime | sed 's/.*up \([^,]*\),.*/\1/'
-color=#8fa1b3
 interval=60
 
 [memory]
 label=
 command=~/.config/i3blocks/scripts/memory.sh
-color=#8fa1b3
 interval=1
 
 [load average]
 label=
 command=echo "$(uptime | sed 's/.*load average: \(.*\)/\1/' | cut -d, -f1)/$(grep 'processor' /proc/cpuinfo | wc -l)"
-color=#8fa1b3
 interval=1
 
 [date]
-label=
-command=echo " $(date +'%Y/%m/%d %H:%M(%a)')"
-color=#8fa1b3
+label=
+command=echo " $(date '+%Y/%m/%d %H:%M(%a)')"
 interval=1
+
+[power]
+label=
+command=~/.config/i3blocks/scripts/power.sh
+interval=persist
+
+[separator]

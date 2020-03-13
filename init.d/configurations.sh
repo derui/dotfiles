@@ -21,18 +21,17 @@ if [ is_linux ]; then
     rm -f $HOME/.config/dunst/*
     ln -s $HOME/dotfiles/dunstrc $HOME/.config/dunst/dunstrc
 
-    rm -rf $HOME/.config/fish
-
-    ln -s $HOME/dotfiles/fish $HOME/.config/fish
-
     mkdir -p $HOME/.config/alacritty/
     rm -f $HOME/.config/alacritty/*
     ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
-    mkdir -p $HOME/.config/compton/
-    rm -f $HOME/.config/comnton/compton.conf
-    ln -s $HOME/dotfiles/compton.conf $HOME/.config/compton/compton.conf
+    mkdir -p $HOME/.config/picom/
+    rm -f $HOME/.config/picom/picom.conf
+    ln -s $HOME/dotfiles/picom.conf $HOME/.config/picom/picom.conf
 fi
+
+rm -rf $HOME/.config/fish
+ln -s $HOME/dotfiles/fish $HOME/.config/fish
 
 # bootstrap for virtualenv of python3 and powerline
 if [[ ! -d ~/.virtualenv && -x `which python3` ]]; then

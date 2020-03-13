@@ -131,7 +131,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-exec_always --no-startup-id /usr/bin/compton -b --config $HOME/.config/compton/compton.conf
+exec_always --no-startup-id /usr/bin/picom -b --config $HOME/.config/picom/picom.conf
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

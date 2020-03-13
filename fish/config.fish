@@ -84,3 +84,8 @@ if test -x (which emacsclient)
 else
     set -gx EDITOR "vim"
 end
+
+# set aliases
+if test -x (which exa)
+    alias ls='exa --icons'
+end

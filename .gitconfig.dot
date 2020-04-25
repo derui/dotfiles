@@ -10,6 +10,8 @@
     rb = rebase
     rbi = rebase -i
     rbh = rebase HEAD
+    nb = switch -c
+    s = switch
     sq = "!point=${1:-HEAD} sh -c 'files=`git diff --name-only ${point}`; git reset ${point};git add $files; git commit -a'; git rept"
     rept = "!sh -c 'git tag -d pt; git tag pt'"
     l = log --pretty=format:\"%ci %C(yellow)%H%Creset [%cn] %Cgreen%s %C(cyan)%d%Creset\" -10

@@ -9,4 +9,5 @@ function my_key_bindings
     bind -M insert \cr 'history save; history merge; __select_history'
     bind -M default \cs__select_ghq_cd
     bind -M insert \cs __select_ghq_cd
+    bind -M insert \cn __integrated_completer
 end

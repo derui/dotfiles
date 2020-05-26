@@ -25,3 +25,7 @@ export PATH=$NPM_PACKAGES/bin:$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.nodebrew/curr
 if [ -f "$HOME/.opam/opam-init/init.sh" ]; then
     . $HOME/.opam/opam-init/init.sh
 fi
+
+if [ -f "$HOME/.secrets/bash"]; then
+    source $HOME/.secrets/bash
+fi

@@ -89,3 +89,7 @@ end
 if test -x (which exa)
     alias ls='exa --icons'
 end
+
+if test -f ~/.secrets/fish
+    builtin source ~/.secrets/fish
+end

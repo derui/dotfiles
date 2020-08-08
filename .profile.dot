@@ -38,4 +38,5 @@ if [ "$WSL_DISTRO_NAME" != "" ]; then
     WSLENV=DISPLAY ./xhost.exe + $(ip -4 a show eth0 | grep -oP '?(<=inet\s)\d+(\.\d+){3}')
 
     export DISPLAY=$(awk '/^nameserver/ {print $2; exit}' /etc/resolv.conf):0.0
+    export LIBGL_ALWAYS_INDIRECT=1
 fi

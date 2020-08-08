@@ -63,7 +63,8 @@ if test -f ~/.cargo/env
 end
 
 # enable powerline if extsts
-if test -x (which powerline)
+set -l _powerline (which powerline)
+if test -x "$_powerline"
     if test (pgrep powerline | wc -l) -eq 0
         powerline-daemon -q
     end
@@ -79,14 +80,16 @@ set -g fish_key_bindings my_key_bindings
 # default fzf option
 set -gx FZF_DEFAULT_OPTS "--no-sort --reverse --ansi --border --height 50%"
 
-if test -x (which emacsclient)
+set -l _emacsclient (which emacsclient)
+if test -x "$_emacsclient"
     set -gx EDITOR "emacsclient"
 else
     set -gx EDITOR "vim"
 end
 
 # set aliases
-if test -x (which exa)
+set -l _exa (which exa)
+if test -x "$_exa"
     alias ls='exa --icons'
 end
 

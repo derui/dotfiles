@@ -32,5 +32,10 @@ fi
 
 # WSL_DISTRO_NAMEにDistributionの名前が入っているので、これが設定されていたらWSLの内部と判断する
 if [ "$WSL_DISTRO_NAME" != "" ]; then
+    cd '/mnt/c/Program Files/VcXsrv'
+
+    export DISPLAY=127.0.0.1:0.0
+    WSLENV=DISPLAY ./xhost.exe + $(ip -4 a show eth0 | grep -oP '?(<=inet\s)\d+(\.\d+){3}')
+
     export DISPLAY=$(awk '/^nameserver/ {print $2; exit}' /etc/resolv.conf):0.0
 fi

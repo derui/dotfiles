@@ -96,3 +96,7 @@ end
 if test -f ~/.secrets/fish
     builtin source ~/.secrets/fish
 end
+
+if test -d ~/.anyenv
+    status --is-interactive; and source (anyenv init - | psub)
+end

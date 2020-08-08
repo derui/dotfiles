@@ -29,3 +29,8 @@ fi
 if [ -f "$HOME/.secrets/bash"]; then
     source $HOME/.secrets/bash
 fi
+
+# WSL_DISTRO_NAMEにDistributionの名前が入っているので、これが設定されていたらWSLの内部と判断する
+if [ "$WSL_DISTRO_NAME" != "" ]; then
+    export DISPLAY=$(awk '/^nameserver/ {print $2; exit}' /etc/resolv.conf):0.0
+fi

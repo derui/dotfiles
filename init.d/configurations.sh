@@ -28,6 +28,10 @@ if [ is_linux ]; then
     mkdir -p $HOME/.config/picom/
     rm -f $HOME/.config/picom/picom.conf
     ln -s $HOME/dotfiles/picom.conf $HOME/.config/picom/picom.conf
+
+    mkdir -p $HOME/.config/
+    rm -f $HOME/.config/starship.toml
+    ln -s $HOME/dotfiles/starship.toml $HOME/.config/starship.toml
 fi
 
 rm -rf $HOME/.config/fish

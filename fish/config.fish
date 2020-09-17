@@ -62,19 +62,6 @@ if test -f ~/.cargo/env
     builtin source ~/.cargo/env
 end
 
-# enable powerline if extsts
-set -l _powerline (which powerline)
-if test -x "$_powerline"
-    if test (pgrep powerline | wc -l) -eq 0
-        powerline-daemon -q
-    end
-    set -q _powerline_repository_root; or set -U _powerline_repository_root (pip show powerline-status | egrep "^Location: " | sed -e 's/Location: \+//')
-    set fish_function_path $fish_function_path "$_powerline_repository_root/powerline/bindings/fish"
-    powerline-setup
-else
-    echo "Powerline not found"
-end
-
 set -g fish_key_bindings my_key_bindings
 
 # default fzf option
@@ -100,4 +87,8 @@ end
 if test -d ~/.anyenv
     set -xg PATH $HOME/.anyenv/bin $PATH
     status --is-interactive; and source (anyenv init - | psub)
+end
+
+if test -f ~/bin/starship
+    ~/bin/starship init fish | source
 end

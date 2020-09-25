@@ -25,20 +25,32 @@ set scrolloff=10
 
 set showmode
 
+nnoremap / :<C-u>action Find<CR>
+
 nnoremap == :action ReformatCode<CR>
-nnoremap <C-o> :<C-u>action Back<CR>
-nnoremap <C-i> :<C-u>action Forward<CR>
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-o> :<C-u>action Back<CR>
+nnoremap <C-i> :<C-u>action Forward<CR>
+nnoremap <C-S-o> <C-o>
+nnoremap <C-S-i> <C-i>
+
+inoremap <C-n> :<C-u>action EditorDown<CR>
+inoremap <C-f> :<C-u>action EditorRight<CR>
+inoremap <C-b> :<C-u>action EditorLeft<CR>
+inoremap <C-p> :<C-u>action EditorUp<CR>
+inoremap <C-s> :<C-u>action Find<CR>
 
 let mapleader = " "
-"map <leader>o :action $SelectAll<CR>
+map <leader> <nop>
+map <leader>o :action $SelectAll<CR>
+map <leader>f :<C-u>action GotoFile<CR>
+map <leader>s :<C-u>action FindInPath<CR>
 
-inoremap jj <ESC>
+nnoremap <C-CR> :action ShowIntentionActions<CR>
+inoremap <C-CR> :action ShowIntentionActions<CR>
 
-"x キー削除でデフォルトレジスタに入れない
-nnoremap x "_x
-vnoremap x "_x
+inoremap kj <ESC>
 
 "vv で行末まで選択
 vnoremap v ^$h
@@ -46,3 +58,18 @@ vnoremap v ^$h
 "選択範囲のインデントを連続して変更
 vnoremap < <gv
 vnoremap > >gv
+
+nnoremap [e :<C-u>action GotoPreviousError<CR>
+nnoremap ]e :<C-u>action GotoNextError<CR>
+
+nnoremap K :<C-u>action QuickJavaDoc<CR>
+nnoremap gjK :<C-u>action GotoDeclaration<CR>
+nnoremap gjk :<C-u>action GotoTypeDeclaration<CR>
+nnoremap gji :<C-u>action GotoImplementation<CR>
+nnoremap gjs :<C-u>action GotoSuperMethod<CR>
+nnoremap gjt :<C-u>action GotoTest<CR>
+nnoremap <C-k> :<C-u>action ShowUsages<CR>
+
+nnoremap cre :<C-u>action RenameElement<CR>
+nnoremap cS :<C-u>action ChangeSignature<CR>
+nnoremap cts :<C-u>action ChangeTypeSignature<CR>

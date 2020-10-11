@@ -30,6 +30,10 @@ if [ -x `which nitrogen` ]; then
     nitrogen --restore
 fi
 
+if [ -x `which imwheel` ]; then
+    imwheel -k -b 45
+fi
+
 # running dropbox
 if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
     $HOME/.dropbox-dist/dropboxd &

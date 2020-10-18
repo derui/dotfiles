@@ -35,11 +35,11 @@ nnoremap <C-i> :<C-u>action Forward<CR>
 nnoremap <C-S-o> <C-o>
 nnoremap <C-S-i> <C-i>
 
-inoremap <C-n> :<C-u>action EditorDown<CR>
-inoremap <C-f> :<C-u>action EditorRight<CR>
-inoremap <C-b> :<C-u>action EditorLeft<CR>
-inoremap <C-p> :<C-u>action EditorUp<CR>
-inoremap <C-s> :<C-u>action Find<CR>
+inoremap <C-n> <C-o>:<C-u>action EditorDown<CR>
+inoremap <C-f> <C-o>:<C-u>action EditorRight<CR>
+inoremap <C-b> <C-o>:<C-u>action EditorLeft<CR>
+inoremap <C-p> <C-o>:<C-u>action EditorUp<CR>
+inoremap <C-s> <C-o>:<C-u>action Find<CR>
 
 let mapleader = " "
 map <leader> <nop>
@@ -48,7 +48,7 @@ map <leader>f :<C-u>action GotoFile<CR>
 map <leader>s :<C-u>action FindInPath<CR>
 
 nnoremap <C-CR> :action ShowIntentionActions<CR>
-inoremap <C-CR> :action ShowIntentionActions<CR>
+inoremap <C-CR> <C-o><C-u>:action ShowIntentionActions<CR>
 
 inoremap kj <ESC>
 

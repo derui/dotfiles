@@ -43,12 +43,12 @@ inoremap <C-s> <C-o>:<C-u>action Find<CR>
 
 let mapleader = " "
 map <leader> <nop>
-map <leader>o :action $SelectAll<CR>
+map <leader>o :<C-u>action $SelectAll<CR>
 map <leader>f :<C-u>action GotoFile<CR>
 map <leader>s :<C-u>action FindInPath<CR>
 
-nnoremap <C-CR> :action ShowIntentionActions<CR>
-inoremap <C-CR> <C-o><C-u>:action ShowIntentionActions<CR>
+nnoremap <C-CR> :<C-u>action ShowIntentionActions<CR>
+inoremap <C-CR> <C-o>:<C-u>action ShowIntentionActions<CR>
 
 inoremap kj <ESC>
 

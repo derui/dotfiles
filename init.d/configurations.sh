@@ -13,9 +13,16 @@ if [ is_linux ]; then
     rm -f $HOME/.config/i3/config
     ln -s $HOME/dotfiles/i3 $HOME/.config/i3/config
 
+    mkdir -p $HOME/.config/sway
+    rm -f $HOME/.config/sway/config
+    ln -s $HOME/dotfiles/sway $HOME/.config/sway/config
+
     rm -f $HOME/.config/i3blocks
     ln -s $HOME/dotfiles/i3blocks $HOME/.config/i3blocks
     chmod a+x $HOME/dotfiles/i3blocks/scripts/*
+    
+    rm -f $HOME/.config/i3status
+    ln -s $HOME/dotfiles/i3status $HOME/.config/i3status
 
     mkdir -p $HOME/.config/dunst
     rm -f $HOME/.config/dunst/*

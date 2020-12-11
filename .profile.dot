@@ -8,6 +8,12 @@ export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 export XMODIFIERS="@im=fcitx"
 export COLORTERM=rxvt-256unicode
+export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
+
+if [ ! -d "$XDG_RUNTIME_DIR" ]; then
+    mkdir -p $XDG_RUNTIME_DIR
+    chmod 0700 $XDG_RUNTIME_DIR
+fi
 
 # use openjdk in gentoo
 if [ -d "/usr/lib64/openjdk-11" ]; then
@@ -20,13 +26,13 @@ export NPM_PACKAGES=$HOME/.npm-packages
 
 export MANPATH=$NPM_PACKAGES/share/man:$MANPATH
 
-export PATH=$NPM_PACKAGES/bin:$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.anyenv/envs/nodenv/shims:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH
+export PATH=$NPM_PACKAGES/bin:$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.anyenv/bin:$HOME/.anyenv/envs/nodenv/shims:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH
 
 if [ -f "$HOME/.opam/opam-init/init.sh" ]; then
     . $HOME/.opam/opam-init/init.sh
 fi
 
-if [ -f "$HOME/.secrets/bash"]; then
+if [ -f "$HOME/.secrets/bash" ]; then
     source $HOME/.secrets/bash
 fi
 

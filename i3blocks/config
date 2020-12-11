@@ -1,8 +1,8 @@
 color=#8fa1b3
 
-[title]
-command=~/.config/i3blocks/scripts/title.sh
-interval=persist
+# [title]
+# command=~/.config/i3blocks/scripts/title.sh
+# interval=persist
 
 [uptime]
 label=

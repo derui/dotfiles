@@ -34,6 +34,10 @@ if [ -x `which imwheel` ]; then
     imwheel -k -b 45
 fi
 
+if [ -x `which pulseaudio` ]; then
+    pulseaudio --start
+fi
+
 # running dropbox
 if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
     $HOME/.dropbox-dist/dropboxd &

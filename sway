@@ -33,7 +33,9 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # launch rofi as launcher
-bindsym $mod+semicolon exec "rofi -show run -font 'cica 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i'"
+#bindsym $mod+semicolon exec "rofi -show run -font 'cica 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i'"
+# launch krunner as launcher for wayland
+bindsym $mod+semicolon exec krunner
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -130,9 +132,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
-exec fcitx-autostart
-exec pulseaudio --start
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -212,3 +211,6 @@ client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
+
+exec fcitx-autostart
+exec pulseaudio --start

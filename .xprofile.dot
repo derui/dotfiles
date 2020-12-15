@@ -16,6 +16,10 @@ if [ -f "$userresources" ]; then
     fi
 fi
 
+if [[ $XDG_SESSION_TYPE == "wayland" ]]; then 
+    return
+fi
+
 if [[ ! -x `which systemctl` ]]; then
     eval "$(dbus-launch --sh-syntax --exit-with-session)"
     fcitx -d &

@@ -4,7 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -33,9 +32,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # launch rofi as launcher
-#bindsym $mod+semicolon exec "rofi -show run -font 'cica 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i'"
-# launch krunner as launcher for wayland
-bindsym $mod+semicolon exec krunner
+bindsym $mod+semicolon exec "rofi -show run -font 'cica 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i' -monitor -5"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -180,6 +177,8 @@ bar {
     workspace_buttons yes
     strip_workspace_numbers yes
     binding_mode_indicator yes
+    tray_output *
+    icon_theme Adwaita
     colors {
         background $background
         focused_background $background
@@ -212,5 +211,14 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-exec fcitx-autostart
+output DP-3 {
+  pos 0 0
+  mode 1920x1080@119.982002Hz
+}
+output DP-1 {
+  pos 1920 0
+  mode 1920x1080@119.982002Hz
+}
+
+exec --no-startup-id "fcitx -rd"
 exec pulseaudio --start

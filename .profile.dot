@@ -6,8 +6,12 @@ export GHQ_ROOT=$GOPATH/src
 
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
-export XMODIFIERS="@im=fcitx"
 export COLORTERM=rxvt-256unicode
+
+# environment variables for X11/wayland
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
 export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
 
 if [ ! -d "$XDG_RUNTIME_DIR" ]; then
@@ -47,6 +51,10 @@ if [ "$WSL_DISTRO_NAME" != "" ]; then
     export LIBGL_ALWAYS_INDIRECT=1
 fi
 
-if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
-    $HOME/.dropbox-dist/dropboxd &
+
+# Start programs for sway session
+if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
+    if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
+        $HOME/.dropbox-dist/dropboxd &
+    fi
 fi

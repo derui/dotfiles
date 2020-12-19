@@ -1,5 +1,6 @@
 *.log
 .mlterm.dot/challenge
+fish/fish_variables
 
 bin/idea/
 bin/starship

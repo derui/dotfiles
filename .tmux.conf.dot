@@ -237,6 +237,12 @@ bind-key -Tcopy-mode-vi C-n send -X page-up
 bind-key -Tcopy-mode-vi C-f send -X page-down
 bind-key -Tcopy-mode-vi C-u send -X scroll-up
 bind-key -Tcopy-mode-vi C-d send -X scroll-down
+## comment out this line if you on Wayland(example: on sway, on plasma wayland)
+bind-key -Tcopy-mode-vi Enter send -X copy-pipe "wl-paste"
+## comment out this line if you on X11
+#bind-key -Tcopy-mode-vi Enter send -X copy-pipe "wl-paste"
+## comment out this line if you on macOS
+#bind-key -Tcopy-mode-vi Enter send -X copy-pipe "reattach-to-user-namespace pbcopy"
 
 unbind-key -Tcopy-mode-vi Space
 bind-key -Tcopy-mode-vi V send -X select-line

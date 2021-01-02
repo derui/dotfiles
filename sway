@@ -84,7 +84,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+return floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -155,6 +155,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+mode "toggle" {
+        bindsym h output DP-3 toggle
+        bindsym l output DP-1 toggle
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+t mode "toggle"
+
+
 # configurations from https://qiita.com/tayusa/items/f4f2e34560afd22e48a3
 set $background #2b303b
 set $foreground #c0c5ce
@@ -220,5 +231,5 @@ output DP-1 {
   mode 1920x1080@119.982002Hz
 }
 
-exec --no-startup-id "fcitx -rd"
+exec fcitx -rd
 exec pulseaudio --start

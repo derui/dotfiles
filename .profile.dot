@@ -14,6 +14,9 @@ export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
 
+# Avoid blank screen of AWT-based application on Wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 if [ ! -d "$XDG_RUNTIME_DIR" ]; then
     mkdir -p $XDG_RUNTIME_DIR
     chmod 0700 $XDG_RUNTIME_DIR

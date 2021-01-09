@@ -17,6 +17,8 @@ export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
 # Avoid blank screen of AWT-based application on Wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+export LV2_PATH=$HOME/.local/share/lv2
+
 if [ ! -d "$XDG_RUNTIME_DIR" ]; then
     mkdir -p $XDG_RUNTIME_DIR
     chmod 0700 $XDG_RUNTIME_DIR
@@ -52,12 +54,4 @@ if [ "$WSL_DISTRO_NAME" != "" ]; then
 
     export DISPLAY=$(awk '/^nameserver/ {print $2; exit}' /etc/resolv.conf):0.0
     export LIBGL_ALWAYS_INDIRECT=1
-fi
-
-
-# Start programs for sway session
-if [[ $XDG_SESSION_TYPE == "wayland" ]]; then
-    if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
-        $HOME/.dropbox-dist/dropboxd &
-    fi
 fi

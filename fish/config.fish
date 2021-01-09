@@ -1,7 +1,7 @@
 # https://github.com/albertz/dotfiles/blob/master/.config/fish/config.fish
 egrep "^export " ~/.profile | while read e
-    set var (echo $e | sed -E "s/^export ([A-Z_]+)=(.*)\$/\1/")
-    set value (echo $e | sed -E "s/^export ([A-Z_]+)=(.*)\$/\2/")
+    set var (echo $e | sed -E "s/^export ([0-9A-Z_]+)=(.*)\$/\1/")
+    set value (echo $e | sed -E "s/^export ([0-9A-Z_]+)=(.*)\$/\2/")
 
     # remove surrounding quotes if existing
     set value (echo $value | sed -E "s/^\"(.*)\"\$/\1/")

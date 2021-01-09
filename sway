@@ -233,3 +233,4 @@ output DP-1 {
 
 exec fcitx -rd
 exec pulseaudio --start
+exec $HOME/.dropbox-dist/dropboxd &

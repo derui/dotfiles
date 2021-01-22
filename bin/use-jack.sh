@@ -6,7 +6,8 @@ fi
 
 TARGET_CARD=0
 DEFAULT_PROFILE="output:analog-stereo+input:analog-stereo"
-DEFAULT_CARD=alsa_card.usb-Yamaha_Corporation_Steinberg_UR22C-00
+CARD_NAME=usb-Yamaha_Corporation_Steinberg_UR22C-00
+DEFAULT_CARD=alsa_card.$CARD_NAME
 
 # turn off target device in pulseaudio
 pactl set-card-profile $DEFAULT_CARD off
@@ -17,6 +18,9 @@ if [[ $? != 0 ]]; then
     pactl set-card-profile $DEFAULT_CARD $DEFAULT_PROFILE
     exit 1
 fi
+
+echo "Waiting to finish registration jack to pulseaudio..."
+sleep 2
 
 echo "Use jack sink as default sink in Pulseaudio"
 pacmd set-default-sink jack_out
@@ -34,5 +38,15 @@ echo "Jack exited"
 # restore default profile
 pactl set-card-profile $DEFAULT_CARD $DEFAULT_PROFILE
 
-pacmd set-default-sink alsa_output.usb-Yamaha_Corporation_Steinberg_UR22C-00.analog-stereo
-pacmd set-default-source alsa_input.usb-Yamaha_Corporation_Steinberg_UR22C-00.analog-stereo
+while true; do
+    echo "Waiting to finish activation on pulseaudio..."
+    local sinks=$(pacmd list-sinks | rg "name:" | rg -n "$CARD_NAME")
+    if [[ sinks >= 1 ]]; then
+        break
+    fi
+
+    sleep 1
+done
+
+pacmd set-default-sink alsa_output.$CARD_NAME.analog-stereo
+pacmd set-default-source alsa_input.$CARD_NAME.analog-stereo

@@ -231,6 +231,8 @@ output DP-1 {
   mode 1920x1080@119.982002Hz
 }
 
-exec fcitx -r
-exec pulseaudio --start
-exec $HOME/.dropbox-dist/dropboxd &
+exec {
+    fcitx -r
+    pulseaudio --start
+    $HOME/.dropbox-dist/dropboxd &
+}

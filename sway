@@ -235,4 +235,5 @@ exec {
     fcitx -r
     pulseaudio --start
     $HOME/.dropbox-dist/dropboxd &
+    xrdb $HOME/.Xresources
 }

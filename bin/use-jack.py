@@ -52,10 +52,10 @@ def restore_target_device():
 
     wait_sink_enabled(default_output)
 
-def reset_all_stream_sinks():
+def reset_all_stream_sinks(output):
     all_sinks = subprocess.run(['pactl', 'list','short','sinks'], capture_output=True)
     all_sinks = [str(v, 'utf-8').split('\t') for v in all_sinks.stdout.splitlines()]
-    default_sinks = list(filter(lambda v: v[1].find(default_output) != -1,
+    default_sinks = list(filter(lambda v: v[1].find(output) != -1,
                           map(lambda v: (v[0], v[1]), all_sinks)))
 
     if len(default_sinks) < 1:
@@ -77,6 +77,7 @@ def main():
     set_jack_as_default()
 
     wait_sink_enabled("jack_out")
+    reset_all_stream_sinks("jack_out")
 
     input("Jack startred successfully, waiting hit any key to quit jack...")
 
@@ -84,7 +85,7 @@ def main():
 
     restore_target_device()
     restore_default()
-    reset_all_stream_sinks()
+    reset_all_stream_sinks(default_output)
 
 
 main()

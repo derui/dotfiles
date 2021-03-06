@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # launch rofi as launcher
-bindsym $mod+semicolon exec "rofi -show run -font 'cica 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i'"
+bindsym $mod+semicolon exec "rofi -show run -font 'HackGen 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i'"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -174,7 +174,7 @@ set $white #c0c5ce
 
 bar {
     status_command i3blocks
-    font pango:Cica 10.5
+    font pango:HackGen 10.5
     mode dock
     position top
     separator_symbol " │ "

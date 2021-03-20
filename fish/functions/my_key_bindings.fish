@@ -10,4 +10,8 @@ function my_key_bindings
     bind -M default \cs__select_ghq_cd
     bind -M insert \cs __select_ghq_cd
     bind -M insert \c_ __integrated_completer
+    bind -M default \cgs __git_change_branch
+    bind -M insert \cgs __git_change_branch
+    bind -M default \cgn __git_new_branch
+    bind -M insert \cgn __git_new_branch
 end

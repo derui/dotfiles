@@ -224,11 +224,12 @@ client.background       #ffffff
 
 output DP-3 {
   pos 0 0
-  mode 1920x1080@119.982002Hz
+  mode 2560x1440@60Hz
 }
 output DP-1 {
-  pos 1920 0
-  mode 1920x1080@119.982002Hz
+  pos 2560 0
+  mode 2560x1440@60Hz
+  transform 270
 }
 
 exec {

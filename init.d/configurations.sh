@@ -20,7 +20,7 @@ if [ is_linux ]; then
     rm -f $HOME/.config/i3blocks
     ln -s $HOME/dotfiles/i3blocks $HOME/.config/i3blocks
     chmod a+x $HOME/dotfiles/i3blocks/scripts/*
-    
+
     rm -f $HOME/.config/i3status
     ln -s $HOME/dotfiles/i3status $HOME/.config/i3status
 
@@ -39,6 +39,12 @@ if [ is_linux ]; then
     mkdir -p $HOME/.config/
     rm -f $HOME/.config/starship.toml
     ln -s $HOME/dotfiles/starship.toml $HOME/.config/starship.toml
+
+    mkdir -p $HOME/.config/waybar
+    rm -f $HOME/.config/waybar/config
+    ln -s $HOME/dotfiles/waybar $HOME/.config/waybar/config
+    rm -f $HOME/.config/waybar/style
+    ln -s $HOME/dotfiles/waybar.style.css $HOME/.config/waybar/style
 fi
 
 rm -rf $HOME/.config/fish

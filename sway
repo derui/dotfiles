@@ -206,8 +206,8 @@ set $white #c0c5ce
 #}
 
 bar {
-  status_command waybar
-  mode hide
+  swaybar_command waybar
+  mode dock
 }
 
 # 1 pixel decoration on new windows

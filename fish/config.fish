@@ -57,11 +57,6 @@ if test -f ~/.opam/opam-init/init.fish
     builtin source ~/.opam/opam-init/init.fish
 end
 
-# Enable cargo with rustup
-if test -f ~/.cargo/env
-    builtin source ~/.cargo/env
-end
-
 set -g fish_key_bindings my_key_bindings
 
 # default fzf option

@@ -242,5 +242,5 @@ exec {
     pulseaudio --start
     $HOME/.dropbox-dist/dropboxd &
     xrdb $HOME/.Xresources
-    yaskkserv2 ~/.local/share/dictionary.yaskkserv
+    yaskkserv2 ~/.local/share/dictionary.yaskkserv2
 }

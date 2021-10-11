@@ -30,10 +30,6 @@ if not functions -q fisher
     fish -c fisher
 end
 
-if not functions -q z
-    fisher install jethrokuan/z
-end
-
 # change location of packages installed by fisher
 set -g fisher_path ~/.config/fish/fisher-pkg
 
@@ -42,6 +38,10 @@ set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_com
 
 for file in $fisher_path/conf.d/*.fish
     builtin source $file ^ /dev/null
+end
+
+if not functions -q z
+    fisher add jethrokuan/z
 end
 
 # disable virtualenv's original prompt

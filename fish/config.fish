@@ -30,6 +30,10 @@ if not functions -q fisher
     fish -c fisher
 end
 
+if not functions -q z
+    fisher install jethrokuan/z
+end
+
 # change location of packages installed by fisher
 set -g fisher_path ~/.config/fish/fisher-pkg
 

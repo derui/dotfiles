@@ -79,6 +79,8 @@ if test -x "$_exa"
     alias ls='exa --icons'
 end
 
+alias g=git
+
 if test -f ~/.secrets/fish
     builtin source ~/.secrets/fish
 end

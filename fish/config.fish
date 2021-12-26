@@ -41,7 +41,7 @@ for file in $fisher_path/conf.d/*.fish
 end
 
 if not functions -q z
-    fisher add jethrokuan/z
+    fisher install jethrokuan/z
 end
 
 # disable virtualenv's original prompt

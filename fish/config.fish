@@ -23,12 +23,6 @@ egrep "^export " ~/.profile | while read e
     set -xg $var $value
 end
 
-# install fisher
-if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-end
-
 # change location of packages installed by fisher
 set -g fisher_path ~/.config/fish/fisher-pkg
 
@@ -37,10 +31,6 @@ set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_com
 
 for file in $fisher_path/conf.d/*.fish
     builtin source $file ^ /dev/null
-end
-
-if not functions -q z
-    fisher install jethrokuan/z
 end
 
 # disable virtualenv's original prompt
@@ -92,3 +82,6 @@ end
 if test -f ~/bin/starship
     ~/bin/starship init fish | source
 end
+
+echo "You should install fisher after first booting fish."
+echo "execute in fish: ~/.config/fish/fisher-install.fish"

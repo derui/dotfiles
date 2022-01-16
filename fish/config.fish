@@ -83,5 +83,7 @@ if test -f ~/bin/starship
     ~/bin/starship init fish | source
 end
 
+if ! type -q fisher
 echo "You should install fisher after first booting fish."
 echo "execute in fish: ~/.config/fish/fisher-install.fish"
+end

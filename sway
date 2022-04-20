@@ -237,7 +237,7 @@ output DP-1 {
 }
 output DP-3 {
   pos 2560 0
-  mode 3440x1440@120Hz
+  mode 3440x1440@99.983Hz
   adaptive_sync on
 }
 

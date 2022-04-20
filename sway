@@ -29,7 +29,10 @@ font monospace:HackGen Console 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+return exec alacritty
+
+# start a emacsclient with new frame
+bindsym $mod+alt+return exec emacsclient -c -n
 
 # launch rofi as launcher
 bindsym $mod+semicolon exec "rofi -show run -font 'HackGen 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i' -monitor -5"
@@ -123,7 +126,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Control+h move workspace to output left
 bindsym $mod+Control+l move workspace to output right
 
-# reload the configuration file
+# $eload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -158,8 +161,6 @@ bindsym $mod+r mode "resize"
 mode "toggle" {
         bindsym h output DP-1 toggle
         bindsym l output DP-3 toggle
-        bindsym 4 output DP-3 mode 3840x2160@60Hz; output DP-1 mode 3840x2160@60Hz; output DP-3 pos 3840 0
-        bindsym 3 output DP-3 mode 2560x1440@60Hz; output DP-1 mode 2560x1440@60Hz; output DP-3 pos 2560 0
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -232,16 +233,18 @@ client.background       #ffffff
 output DP-1 {
   pos 0 0
   mode 2560x1440@60Hz
+  adaptive_sync on
 }
 output DP-3 {
   pos 2560 0
-  mode 2560x1440@60Hz
+  mode 3440x1440@120Hz
+  adaptive_sync on
 }
 
 exec {
     fcitx -rd
-    pulseaudio --start
     $HOME/.dropbox-dist/dropboxd &
     xrdb $HOME/.Xresources
     yaskkserv2 ~/.local/share/dictionary.yaskkserv2
+    /usr/bin/gentoo-pipewire-launcher
 }

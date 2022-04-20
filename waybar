@@ -13,7 +13,7 @@
   },
   "clock": {
     "interval": 5,
-    "format": "{:%4Y/%2m/%2d  %H:%M:%2S}"
+    "format": "{:%Y/%m/%d  %H:%M:%S}"
   },
   "temperature": {
     "interval": 3,

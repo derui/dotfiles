@@ -46,3 +46,7 @@ fi
 if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
     $HOME/.dropbox-dist/dropboxd &
 fi
+
+if [ -x gentoo-pipewire-launcher ]; then
+	gentoo-pipewire-laucncher &
+fi

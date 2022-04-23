@@ -32,6 +32,10 @@ if [ is_linux ]; then
     rm -f $HOME/.config/alacritty/*
     ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
+    mkdir -p $HOME/.config/kitty/
+    rm -f $HOME/.config/kitty/*
+    ln -s $HOME/dotfiles/kitty.conf $HOME/.config/kitty/kitty.conf
+
     mkdir -p $HOME/.config/picom/
     rm -f $HOME/.config/picom/picom.conf
     ln -s $HOME/dotfiles/picom.conf $HOME/.config/picom/picom.conf

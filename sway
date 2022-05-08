@@ -237,8 +237,12 @@ output DP-1 {
 }
 output DP-3 {
   pos 2560 0
-  mode 3440x1440@99.983Hz
+  mode 3440x1440@99.982Hz
   adaptive_sync on
+}
+
+input * {
+  xkb_options "ctrl:nocaps"
 }
 
 exec {

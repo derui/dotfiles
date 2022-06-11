@@ -162,6 +162,9 @@ mode "toggle" {
         bindsym h output DP-1 toggle
         bindsym l output DP-3 toggle
 
+        bindsym r output DP-3 mode 3440x1440@99.982Hz
+        bindsym 4 output DP-3 mode 3440x1440@60.009Hz
+
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -252,3 +255,10 @@ exec {
     yaskkserv2 ~/.local/share/dictionary.yaskkserv2
     /usr/bin/gentoo-pipewire-launcher
 }
+
+# mouse configuration
+set $MOUSE "1149:8257:Kensington_Slimblade_Trackball"
+
+bindsym --input-device=$MOUSE --whole-window BTN_MIDDLE seat - cursor press BTN_SIDE, seat - cursor release BTN_SIDE
+
+bindsym --input-device=$MOUSE --whole-window BTN_SIDE seat - cursor press BTN_MIDDLE, seat - cursor release BTN_MIDDLE

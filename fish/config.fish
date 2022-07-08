@@ -87,3 +87,8 @@ if ! type -q fisher
     echo "You should install fisher after first booting fish."
     echo "execute in fish: ~/.config/fish/fisher-install.fish"
 end
+
+if test -d ~/.volta/
+    set -gx VOLTA_HOME "$HOME/.volta"
+    set -gx PATH "$VOLTA_HOME/bin" $PATH
+end

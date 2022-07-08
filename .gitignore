@@ -4,3 +4,4 @@ fish/fish_variables
 
 bin/idea/
 bin/starship
+bin/volta*

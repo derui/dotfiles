@@ -31,11 +31,7 @@ elif [ -x java-config ]; then
     export JAVA_HOME=`java-config -O`
 fi
 
-export NPM_PACKAGES=$HOME/.npm-packages
-
-export MANPATH=$NPM_PACKAGES/share/man:$MANPATH
-
-export PATH=$HOME/.local/bin:$NPM_PACKAGES/bin:$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.anyenv/bin:$HOME/.anyenv/envs/nodenv/shims:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.volta/bin:$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.anyenv/bin:$HOME/.anyenv/envs/nodenv/shims:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH
 
 if [ -f "$HOME/.opam/opam-init/init.sh" ]; then
     . $HOME/.opam/opam-init/init.sh

@@ -159,11 +159,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "toggle" {
-        bindsym h output DP-1 toggle
-        bindsym l output DP-3 toggle
+        bindsym h output DP-3 toggle
+        bindsym l output DP-1 toggle
 
-        bindsym r output DP-3 mode 3440x1440@99.982Hz
-        bindsym 4 output DP-3 mode 3440x1440@60.009Hz
+        bindsym r output DP-1 mode 3440x1440@99.982Hz
+        bindsym 4 output DP-1 mode 3440x1440@60.009Hz
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -235,7 +235,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 output DP-3 {
-  pos -3440 0
+  pos -2560 0
   mode 2560x1440@60Hz
   adaptive_sync on
 }

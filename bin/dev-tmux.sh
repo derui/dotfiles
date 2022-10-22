@@ -7,7 +7,7 @@ elif tmux has-session > /dev/null 2>&1 && [[ $(tmux list-sessions | wc -l) -ge 1
     tmux attach
 else
     tmux new-session -s "main" -d \; \
-         new-window -n 'top' 'bpytop' \; \
+         new-window -n 'top' 'btop' \; \
          new-window -n 'dev' -c "~/develop/ghq/github.com/derui" \; \
          attach
 fi

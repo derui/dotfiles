@@ -74,9 +74,8 @@ if test -f ~/.secrets/fish
     builtin source ~/.secrets/fish
 end
 
-if test -d ~/.anyenv
-    set -xg PATH $HOME/.anyenv/bin $PATH
-    status --is-interactive; and source (anyenv init - | psub)
+if test -d ~/.asdf
+    source ~/.asdf/asdf.fish
 end
 
 if test -f ~/bin/starship

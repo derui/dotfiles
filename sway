@@ -29,7 +29,7 @@ font monospace:HackGen Console 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+return exec alacritty
+bindsym $mod+return exec kitty
 
 # start a emacsclient with new frame
 bindsym $mod+alt+return exec emacsclient -c -n
@@ -235,12 +235,12 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 output DP-3 {
-  pos -2560 0
+  pos 0 0
   mode 2560x1440@60Hz
   adaptive_sync on
 }
 output DP-1 {
-  pos 0 0
+  pos 2560 0
   mode 3440x1440@99.982Hz
   adaptive_sync on
 }
@@ -254,7 +254,8 @@ exec {
     $HOME/.dropbox-dist/dropboxd &
     xrdb $HOME/.Xresources
     yaskkserv2 ~/.local/share/dictionary.yaskkserv2
-    /usr/bin/gentoo-pipewire-launcher
+    gentoo-pipewire-launcher
+    /usr/bin/dunst
 }
 
 # mouse configuration

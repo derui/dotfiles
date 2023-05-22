@@ -255,7 +255,7 @@ exec {
     xrdb $HOME/.Xresources
     yaskkserv2 ~/.local/share/dictionary.yaskkserv2
     gentoo-pipewire-launcher
-    /usr/bin/dunst
+    /usr/bin/mako
 }
 
 # mouse configuration

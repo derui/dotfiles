@@ -34,8 +34,8 @@ bindsym $mod+return exec kitty
 # start a emacsclient with new frame
 bindsym $mod+alt+return exec emacsclient -c -n
 
-# launch rofi as launcher
-bindsym $mod+semicolon exec "rofi -show run -font 'HackGen 10' -fg '#505050' -bg '#000000' -hlfg '#ffb964' -hlbg '#000000' -o 85 -kb-cancel 'Escape,Control+g' -kb-mode-next 'Control+i' -monitor -5"
+# launch wofi as launcher
+bindsym $mod+semicolon exec "wofi --show drun | xargs swaymsg exec --"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -156,14 +156,14 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+Bindsym $mod+r mode "resize"
 
 mode "toggle" {
-        bindsym h output DP-3 toggle
+        bindsym h output DP-2 toggle
         bindsym l output DP-1 toggle
 
-        bindsym r output DP-1 mode 3440x1440@99.982Hz
-        bindsym 4 output DP-1 mode 3440x1440@60.009Hz
+        bindsym r output DP-1 mode 3440x1440@99.982Hz adaptive_sync on
+        bindsym 4 output DP-1 mode 3440x1440@59.973Hz adaptive_sync on
 
         bindsym Return mode "default"
         bindsym Escape mode "default"

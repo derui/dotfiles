@@ -63,9 +63,9 @@ else
 end
 
 # set aliases
-set -l _exa (which exa)
-if test -x "$_exa"
-    alias ls='exa --icons'
+set -l _eza (which eza)
+if test -x "$_eza"
+    alias ls='eza --icons'
 end
 
 alias g=git
@@ -91,3 +91,7 @@ if test -d ~/.volta/
     set -gx VOLTA_HOME "$HOME/.volta"
     set -gx PATH "$VOLTA_HOME/bin" $PATH
 end
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true

@@ -16,6 +16,8 @@
     rept = "!sh -c 'git tag -d pt; git tag pt'"
     l = log --pretty=format:\"%ci %C(yellow)%H%Creset [%cn] %Cgreen%s %C(cyan)%d%Creset\" -10
     lg = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+    fp = fetch --prune
+    delete-merged-branch = !fish -c git_alias_remove_merged_branch
 [push]
     default = simple
 [color]

@@ -250,17 +250,10 @@ input * {
   xkb_options "ctrl:nocaps"
 }
 
-exec {
-    fcitx -rd
-    $HOME/.dropbox-dist/dropboxd &
-    yaskkserv2 ~/.local/share/dictionary.yaskkserv2
-    gentoo-pipewire-launcher
-    /usr/bin/mako
-}
-
-# mouse configuration
-set $MOUSE "1149:8257:Kensington_Slimblade_Trackball"
-
-bindsym --input-device=$MOUSE --whole-window BTN_MIDDLE seat - cursor press BTN_SIDE, seat - cursor release BTN_SIDE
-
-bindsym --input-device=$MOUSE --whole-window BTN_SIDE seat - cursor press BTN_MIDDLE, seat - cursor release BTN_MIDDLE
+# need dbus-update-activation-environment for all other services
+exec dbus-update-activation-environment --all
+exec fcitx -rd
+exec $HOME/.dropbox-dist/dropboxd &
+exec yaskkserv2 ~/.local/share/dictionary.yaskkserv2
+exec gentoo-pipewire-launcher &
+exec mako &

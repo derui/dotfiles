@@ -24,10 +24,6 @@ if [ is_linux ]; then
     rm -f $HOME/.config/i3status
     ln -s $HOME/dotfiles/i3status $HOME/.config/i3status
 
-    mkdir -p $HOME/.config/dunst
-    rm -f $HOME/.config/dunst/*
-    ln -s $HOME/dotfiles/dunstrc $HOME/.config/dunst/dunstrc
-
     mkdir -p $HOME/.config/alacritty/
     rm -f $HOME/.config/alacritty/*
     ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml

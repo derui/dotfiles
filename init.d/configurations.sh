@@ -40,6 +40,10 @@ if [ is_linux ]; then
     rm -f $HOME/.config/picom/picom.conf
     ln -s $HOME/dotfiles/picom.conf $HOME/.config/picom/picom.conf
 
+    mkdir -p $HOME/.config/mako/
+    rm -f $HOME/.config/mako/config
+    ln -s $HOME/dotfiles/mako $HOME/.config/mako/config
+
     mkdir -p $HOME/.config/
     rm -f $HOME/.config/starship.toml
     ln -s $HOME/dotfiles/starship.toml $HOME/.config/starship.toml
@@ -57,11 +61,4 @@ ln -s $HOME/dotfiles/fish $HOME/.config/fish
 # bootstrap for virtualenv of python3 and powerline
 if [[ ! -d ~/.virtualenv && -x `which python3` ]]; then
     python3 -m venv ~/.virtualenv
-fi
-
-bash -c "source ~/.virtualenv/bin/activate; pip install powerline-status"
-rm -rf $HOME/.config/powerline
-
-if [[ ! -L $HOME/.config/powerline ]]; then
-    ln -s $HOME/dotfiles/powerline $HOME/.config/powerline
 fi

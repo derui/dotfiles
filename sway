@@ -16,7 +16,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font monospace:HackGen Console 8
+font monospace:UDEV Gothic 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -243,6 +243,7 @@ output DP-1 {
   pos 2560 0
   mode 3440x1440@99.982Hz
   adaptive_sync on
+  render_bit_depth 10
 }
 
 input * {

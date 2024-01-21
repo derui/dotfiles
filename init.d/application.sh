@@ -9,7 +9,7 @@ is_linux () {
 }
 
 if [ is_linux ]; then
-    mkdir -p $HOME/.config/share/applications
-    rm -f $HOME/.config/share/applications/temp-emacsclient.desktop
-    ln -s $HOME/dotfiles/init.d/applications/temp-emacsclient.desktop $HOME/.config/share/applications/temp-emacsclient.desktop
+    mkdir -p $HOME/.local/share/applications
+    rm -f $HOME/.local/share/applications/temp-emacsclient.desktop
+    ln -s $HOME/dotfiles/init.d/applications/temp-emacsclient.desktop $HOME/.local/share/applications/temp-emacsclient.desktop
 fi

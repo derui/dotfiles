@@ -1,0 +1,9 @@
+[Desktop Entry]
+Icon=
+Exec=/home/derui/bin/my-emacsclient.sh
+Version=1.0
+Type=Application
+Categories=Development
+Name=Launch Emacsclient with temporary file
+StartupWMClass=emacsclient
+Terminal=true

@@ -29,7 +29,7 @@ font monospace:UDEV Gothic 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+return exec kitty
+bindsym $mod+return exec kitty --single-instance
 
 # start a emacsclient with new frame
 bindsym $mod+alt+return exec emacsclient -c -n

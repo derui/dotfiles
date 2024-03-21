@@ -241,7 +241,7 @@ output DP-2 {
 }
 output DP-1 {
   pos 2560 0
-  mode 3440x1440@99.982Hz
+  mode 3840x2160@120Hz
   adaptive_sync on
   render_bit_depth 10
 }

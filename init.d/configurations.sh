@@ -49,6 +49,11 @@ if [ is_linux ]; then
     ln -s $HOME/dotfiles/waybar $HOME/.config/waybar/config
     rm -f $HOME/.config/waybar/style
     ln -s $HOME/dotfiles/waybar.style.css $HOME/.config/waybar/style
+
+    mkdir -p $HOME/.config/wezterm/
+    rm -f $HOME/.config/wezterm/*
+    ln -s $HOME/dotfiles/wezterm.lua $HOME/.config/wezterm/wezterm.lua
+
 fi
 
 rm -rf $HOME/.config/fish

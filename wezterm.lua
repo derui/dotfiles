@@ -1,7 +1,9 @@
 local wezterm = require 'wezterm'
 local config = {}
 
-config.font = wezterm.font 'Moralerspace Neon JPDOC'
+config.font = wezterm.font 'Moralerspace Neon HWNF'
+config.font_size = 13.5
+config.font_antialias = 'Subpixel'
 
 -- fishを利用しておく
 config.default_prog = { '/bin/fish', '-l' }

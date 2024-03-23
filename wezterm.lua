@@ -53,8 +53,6 @@ end)
 
 config.leader = { key = 't', mods = 'CTRL' }
 config.keys = {
-  -- CTRL+SHIFT+Space, followed by 'r' will put us in resize-pane
-  -- mode until we cancel that mode.
   {
     key = 'r',
     mods = 'LEADER',
@@ -64,9 +62,6 @@ config.keys = {
     },
   },
 
-  -- CTRL+SHIFT+Space, followed by 'a' will put us in activate-pane
-  -- mode until we press some other key or until 1 second (1000ms)
-  -- of time elapses
   {
     key = 'a',
     mods = 'LEADER',
@@ -76,6 +71,27 @@ config.keys = {
     },
   },
 
+  -- paneの移動は一級市民としておく
+  {
+     key = 'j',
+     mods = 'LEADER',
+     action = act.ActivatePaneDirection 'Down',
+  },
+  {
+     key = 'k',
+     mods = 'LEADER',
+     action = act.ActivatePaneDirection 'Up',
+  },
+  {
+     key = 'h',
+     mods = 'LEADER',
+     action = act.ActivatePaneDirection 'Left',
+  },
+  {
+     key = 'l',
+     mods = 'LEADER',
+     action = act.ActivatePaneDirection 'Right',
+  },
   -- tabを追加する
   {
     key = 'n',
@@ -97,8 +113,8 @@ config.keys = {
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
-    key = 'w',
-    mods = 'LEADER',
+    key = 't',
+    mods = 'LEADER|CTRL',
     action = wezterm.action.PaneSelect {},
   },
 

@@ -54,6 +54,9 @@ if [ is_linux ]; then
     rm -f $HOME/.config/wezterm/*
     ln -s $HOME/dotfiles/wezterm.lua $HOME/.config/wezterm/wezterm.lua
 
+    mkdir -p $HOME/.config/hyprland/
+    rm -f $HOME/.config/hyprland/*
+    ln -s $HOME/dotfiles/hyprland.conf $HOME/.config/hyprland/hyprland.conf
 fi
 
 rm -rf $HOME/.config/fish

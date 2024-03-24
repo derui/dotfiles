@@ -47,16 +47,16 @@ if [ is_linux ]; then
     mkdir -p $HOME/.config/waybar
     rm -f $HOME/.config/waybar/config
     ln -s $HOME/dotfiles/waybar $HOME/.config/waybar/config
-    rm -f $HOME/.config/waybar/style
-    ln -s $HOME/dotfiles/waybar.style.css $HOME/.config/waybar/style
+    rm -f $HOME/.config/waybar/style.css
+    ln -s $HOME/dotfiles/waybar.style.css $HOME/.config/waybar/style.css
 
     mkdir -p $HOME/.config/wezterm/
     rm -f $HOME/.config/wezterm/*
     ln -s $HOME/dotfiles/wezterm.lua $HOME/.config/wezterm/wezterm.lua
 
-    mkdir -p $HOME/.config/hyprland/
-    rm -f $HOME/.config/hyprland/*
-    ln -s $HOME/dotfiles/hyprland.conf $HOME/.config/hyprland/hyprland.conf
+    mkdir -p $HOME/.config/hypr/
+    rm -f $HOME/.config/hypr/*
+    ln -s $HOME/dotfiles/hyprland.conf $HOME/.config/hypr/hyprland.conf
 fi
 
 rm -rf $HOME/.config/fish

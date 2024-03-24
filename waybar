@@ -1,9 +1,13 @@
 {
   "layer": "top",
   "height": 24,
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "modules-left": ["hyprland/workspaces", "sway/workspaces", "sway/mode"],
+  "modules-center": ["sway/window", "hyprland/window"],
   "modules-right": ["temperature", "temperature#gpu", "memory", "clock", "tray"],
+  "hyprland/window": {
+    "max-length": 200,
+    "separate-outputs": true
+  },
   "sway/window": {
     "max-length": 50
   },

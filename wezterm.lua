@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+-- temporary disabled
+config.enable_wayland = false
 config.font = wezterm.font 'Moralerspace Neon HWNF'
 config.font_size = 14
 

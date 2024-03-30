@@ -50,17 +50,20 @@ if [ is_linux ]; then
     rm -f $HOME/.config/waybar/style.css
     ln -s $HOME/dotfiles/waybar.style.css $HOME/.config/waybar/style.css
 
-    mkdir -p $HOME/.config/wezterm/
-    rm -f $HOME/.config/wezterm/*
-    ln -s $HOME/dotfiles/wezterm.lua $HOME/.config/wezterm/wezterm.lua
-
     mkdir -p $HOME/.config/hypr/
     rm -f $HOME/.config/hypr/*
     ln -s $HOME/dotfiles/hyprland.conf $HOME/.config/hypr/hyprland.conf
+
 fi
 
 rm -rf $HOME/.config/fish
 ln -s $HOME/dotfiles/fish $HOME/.config/fish
+
+rm -rf $HOME/.config/nushell
+ln -s $HOME/dotfiles/nushell $HOME/.config/nushell
+
+rm -rf $HOME/.config/zellij
+ln -s $HOME/dotfiles/zellij $HOME/.config/zellij
 
 # bootstrap for virtualenv of python3 and powerline
 if [[ ! -d ~/.virtualenv && -x `which python3` ]]; then

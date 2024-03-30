@@ -26,7 +26,7 @@ if [ is_linux ]; then
 
     mkdir -p $HOME/.config/alacritty/
     rm -f $HOME/.config/alacritty/*
-    ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+    ln -s $HOME/dotfiles/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 
     mkdir -p $HOME/.config/kitty/
     rm -f $HOME/.config/kitty/*

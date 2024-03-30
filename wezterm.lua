@@ -4,7 +4,7 @@ local config = {}
 -- temporary disabled
 config.enable_wayland = false
 config.font = wezterm.font 'Moralerspace Neon HWNF'
-config.font_size = 14
+config.font_size = 13
 
 -- fishを利用しておく
 config.default_prog = { '/bin/fish', '-l' }
@@ -97,12 +97,12 @@ config.keys = {
   },
   -- tabを追加する
   {
-    key = 'n',
+    key = 'c',
     mods = 'LEADER',
     action = act.SpawnTab 'DefaultDomain',
   },
-  { key = ',', mods = 'LEADER', action = act.ActivateTabRelative(-1) },
-  { key = '.', mods = 'LEADER', action = act.ActivateTabRelative(1) },
+  { key = 'h', mods = 'LEADER|CTRL', action = act.ActivateTabRelative(-1) },
+  { key = 'l', mods = 'LEADER|CTRL', action = act.ActivateTabRelative(1) },
 
   -- pane関連の設定
   {
@@ -123,7 +123,7 @@ config.keys = {
 
   -- copy modeの起動
   {
-    key = 'c',
+    key = '[',
     mods = 'LEADER',
     action = wezterm.action.ActivateCopyMode,
   }

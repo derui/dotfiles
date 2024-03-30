@@ -1,24 +1,11 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
-keybinds claer-defaults=true {
+keybinds clear-defaults=true {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
-    }
-    resize {
-        bind "Ctrl n" { SwitchToMode "Normal"; }
-        bind "h" "Left" { Resize "Increase Left"; }
-        bind "j" "Down" { Resize "Increase Down"; }
-        bind "k" "Up" { Resize "Increase Up"; }
-        bind "l" "Right" { Resize "Increase Right"; }
-        bind "H" { Resize "Decrease Left"; }
-        bind "J" { Resize "Decrease Down"; }
-        bind "K" { Resize "Decrease Up"; }
-        bind "L" { Resize "Decrease Right"; }
-        bind "=" "+" { Resize "Increase"; }
-        bind "-" { Resize "Decrease"; }
     }
     pane {
         bind "Ctrl p" { SwitchToMode "Normal"; }
@@ -59,6 +46,8 @@ keybinds claer-defaults=true {
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
         bind "Tab" { ToggleTab; }
+        bind "p" { SwitchToMode "Pane"; }
+        bind "s" { SwitchToMode "Scroll"; }
     }
     scroll {
         bind "Ctrl s" { SwitchToMode "Normal"; }
@@ -129,15 +118,6 @@ keybinds claer-defaults=true {
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
-    shared_except "pane" "locked" {
-        bind "Ctrl p" { SwitchToMode "Pane"; }
-    }
-    shared_except "resize" "locked" {
-        bind "Ctrl n" { SwitchToMode "Resize"; }
-    }
-    shared_except "scroll" "locked" {
-        bind "Ctrl s" { SwitchToMode "Scroll"; }
-    }
     shared_except "session" "locked" {
         bind "Ctrl o" { SwitchToMode "Session"; }
     }
@@ -172,7 +152,7 @@ plugins {
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-// default_shell "fish"
+default_shell "/usr/bin/nu"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //

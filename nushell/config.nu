@@ -1,6 +1,10 @@
 $env.config = {
   show_banner: false
 
+  color_config: {
+    hints: light_gray
+  }
+
   keybindings : [
     # fzfで履歴の検索を行う
     {

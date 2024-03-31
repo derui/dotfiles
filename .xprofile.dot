@@ -30,23 +30,17 @@ xset s off
 xset s noblank
 xset -dpms
 
-if [ -x `which nitrogen` ]; then
-    nitrogen --restore
-fi
-
-if [ -x `which imwheel` ]; then
-    imwheel -k -b 45
-fi
-
-if [ -x `which pulseaudio` ]; then
-    pulseaudio --start
-fi
-
 # running dropbox
 if [ -x "$HOME/.dropbox-dist/dropboxd" ]; then
     $HOME/.dropbox-dist/dropboxd &
 fi
 
-if [ -x gentoo-pipewire-launcher ]; then
-	gentoo-pipewire-laucncher &
+if [ -x `which dunst` ]; then
+	dunst &
 fi
+
+if [ -x `which gentoo-pipewire-launcher` ]; then
+	gentoo-pipewire-launcher &
+fi
+
+/usr/bin/i3

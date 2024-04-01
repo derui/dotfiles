@@ -14,6 +14,9 @@ export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
 
+export XDG_CONFIG_HOME=$HOME/.config
+export NU_LIB_DIRS=$XDG_CONFIG_HOME/nushell/scripts
+
 # Avoid blank screen of AWT-based application on Wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 

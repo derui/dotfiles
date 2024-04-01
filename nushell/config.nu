@@ -1,3 +1,6 @@
+
+use fzf-commands.nu
+
 $env.config = {
   show_banner: false
 
@@ -8,40 +11,27 @@ $env.config = {
   keybindings : [
     # fzfで履歴の検索を行う
     {
-      name: fuzzy_history
+      name: fzf_ghq
       modifier: control
       keycode: char_r
       mode: [emacs, vi_normal, vi_insert]
       event: [
         {
           send: ExecuteHostCommand
-          cmd: "commandline (
-            history
-              | get command
-              | uniq
-              | reverse
-              | str join (char -i 0)
-              | fzf --scheme=history --read0 --layout=reverse --height=40% -q (commandline)
-              | decode utf-8
-              | str trim
-          )"
+          cmd: "fzf-commands get-history"
         }
       ]
     }
+    # fzfでghqのlistを検索する
     {
-      name: ghq_history
+      name: fzf_ghq
       modifier: control
       keycode: char_s
       mode: [emacs, vi_normal, vi_insert]
       event: [
         {
           send: ExecuteHostCommand
-          cmd: "commandline (
-            ghq list --full-path
-              | fzf --height=40% -q (commandline)
-              | decode utf-8
-              | cd $in
-          )"
+          cmd: "fzf-commands ghq"
         }
       ]
     }
@@ -65,5 +55,8 @@ def start_zellij [] {
 
 start_zellij
 
+# alias
+alias g = git
+
 # starshipを実行する
-source ~/.config/nushell/starship.nu
+source starship.nu

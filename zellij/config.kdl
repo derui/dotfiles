@@ -233,7 +233,7 @@ default_shell "/usr/bin/nu"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+mouse_mode false
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -271,6 +271,7 @@ default_shell "/usr/bin/nu"
 // Default: $EDITOR or $VISUAL
 //
 // scrollback_editor "/usr/bin/vim"
+scrollback_editor "usr/bin/nvim -c 'set nonumber nolist showtabline=0 foldcolumn=0 laststatus=0' -c 'autocmd TermOpen * normal G' -c 'set clipboard=unnamedplus'"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

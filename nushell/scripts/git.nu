@@ -6,7 +6,7 @@ def "nu-complete git branches" [] {
 }
 
 # aliasを前提にした switchの提供
-export def "git s" [
+export def "g s" [
   branch:  string@"nu-complete git branches"
 ] {
    ^git switch $branch

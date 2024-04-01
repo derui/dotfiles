@@ -1,6 +1,6 @@
 
 use fzf-commands.nu
-use git.nu
+use git.nu *
 
 $env.config = {
   show_banner: false

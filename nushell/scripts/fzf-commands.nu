@@ -16,7 +16,7 @@ export def get-history [] {
 # ghqで管理しているリポジトリをfzfで選択して移動する
 # --envがないと、cdで変更してもシェルのカレントディレクトリが変わらない
 export def --env ghq [] {
-  ^ghq list --full-path | fzf | decode utf-8 | str trim | cd $in
+  ^ghq list --full-path | fzf --layout=reverse --height=40% | decode utf-8 | str trim | cd $in
 }
 
 export def main [] {}

@@ -85,6 +85,11 @@ hide_when_typing = false
 action = "PasteSelection"
 mouse = "Middle"
 
+[[mouse.bindings]]
+  mouse = "Right"
+  mods = "Control"
+  action = "Paste"
+
 [keyboard]
 bindings = [
    { key = "A",         mods = "Alt",       chars = "\u001ba"                       },

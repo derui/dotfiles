@@ -56,7 +56,7 @@ print_events = false
 render_timer = false
 
 [font]
-size = 13.0
+size = 14.0
 
 [font.bold]
 family = "Moralerspace Neon HWNF"

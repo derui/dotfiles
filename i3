@@ -43,7 +43,8 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# change toggle mode
+bindsym $mod+t mode "toggle"
 
 # change focus
 bindsym $mod+h focus left
@@ -151,6 +152,19 @@ mode "resize" {
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "toggle" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym 1 exec xrandr --output DisplayPort-1 --rate 120
+        bindsym 2 exec xrandr --output DisplayPort-1 --rate 60
+        bindsym h exec xrandr --output DisplayPort-3 --off
+        bindsym Shift+h exec xrandr --output DisplayPort-3 --left-of DisplayPort-1 --mode 2560x1440
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"

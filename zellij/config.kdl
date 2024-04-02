@@ -46,7 +46,6 @@ keybinds clear-defaults=true {
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
         bind "Tab" { ToggleTab; }
-        bind "p" { SwitchToMode "Pane"; }
         bind "s" { SwitchToMode "Scroll"; }
     }
     scroll {
@@ -61,7 +60,7 @@ keybinds clear-defaults=true {
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
+        bind "Alt c" { Copy; }
     }
     search {
         bind "Ctrl s" { SwitchToMode "Normal"; }
@@ -120,6 +119,9 @@ keybinds clear-defaults=true {
     }
     shared_except "session" "locked" {
         bind "Ctrl o" { SwitchToMode "Session"; }
+    }
+    shared_except "session" "locked" {
+        bind "Ctrl j" { SwitchToMode "Pane"; }
     }
     shared_except "tab" "locked" {
         bind "Ctrl t" { SwitchToMode "Tab"; }

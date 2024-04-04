@@ -161,10 +161,10 @@ mode "resize" {
 mode "toggle" {
         # These bindings trigger as soon as you enter the resize mode
 
-        bindsym 1 exec xrandr --output DisplayPort-1 --rate 120
-        bindsym 2 exec xrandr --output DisplayPort-1 --rate 60
-        bindsym h exec xrandr --output DisplayPort-3 --off
-        bindsym Shift+h exec xrandr --output DisplayPort-3 --left-of DisplayPort-1 --mode 2560x1440
+        bindsym 1 exec xrandr --output DisplayPort-0 --rate 120
+        bindsym 2 exec xrandr --output DisplayPort-0 --rate 60
+        bindsym h exec xrandr --output DisplayPort-2 --off
+        bindsym Shift+h exec xrandr --output DisplayPort-2 --left-of DisplayPort-0 --mode 2560x1440
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"

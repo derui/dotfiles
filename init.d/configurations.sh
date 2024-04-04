@@ -65,6 +65,9 @@ ln -s $HOME/dotfiles/nushell $HOME/.config/nushell
 rm -rf $HOME/.config/zellij
 ln -s $HOME/dotfiles/zellij $HOME/.config/zellij
 
+rm -rf $HOME/.config/nvim
+ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
+
 # bootstrap for virtualenv of python3 and powerline
 if [[ ! -d ~/.virtualenv && -x `which python3` ]]; then
     python3 -m venv ~/.virtualenv

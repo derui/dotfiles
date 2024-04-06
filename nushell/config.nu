@@ -58,6 +58,7 @@ start_zellij
 
 # alias
 alias g = git
+alias e = emacsclient
 
 # starshipを実行する
 source starship.nu

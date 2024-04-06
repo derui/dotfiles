@@ -62,3 +62,4 @@ alias e = emacsclient
 
 # starshipを実行する
 source starship.nu
+source zoxide.nu

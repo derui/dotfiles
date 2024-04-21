@@ -1,7 +1,7 @@
 
 # fzfを利用して履歴からコマンドを選択する
 export def get-history [] {
-  commandline (
+  commandline edit -r (
     history
       | get command
       | uniq

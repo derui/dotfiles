@@ -37,6 +37,11 @@ $env.config = {
       ]
     }
   ]
+
+  history: {
+    # ファイルの形式はsqliteとする
+    file_format: "sqlite"
+  }
 }
 
 # zellij

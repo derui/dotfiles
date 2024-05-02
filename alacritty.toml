@@ -182,6 +182,8 @@ bindings = [
   { key = "Z",         mods = "Command",       chars = "\u001bz"                       },
 ]
 
+[terminal]
+osc52 = "OnlyCopy"
 
 [scrolling]
 history = 10000

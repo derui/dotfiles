@@ -59,20 +59,24 @@ render_timer = false
 size = 14.0
 
 [font.bold]
-family = "Moralerspace Neon HWNF:style=Bold"
+family = "Moralerspace Neon HWNF"
+style = "Bold"
 
 [font.bold_italic]
-family = "Moralerspace Neon HWNF:style=BoldItalic"
+family = "Moralerspace Neon HWNF"
+style = "BoldItalic"
 
 [font.glyph_offset]
 x = 0
 y = 0
 
 [font.italic]
-family = "Moralerspace Neon HWNF:style=Italic"
+family = "Moralerspace Neon HWNF"
+style = "Italic"
 
 [font.normal]
-family = "Moralerspace Neon HWNF:style=Regular"
+family = "Moralerspace Neon HWNF"
+style = "Regular"
 
 [font.offset]
 x = 0

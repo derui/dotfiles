@@ -59,8 +59,6 @@ def start_zellij [] {
   }
 }
 
-start_zellij
-
 # alias
 alias g = git
 alias e = emacsclient

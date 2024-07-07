@@ -252,7 +252,7 @@ input * {
 
 # need dbus-update-activation-environment for all other services
 exec dbus-update-activation-environment --all
-exec fcitx -rd
+exec fcitx5 -rd
 exec $HOME/.dropbox-dist/dropboxd &
 exec yaskkserv2 ~/.local/share/dictionary.yaskkserv2
 exec gentoo-pipewire-launcher &

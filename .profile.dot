@@ -10,7 +10,7 @@ export COLORTERM=rxvt-256unicode
 
 # environment variables for X11/wayland
 export XMODIFIERS="@im=fcitx"
-export GTK_IM_MODULE="fcitx"
+# export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
 

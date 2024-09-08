@@ -1,6 +1,6 @@
 *.log
 fish/fish_variables
-nushell/history.txt
+nushell/history.sqlite3*
 
 bin/idea/
 bin/starship

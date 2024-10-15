@@ -1,36 +1,32 @@
 # Dotfiles #
-This repository is dotfiles of derui.
+This repository is dotfiles managed by derui.
 
-Dotfiles managed in this repository are there.
+Dotfiles managed in this repository are there. This repository aims to support macOS and NixOS
 
-- X11 settings
-- Wayland settings
+- Wayland
   - Use [sway](https://github.com/swaywm/sway)
-- bash settings
-- fish settings
-  - fisher integrated
-- mlterm settings
-- alacritty settings
-- tmux settings
-- asdf integration
-- starship integration
-- some useful shell scripts (for personal use)
+  - Use [Hyprland](https://hyprland.org/)
+- Shells
+  - bash
+  - fish
+- terminals
+  - alacritty
+  - kitty
+- CLI tools
+  - git
+  - tmux
+  - starship
+- GUI tools
+  - mako
+  - waybar
+  
+  
 
-## Requirement ##
-- Fish (least 3.0.0)
-- tmux (least 3.0)
+# Install #
 
-## Other requirement ##
-- If you want to use Wayland
-  - i3status
-  - sway
-- If you want to use X11
-  - i3-gaps
-  - i3blocks
+First, you clone this repository to anywhere, and then, choice method to install for your environment.
 
-## Install ##
 
-1. clone this repository to $HOME
 2. ``cd dotfiles``
 3. ``./bootstrap.sh``
 4. run ``fisher`` in new fish shell.

@@ -1,5 +1,0 @@
-#!/bin/bash
-DICTIONARY=$HOME/.local/share/dictionary.yaskkserv2
-yaskkserv2_make_dictionary --utf8 --dictionary-filename $DICTIONARY $@
-
-yaskkserv2 $DICTIONARY

@@ -1,6 +1,0 @@
-functions/fisher.fish
-fisher-pkg/conf.d/
-fisher-pkg/functions/
-fisher-pkg/completions/
-fishd.*
-fish_variables

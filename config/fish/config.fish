@@ -23,16 +23,6 @@ egrep "^export " ~/.profile | while read e
     set -xg $var $value
 end
 
-# change location of packages installed by fisher
-set -g fisher_path ~/.config/fish/fisher-pkg
-
-set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_function_path[2..-1]
-set fish_complete_path $fish_complete_path[1] $fisher_path/completions $fish_complete_path[2..-1]
-
-for file in $fisher_path/conf.d/*.fish
-    builtin source $file ^ /dev/null
-end
-
 # disable virtualenv's original prompt
 set -g VIRTUAL_ENV_DISABLE_PROMPT "1"
 # enable virtualenv if exists
@@ -68,6 +58,11 @@ if test -x "$_eza"
     alias ls='eza --icons'
 end
 
+set -l _zoxide (which zoxide)
+if test -x "$_zoxide"
+    zoxide init fish | source
+end
+
 alias g=git
 
 if test -f ~/.secrets/fish
@@ -78,20 +73,12 @@ if test -d ~/.asdf
     source ~/.asdf/asdf.fish
 end
 
-if test -f ~/bin/starship
-    ~/bin/starship init fish | source
-end
-
-if ! type -q fisher
-    echo "You should install fisher after first booting fish."
-    echo "execute in fish: ~/.config/fish/fisher-install.fish"
+set -l _starship (which starship)
+if test -x "$_starship"
+    starship init fish | source
 end
 
 if test -d ~/.volta/
     set -gx VOLTA_HOME "$HOME/.volta"
     set -gx PATH "$VOLTA_HOME/bin" $PATH
 end
-
-# tabtab source for packages
-# uninstall by removing these lines
-[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true

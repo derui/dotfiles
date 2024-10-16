@@ -2,25 +2,17 @@
 # -*- mode: sh -*-
 #
 export GOPATH=$HOME/develop/ghq
-export GHQ_ROOT=$GOPATH/src
 
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
-export COLORTERM=rxvt-256unicode
 
 # environment variables for X11/wayland
 export XMODIFIERS="@im=fcitx"
 # export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
-export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
-
-export XDG_CONFIG_HOME=$HOME/.config
-export NU_LIB_DIRS=$XDG_CONFIG_HOME/nushell/scripts
 
 # Avoid blank screen of AWT-based application on Wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-export LV2_PATH=$HOME/.local/share/lv2
 
 if [ ! -d "$XDG_RUNTIME_DIR" ]; then
     mkdir -p $XDG_RUNTIME_DIR

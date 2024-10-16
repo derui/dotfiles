@@ -26,6 +26,9 @@ Dotfiles managed in this repository are there. This repository aims to support m
 
 First, you clone this repository to anywhere, and then, choice method to install for your environment.
 
+## NixOS/Nix ##
+If you use NixOS, you can install this repository as flake.
+
 
 2. ``cd dotfiles``
 3. ``./bootstrap.sh``

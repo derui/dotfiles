@@ -10,7 +10,9 @@
       dotfile-install =  {home, xdg, ...}: {
           xdg.configFile = {
             "alacritty".source = ./config/alacritty;
-            "fish".source = ./config/fish;
+            "fish/config.fish".source = ./config/fish/config.fish;
+            "fish/conf.d".source = ./config/fish/conf.d;
+            "fish/functions".source = ./config/fish/functions;
             "hyrp".source = ./config/hypr;
             "mako".source = ./config/mako;
             "nvim".source = ./config/nvim;

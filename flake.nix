@@ -9,7 +9,7 @@
     let
       dotfile-install =  {home, xdg, ...}: {
           xdg.configFile = {
-            "alacritty".source = ./config/aalacritty;
+            "alacritty".source = ./config/alacritty;
             "fish".source = ./config/fish;
             "hyrp".source = ./config/hypr;
             "mako".source = ./config/mako;

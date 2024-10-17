@@ -69,10 +69,6 @@ if test -f ~/.secrets/fish
     builtin source ~/.secrets/fish
 end
 
-if test -d ~/.asdf
-    source ~/.asdf/asdf.fish
-end
-
 set -l _starship (which starship)
 if test -x "$_starship"
     starship init fish | source

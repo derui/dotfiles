@@ -29,32 +29,5 @@
     in {
 
     nixosModules.default = dotfile-install;
-
-    # For testing setup. YOU DON'T USE THIS ANYWAY.
-    nixosConfigurations.container = nixpkgs.lib.nixosSystem {
-     system = "x86_64-linux";
-     modules = [
-       ({pkgs, ...}: {
-         boot.isContainer = true;
-
-         # version of this flake to show nixos-version
-         system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-
-         # Network configuration.
-         networking.useDHCP = false;
-         networking.firewall.allowedTCPPorts = [ ];
-         
-         # make a test user.
-         users.users = {
-           alice = {
-             isNormalUser = true;
-             extraGroups = ["wheel"];
-             password = "test";
-           };
-         };
-       })
-     ];
-    };
-    
   };
 }

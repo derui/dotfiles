@@ -25,3 +25,9 @@ if [[ (( -e $HOME/.ideavimrc )) || (( -L $HOME/.ideavimrc ))]]; then
 else
     ln -s $current/ideavimrc $HOME/.ideavimrc
 fi
+
+if [[ (( -e $HOME/.bash_profile )) || (( -L $HOME/.bash_profile ))]]; then
+    printf "[warn ] Already extsts $f as Symbolic link.\n"
+else
+    ln -s $current/bash_profile $HOME/.bash_profile
+fi

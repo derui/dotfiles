@@ -19,6 +19,7 @@
             "sway".source = ./config/sway;
             "tmux".source = ./config/tmux;
             "waybar".source = ./config/waybar;
+            "kitty".source = ./config/kitty;
             "git".source = ./config/git;
             "starship.toml".source = ./config/starship.toml;
           };
@@ -26,6 +27,7 @@
           home.file = {
             ".ideavimrc".source = ./ideavimrc;
             ".npmrc".source = ./npmrc;
+            ".bash_profile".source = ./bash_profile;
           };
       };
     in {

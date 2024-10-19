@@ -27,7 +27,8 @@ format = """
 palette = "modus_vivendi_tinted"
 
 [palettes.modus_vivendi_tinted]
-color_fg0 = '#1d2235'
+color_fg0 = '#ffffff'
+color_fg1 = '#0d0e1c'
 color_bg1 = '#4a4f69'
 color_bg3 = '#2b3045'
 color_blue = '#2fafff'
@@ -71,7 +72,7 @@ style_root = "bg:color_orange fg:color_fg0"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
+style = "fg:color_fg1 bg:color_yellow"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -98,12 +99,13 @@ format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 disabled = false
 time_format = "%R"
 utc_time_offset = "+9"
-style = "bg:color_bg1"
+style = "bg:color_bg1 "
 format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [cmd_duration]
 disabled = false
 style = "bg:color_bg1"
+format = '[took [$duration]($style)][bg:color_bg1 fg:color_fg0] '
 
 [nodejs]
 symbol = ""

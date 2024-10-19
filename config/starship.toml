@@ -105,7 +105,7 @@ format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 [cmd_duration]
 disabled = false
 style = "bg:color_bg1"
-format = '[took [$duration]($style)][bg:color_bg1 fg:color_fg0] '
+format = '[took [$duration]($style) ](bg:color_bg1 fg:color_fg0)'
 
 [nodejs]
 symbol = ""

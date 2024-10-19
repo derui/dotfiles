@@ -1,19 +1,64 @@
-# Don't print a new line at the start of the prompt
-add_newline = false
+"$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+  [](color_orange)
+  $os\
   $username\
+  [](bg:color_yellow fg:color_orange)\
   $directory\
+  [](fg:color_yellow bg:color_aqua)\
   $git_branch\
   $git_state\
+  [](fg:color_aqua bg:color_blue)\
+  $rust\
   $nodejs\
+  $golang\
   $ocaml\
+  $python\
+  [](fg:color_blue bg:color_bg1)\
   $time\
   $cmd_duration\
+  [ ](fg:color_bg1)\
   $line_break\
   $jobs\
   $character
 """
+
+palette = "modus_vivendi_tinted";
+
+[palettes.modus_vivendi_tinted]
+color_fg0 = '#1d2235'
+color_bg1 = '#4a4f69'
+color_bg3 = '#2b3045'
+color_blue = '#2fafff'
+color_aqua = '#79a8ff'
+color_green = '#44bc44'
+color_orange = '#db7b5f'
+color_purple = '#909090'
+color_red = '#ff5f59'
+color_yellow = '#d0bc00'
+
+[os]
+disabled = false
+style = "bg:color_orange fg:color_fg0"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+CentOS = ""
+
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -21,17 +66,57 @@ disabled = true
 
 [username]
 show_always = true
+style_user = "bg:color_orange fg:color_fg0"
+style_root = "bg:color_orange fg:color_fg0"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:color_fg0 bg:color_yellow"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
-vicmd_symbol = "[❮](bold green)"
+disabled = false
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
+[git_branch]
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+
+[git_status]
+style = "bg:color_aqua"
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 
 [time]
 disabled = false
-time_format = "%T"
+time_format = "%R"
 utc_time_offset = "+9"
-style = "bold fg:blue"
+style = "bg:color_bg1"
+format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [ocaml]
-symbol = "OCaml "
+symbol = "\ue67a"
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'

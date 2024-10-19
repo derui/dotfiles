@@ -101,6 +101,10 @@ utc_time_offset = "+9"
 style = "bg:color_bg1"
 format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
+[cmd_duration]
+disabled = false
+style = "bg:color_bg1"
+
 [nodejs]
 symbol = ""
 style = "bg:color_blue"

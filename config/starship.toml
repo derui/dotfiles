@@ -24,7 +24,7 @@ format = """
   $character
 """
 
-palette = "modus_vivendi_tinted";
+palette = "modus_vivendi_tinted"
 
 [palettes.modus_vivendi_tinted]
 color_fg0 = '#1d2235'

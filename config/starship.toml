@@ -127,6 +127,7 @@ symbol = "\ue67a"
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[virtualenv]
-format = '[via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+[python]
+symbol = ""
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 style = "bg:color_blue"

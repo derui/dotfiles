@@ -5,9 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
-      dotfile-install =  {home, xdg, ...}: {
+      dotfile-install =
+        { home, xdg, ... }:
+        {
           xdg.configFile = {
             "alacritty".source = ./config/alacritty;
             "fish/config.fish".source = ./config/fish/config.fish;
@@ -21,6 +24,7 @@
             "waybar".source = ./config/waybar;
             "kitty".source = ./config/kitty;
             "git".source = ./config/git;
+            "direnv".source = ./config/direnv;
             "starship.toml".source = ./config/starship.toml;
           };
 
@@ -29,9 +33,11 @@
             ".npmrc".source = ./npmrc;
             ".bash_profile".source = ./bash_profile;
           };
-      };
-    in {
+        };
+    in
+    {
 
-    nixosModules.default = dotfile-install;
-  };
+      nixosModules.default = dotfile-install;
+      formatter.x86_64-linux = (import nixpkgs { system = "x86_64-linux"; }).nixfmt-rfc-style;
+    };
 }

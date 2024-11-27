@@ -39,5 +39,19 @@
 
       nixosModules.default = dotfile-install;
       formatter.x86_64-linux = (import nixpkgs { system = "x86_64-linux"; }).nixfmt-rfc-style;
+
+      devShells =  (
+        let
+          pkgs = (import nixpkgs { system = "x86_64-linux"; });
+        in
+        {
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              deno
+            ];
+          };
+        }
+      );
+
     };
 }

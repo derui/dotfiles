@@ -1,0 +1,12 @@
+* personal karabiner configuration and generator
+
+** Build
+#+begin_src shell
+  deno task build
+#+end_src
+
+or watch build:
+
+#+begin_src shell
+  deno task watch
+#+end_src

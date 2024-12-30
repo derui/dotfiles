@@ -25,6 +25,7 @@
             "kitty".source = ./config/kitty;
             "git".source = ./config/git;
             "direnv".source = ./config/direnv;
+            "xkb".source = ./config/xkb;
             "starship.toml".source = ./config/starship.toml;
           };
 

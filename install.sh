@@ -31,3 +31,9 @@ if [[ (( -e $HOME/.bash_profile )) || (( -L $HOME/.bash_profile ))]]; then
 else
     ln -s $current/bash_profile $HOME/.bash_profile
 fi
+
+if [[ (( -e $HOME/.profile )) || (( -L $HOME/.profile ))]]; then
+    printf "[warn ] Already extsts profile as Symbolic link.\n"
+else
+    ln -s $current/profile $HOME/.profile
+fi

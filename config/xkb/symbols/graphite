@@ -1,0 +1,122 @@
+partial alphanumeric_keys
+xkb_symbols "graphite" {
+
+   include "us"
+   
+    key <AE11> {         [     bracketleft,       braceleft ] };
+    key <AE12> {         [    bracketright,      braceright ] };
+    key <AD01> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               b,               B ]
+    };
+    key <AD02> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               l,               L ]
+    };
+    key <AD03> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               d,               D ]
+    };
+    key <AD04> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               w,               W ]
+    };
+    key <AD05> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               z,               Z ]
+    };
+    key <AD06> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [      apostrophe,       underscore]
+    };
+    key <AD07> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               f,               F ]
+    };
+    key <AD08> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               o,               O ]
+    };
+    key <AD09> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               u,               U ]
+    };
+    key <AD10> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               j,               J ]
+    };
+    key <AD11> {         [       semicolon,           colon ] };
+    key <AD12> {         [            plus,           equal ] };
+    key <AC01> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               n,               N ]
+    };
+    key <AC02> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               r,               R ]
+    };
+    key <AC03> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               t,               T ]
+    };
+    key <AC04> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               s,               S ]
+    };
+    key <AC05> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               g,               G ]
+    };
+    key <AC06> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               y,               Y ]
+    };
+    key <AC07> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               h,               H ]
+    };
+    key <AC08> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               a,               A ]
+    };
+    key <AC09> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               e,               E ]
+    };
+    key <AC10> {         [               i,               I ] };
+    key <AC11> {         [           comma,        question ] };
+    key <AB01> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               q,               Q ]
+    };
+    key <AB02> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               x,               X ]
+    };
+    key <AB03> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               m,               M ]
+    };
+    key <AB04> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               c,               C ]
+    };
+    key <AB05> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               v,               V ]
+    };
+    key <AB06> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               k,               K ]
+    };
+    key <AB07> {
+        type= "ALPHABETIC",
+        symbols[Group1]= [               p,               P ]
+    };
+    key <AB08> {         [          period,         greater ] };
+    key <AB09> {         [           minus,        quotedbl ] };
+    key <AB10> {         [           slash,            less ] };
+
+   include "level3(ralt_switch)"
+
+};

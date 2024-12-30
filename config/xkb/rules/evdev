@@ -1,0 +1,4 @@
+! option   = symbols
+  graphite:us  = +graphite(us)
+
+! include %S/evdev

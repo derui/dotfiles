@@ -1,5 +1,5 @@
 partial alphanumeric_keys
-xkb_symbols "graphite" {
+xkb_symbols "us" {
 
    include "us"
    
@@ -117,6 +117,6 @@ xkb_symbols "graphite" {
     key <AB09> {         [           minus,        quotedbl ] };
     key <AB10> {         [           slash,            less ] };
 
-   include "level3(ralt_switch)"
+   //include "level3(ralt_switch)"
 
 };

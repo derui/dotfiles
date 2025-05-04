@@ -11,9 +11,9 @@
     "hyprland/window"
   ],
   "modules-right": [
+    "network",
     "temperature",
     "temperature#gpu",
-    "network",
     "memory",
     "clock",
     "tray"

@@ -26,8 +26,9 @@
     "max-length": 50
   },
   "network": {
+    "interval": 3,
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ifname}   {bandwidthUpBytes}/{bandwidthDownBytes}",
+    "format-ethernet": "{ifname}    {bandwidthUpBytes}/ {bandwidthDownBytes}",
     "format-disconnected": "",
     "max-length": 50,
     "on-click": "kitty -e 'nmtui'"

@@ -27,7 +27,7 @@
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ifname} ",
+    "format-ethernet": "{ifname}   {bandwidthUpBytes}/{bandwidthDownBytes}",
     "format-disconnected": "",
     "max-length": 50,
     "on-click": "kitty -e 'nmtui'"

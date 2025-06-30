@@ -17,7 +17,8 @@
   ],
   "hyprland/window": {
     "max-length": 200,
-    "separate-outputs": true
+    "separate-outputs": true,
+    "swap-icon-label": true
   },
   "network": {
     "interval": 3,

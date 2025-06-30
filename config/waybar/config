@@ -2,12 +2,9 @@
   "layer": "top",
   "height": 24,
   "modules-left": [
-    "hyprland/workspaces",
-    "sway/workspaces",
-    "sway/mode"
+    "hyprland/workspaces"
   ],
   "modules-center": [
-    "sway/window",
     "hyprland/window"
   ],
   "modules-right": [
@@ -21,9 +18,6 @@
   "hyprland/window": {
     "max-length": 200,
     "separate-outputs": true
-  },
-  "sway/window": {
-    "max-length": 50
   },
   "network": {
     "interval": 3,

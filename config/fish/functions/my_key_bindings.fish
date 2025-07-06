@@ -14,4 +14,6 @@ function my_key_bindings
     bind -M insert \cgs __git_change_branch
     bind -M default \cgn __git_new_branch
     bind -M insert \cgn __git_new_branch
+    bind -M default \cp __select_pnpm_workspace
+    bind -M insert \cp __select_pnpm_workspace
 end

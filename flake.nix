@@ -33,6 +33,7 @@
             ".ideavimrc".source = ./ideavimrc;
             ".npmrc".source = ./npmrc;
             ".bash_profile".source = ./bash_profile;
+            ".profile".source = ./profile;
           };
         };
     in

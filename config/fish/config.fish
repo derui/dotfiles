@@ -78,3 +78,8 @@ if test -d ~/.volta/
     set -gx VOLTA_HOME "$HOME/.volta"
     set -gx PATH "$VOLTA_HOME/bin" $PATH
 end
+
+# add cargo to the path
+if test -d ~/.cargo
+    set -gx PATH "$HOME/.cargo/bin" $PATH
+end

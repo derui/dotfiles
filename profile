@@ -19,10 +19,7 @@ if [ ! -d "$XDG_RUNTIME_DIR" ]; then
     chmod 0700 $XDG_RUNTIME_DIR
 fi
 
-# use openjdk in gentoo
-if [ -d "/usr/lib64/openjdk-11" ]; then
-    export JAVA_HOME=/usr/lib64/openjdk-11
-elif [ -x java-config ]; then
+if [ -x java-config ]; then
     export JAVA_HOME=`java-config -O`
 fi
 

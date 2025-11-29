@@ -20,7 +20,6 @@ Dotfiles managed in this repository are there. This repository aims to support m
   - mako
   - waybar
   
-  
 
 # Install #
 

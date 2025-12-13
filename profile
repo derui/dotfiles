@@ -27,7 +27,7 @@ if [ -x dbus-daemon ]; then
     dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 fi
 
-export PATH=$HOME/.local/bin:$HOME/.volta/bin:$JAVA_HOME/bin:$HOME/.npm/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:/opt/VirtualBox:$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.volta/bin:$JAVA_HOME/bin:$HOME/.npm-packages/bin:$HOME/.asdf/bin:$HOME/.asdf/shims:$GOPATH/bin:$HOME/.roswell/bin:$HOME/.cargo/bin:$PATH
 
 if [ -f "$HOME/.opam/opam-init/init.sh" ]; then
     . $HOME/.opam/opam-init/init.sh

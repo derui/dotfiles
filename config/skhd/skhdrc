@@ -28,6 +28,13 @@ shift + alt - 5 : yabai -m window --space 5
 shift + alt - 9 : yabai -m window --space prev
 shift + alt - 0 : yabai -m window --space next
 
+# move display
+ctrl + alt - h : yabai -m display --focus prev
+ctrl + alt - l : yabai -m display --focus next
+
+ctrl + alt - 9 : yabai -m window --display prev
+ctrl + alt - 0 : yabai -m window --display next
+
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 # toggle window fullscreen zoom

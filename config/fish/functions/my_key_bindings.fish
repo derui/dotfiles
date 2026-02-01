@@ -4,7 +4,6 @@ function my_key_bindings
     end
     fish_vi_key_bindings --no-erase
 
-    bind -M insert -m default jj force-repaint
     bind -M default \cr 'history save; history merge; __select_history'
     bind -M insert \cr 'history save; history merge; __select_history'
     bind -M default \cs__select_ghq_cd

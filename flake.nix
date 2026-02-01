@@ -26,6 +26,7 @@
             "git".source = ./config/git;
             "direnv".source = ./config/direnv;
             "xkb".source = ./config/xkb;
+            "jj".source = ./config/jj;
             "starship.toml".source = ./config/starship.toml;
           };
 

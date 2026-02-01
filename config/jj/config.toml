@@ -1,0 +1,15 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+[user]
+name = "derui"
+email = "derutakeyu@gmail.com"
+
+[aliases]
+# See https://jj-vcs.github.io/jj/latest/config/#aliases
+pre-commit = [
+  "util",
+  "exec",
+  "--",
+  "bash",
+  "-c",
+  "jj diff -r @ --name-only --no-pager | xargs prek run --files",
+]

@@ -65,6 +65,11 @@ end
 
 alias g=git
 
+set -l _jj (which jj)
+if test -x "$_jj"
+    alias j=jj
+end
+
 if test -f ~/.secrets/fish
     builtin source ~/.secrets/fish
 end

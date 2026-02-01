@@ -13,3 +13,6 @@ pre-commit = [
   "-c",
   "jj diff -r @ --name-only --no-pager | xargs prek run --files",
 ]
+
+# push shortcut
+p = ["git", "push"]

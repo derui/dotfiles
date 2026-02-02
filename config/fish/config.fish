@@ -64,10 +64,12 @@ if test -x "$_zoxide"
 end
 
 alias g=git
+complete -c g -w git
 
 set -l _jj (which jj)
 if test -x "$_jj"
     alias j=jj
+    complete -c j -w jj
 end
 
 if test -f ~/.secrets/fish

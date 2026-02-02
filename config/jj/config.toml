@@ -3,6 +3,9 @@
 name = "derui"
 email = "derutakayu@gmail.com"
 
+[ui]
+default-command = "status"
+
 [aliases]
 # See https://jj-vcs.github.io/jj/latest/config/#aliases
 pre-commit = [
@@ -16,3 +19,4 @@ pre-commit = [
 
 # push shortcut
 p = ["git", "push"]
+l = ["log"]

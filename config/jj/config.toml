@@ -6,6 +6,9 @@ email = "derutakayu@gmail.com"
 [ui]
 default-command = "status"
 
+[remotes.origin]
+auto-track-bookmarks = "*"
+
 [aliases]
 # See https://jj-vcs.github.io/jj/latest/config/#aliases
 pre-commit = [

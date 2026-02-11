@@ -9,6 +9,10 @@ default-command = "status"
 [remotes.origin]
 auto-track-bookmarks = "*"
 
+[revset-aliases]
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'closest_pushable(to)' = 'heads(::to & ~description(exact:"") & (~empty() | merges()))'
+
 [aliases]
 # See https://jj-vcs.github.io/jj/latest/config/#aliases
 pre-commit = [
@@ -23,3 +27,6 @@ pre-commit = [
 # push shortcut
 p = ["git", "push"]
 l = ["log"]
+
+# move recent pushable bookmark to @
+tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pushable(@)"]

@@ -4,7 +4,7 @@ printf "[info ] Start installing dotfiles to $HOME.\n"
 
 current=$(pwd)
 
-configs=(alacritty fish hypr mako nvim sway tmux waybar git xkb starship.toml)
+configs=(alacritty fish hypr mako nvim sway tmux waybar git xkb starship.toml jj)
 
 for f in ${configs[@]}; do
     if [[ (( -e $XDG_CONFIG_HOME/$f )) || (( -L $XDG_CONFIG_HOME/$f ))]]; then

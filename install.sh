@@ -4,7 +4,8 @@ printf "[info ] Start installing dotfiles to $HOME.\n"
 
 current=$(pwd)
 
-configs=(alacritty fish hypr mako nvim sway tmux waybar git xkb starship.toml jj)
+configs=(alacritty fish hypr mako nvim sway tmux waybar git xkb starship.toml jj kitty)
+macos_configs=(karabiner kitty)
 
 for f in ${configs[@]}; do
     if [[ (( -e $XDG_CONFIG_HOME/$f )) || (( -L $XDG_CONFIG_HOME/$f ))]]; then
@@ -13,6 +14,17 @@ for f in ${configs[@]}; do
         ln -s $current/config/$f $XDG_CONFIG_HOME/$f
     fi
 done
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    printf "[info ] macOS detected. Installing macOS-only configurations.\n"
+    for f in ${macos_configs[@]}; do
+        if [[ (( -e $XDG_CONFIG_HOME/$f )) || (( -L $XDG_CONFIG_HOME/$f ))]]; then
+            printf "[warn ] Already extsts $f as Symbolic link.\n"
+        else
+            ln -s $current/config/$f $XDG_CONFIG_HOME/$f
+        fi
+    done
+fi
 
 if [[ (( -e $HOME/.npmrc )) || (( -L $HOME/.npmrc ))]]; then
     printf "[warn ] Already extsts $f as Symbolic link.\n"

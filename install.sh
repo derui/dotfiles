@@ -5,7 +5,7 @@ printf "[info ] Start installing dotfiles to $HOME.\n"
 current=$(pwd)
 
 configs=(alacritty fish hypr mako nvim sway tmux waybar git xkb starship.toml jj kitty)
-macos_configs=(karabiner kitty)
+macos_configs=(karabiner aerospace kanata)
 
 for f in ${configs[@]}; do
     if [[ (( -e $XDG_CONFIG_HOME/$f )) || (( -L $XDG_CONFIG_HOME/$f ))]]; then

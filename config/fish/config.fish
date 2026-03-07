@@ -52,10 +52,9 @@ else
     set -gx EDITOR "vim"
 end
 
-# set aliases
 set -l _eza (which eza)
 if test -x "$_eza"
-    alias ls='eza --icons'
+    abbr --add ls 'eza --icons'
 end
 
 set -l _zoxide (which zoxide)
@@ -63,13 +62,11 @@ if test -x "$_zoxide"
     zoxide init fish | source
 end
 
-alias g=git
-complete -c g -w git
+abbr --add --global g git
 
 set -l _jj (which jj)
 if test -x "$_jj"
-    alias j=jj
-    complete -c j -w jj
+    abbr --add --global j "jj"
 end
 
 if test -f ~/.secrets/fish

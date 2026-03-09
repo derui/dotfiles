@@ -54,7 +54,7 @@ end
 
 set -l _eza (which eza)
 if test -x "$_eza"
-    abbr --add ls 'eza --icons'
+    abbr --add ls 'eza'
 end
 
 set -l _zoxide (which zoxide)
@@ -63,6 +63,11 @@ if test -x "$_zoxide"
 end
 
 abbr --add --global g git
+abbr --add --global gs 'git status'
+abbr --add --global gl 'git log'
+abbr --add --global gds 'git diff --stat'
+abbr --add --global gpp 'git pull --prune'
+abbr --add --global gfp 'git fetch --prune'
 
 set -l _jj (which jj)
 if test -x "$_jj"

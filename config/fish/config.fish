@@ -69,6 +69,7 @@ abbr --add --global g git
 abbr --add --global gs 'git status'
 abbr --add --global gl 'git log'
 abbr --add --global gds 'git diff --stat'
+abbr --add --global gp 'git push'
 abbr --add --global gpp 'git pull --prune'
 abbr --add --global gfp 'git fetch --prune'
 

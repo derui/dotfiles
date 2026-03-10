@@ -55,6 +55,9 @@ end
 set -l _eza (which eza)
 if test -x "$_eza"
     abbr --add ls 'eza'
+    abbr --add ll 'eza -l'
+    abbr --add la 'eza -a'
+    abbr --add lla 'eza -la'
 end
 
 set -l _zoxide (which zoxide)

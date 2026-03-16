@@ -23,6 +23,10 @@ if [ -x java-config ]; then
     export JAVA_HOME=`java-config -O`
 fi
 
+if [ -x /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
 if [ -x dbus-daemon ]; then
     dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 fi

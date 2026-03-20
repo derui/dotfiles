@@ -68,10 +68,14 @@ end
 abbr --add --global g git
 abbr --add --global gs 'git status'
 abbr --add --global gl 'git log'
+abbr --add --global gd 'git diff'
 abbr --add --global gds 'git diff --stat'
 abbr --add --global gp 'git push'
 abbr --add --global gpp 'git pull --prune'
 abbr --add --global gfp 'git fetch --prune'
+abbr --add --global gn 'git switch -c'
+abbr --add --global gr 'git rebase -i'
+abbr --add --global gbd 'git branch -D'
 
 set -l _jj (which jj)
 if test -x "$_jj"

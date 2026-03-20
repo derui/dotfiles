@@ -74,6 +74,7 @@ abbr --add --global gp 'git push'
 abbr --add --global gpp 'git pull --prune'
 abbr --add --global gfp 'git fetch --prune'
 abbr --add --global gn 'git switch -c'
+abbr --add --global gno 'git switch -c % origin/main'
 abbr --add --global gr 'git rebase -i'
 abbr --add --global gbd 'git branch -D'
 

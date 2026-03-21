@@ -4,3 +4,4 @@ nushell/history.sqlite3*
 
 bin/idea/
 bin/starship
+/.agent-shell/

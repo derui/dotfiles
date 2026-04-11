@@ -72,10 +72,11 @@ abbr --add --global gd 'git diff'
 abbr --add --global gds 'git diff --stat'
 abbr --add --global gp 'git push'
 abbr --add --global gpp 'git pull --prune'
-abbr --add --global gfp 'git fetch --prune'
+abbr --add --global gfp 'git fetch --prune --tags -f'
 abbr --add --global gn 'git switch -c'
-abbr --add --global gno 'git switch -c % origin/main'
+abbr --add --global --set-cursor gno 'git switch -c % origin/main'
 abbr --add --global gr 'git rebase -i'
+abbr --add --global gb 'git branch'
 abbr --add --global gbd 'git branch -D'
 
 set -l _jj (which jj)

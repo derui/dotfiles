@@ -23,6 +23,9 @@ egrep "^export " ~/.profile | while read e
     set -xg $var $value
 end
 
+# disable greeting message
+set -g fish_greeting
+
 # disable virtualenv's original prompt
 set -g VIRTUAL_ENV_DISABLE_PROMPT "1"
 # enable virtualenv if exists

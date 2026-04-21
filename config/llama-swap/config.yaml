@@ -1,0 +1,7 @@
+healthCheckTimeout: 600
+ttl: 3600
+
+models:
+  "gemma-4:4b":
+     cmd: |
+       "llama-server -hf ggml-org/gemma-4-E4B-it-GGUF --port \${PORT} --n-gpu-layers 999 --repeat-penalty 1.0 "

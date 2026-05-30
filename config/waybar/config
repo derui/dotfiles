@@ -9,6 +9,7 @@
   ],
   "modules-right": [
     "network",
+    "cpu",
     "temperature",
     "temperature#gpu",
     "memory",
@@ -39,6 +40,10 @@
   "clock": {
     "interval": 5,
     "format": "{:%Y/%m/%d  %H:%M:%S}"
+  },
+  "cpu": {
+    "interval": 3,
+    "format": "{usage}% "
   },
   "temperature": {
     "interval": 3,

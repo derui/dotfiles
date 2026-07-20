@@ -33,3 +33,11 @@ yashiki bind --mode base m layout-cmd zoom
 # Multi-monitor
 yashiki bind --mode base ctrl-h output-send prev
 yashiki bind --mode base ctrl-l output-send next
+
+# suppress some popup behaviors
+yashiki rule-add --subrole Dialog float
+yashiki rule-add --subrole FloatingWindow float
+yashiki rule-add --subrole other ignore
+
+## Emacs child frame behavior
+yashiki rule-add --app-id org.gnu.Emacs --close-button none ignore

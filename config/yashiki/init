@@ -42,3 +42,6 @@ yashiki rule-add --subrole AXUnknown ignore
 
 ## Emacs child frame behavior
 yashiki rule-add --app-id org.gnu.Emacs --close-button none ignore
+
+## Stop flikering on Chrome
+yashiki rule-add --app-id com.google.Chrome --close-button none ignore

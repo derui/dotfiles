@@ -38,6 +38,7 @@ yashiki bind --mode base ctrl-l output-send next
 yashiki rule-add --subrole Dialog float
 yashiki rule-add --subrole FloatingWindow float
 yashiki rule-add --subrole other ignore
+yashiki rule-add --subrole AXUnknown ignore
 
 ## Emacs child frame behavior
 yashiki rule-add --app-id org.gnu.Emacs --close-button none ignore

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Layout configuration
+yashiki layout-set-default tatami
+yashiki set-outer-gap 10  # Gap between windows and screen edges (global)
+
+# Cursor warp (mouse follows focus)
+yashiki set-cursor-warp on-focus-change
+
+# Not use default mode
+yashiki declare-mode base
+yashiki bind alt-/ enter-mode base
+yashiki bind --mode base alt-/ enter-mode normal
+
+# Tag bindings (tag N = bitmask $((1<<(N-1))))
+for i in 1 2 3 4 5 6 7 8 9; do
+  yashiki bind --mode base "$i" tag-view "$((1<<(i-1)))"
+  yashiki bind --mode base "shift-$i" window-move-to-tag "$((1<<(i-1)))"
+  yashiki bind --mode base "ctrl-$i" tag-toggle "$((1<<(i-1)))"
+done
+
+# Window focus
+yashiki bind --mode base j window-focus down
+yashiki bind --mode base k window-focus up
+yashiki bind --mode base h window-focus left
+yashiki bind --mode base l window-focus right
+
+yashiki bind --mode base n window-toggle-float
+
+# swap mastar
+yashiki bind --mode base m layout-cmd zoom
+
+# Multi-monitor
+yashiki bind --mode base s output-focus next
+yashiki bind --mode base ctrl-s output-send next

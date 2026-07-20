@@ -9,8 +9,8 @@ yashiki set-cursor-warp on-focus-change
 
 # Not use default mode
 yashiki declare-mode base
-yashiki bind alt-/ enter-mode base
-yashiki bind --mode base alt-/ enter-mode normal
+yashiki bind alt-slash enter-mode base
+yashiki bind --mode base alt-slash enter-mode normal
 
 # Tag bindings (tag N = bitmask $((1<<(N-1))))
 for i in 1 2 3 4 5 6 7 8 9; do

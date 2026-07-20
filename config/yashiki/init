@@ -31,5 +31,5 @@ yashiki bind --mode base n window-toggle-float
 yashiki bind --mode base m layout-cmd zoom
 
 # Multi-monitor
-yashiki bind --mode base s output-focus next
-yashiki bind --mode base ctrl-s output-send next
+yashiki bind --mode base ctrl-h output-send prev
+yashiki bind --mode base ctrl-l output-send next

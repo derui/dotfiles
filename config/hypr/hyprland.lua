@@ -41,8 +41,8 @@ local menu        = "wofi --show drun"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("waybar")
-  hl.exec_cmd("maku")
+  hl.exec_cmd("wayle shell")
+  hl.exec_cmd("mako")
   hl.exec_cmd("/run/current-system/sw/bin/fcitx5 -D")
   hl.exec_cmd("hyprpaper")
 end)

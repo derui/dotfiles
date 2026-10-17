@@ -253,8 +253,8 @@ end
 
 -- hl.bind(mainMod .. " + CTRL + H", hl.dsp.workspace.move({ monitor = "DP-3" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.workspace.move({ monitor = "DP-1" }))
-hl.bind(mainMod .. " + Tab",      hl.dsp.window.cycle_next())
-hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }))
+hl.bind(mainMod .. " + A",      hl.dsp.window.cycle_next())
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.cycle_next({ next = false }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]

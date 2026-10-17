@@ -232,7 +232,10 @@ hl.bind(mainMod .. " + semicolon",       hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + B",       hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + N",       hl.dsp.exit())
 hl.bind(mainMod .. " + M",               hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SHIFT + M",       hl.dsp.window.pin({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + M",       function()
+           hl.dispatch(hl.dsp.window.float({ action = "enable" }))
+           hl.dispatch(hl.dsp.window.pin({ action = "toggle" }))
+end)
 hl.bind(mainMod .. " + F",               hl.dsp.window.fullscreen())
 
 -- Graphite layout: h, l, k, and j correspond to left, right, up, and down.

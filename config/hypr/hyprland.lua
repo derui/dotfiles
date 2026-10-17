@@ -15,13 +15,6 @@ hl.monitor({
     scale    = "1",
 })
 
-hl.monitor({
-    output   = "DP-3",
-    mode     = "2560x1440",
-    position = "0x0",
-    scale    = "1",
-})
-
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -254,7 +247,7 @@ for key, direction in pairs(directions) do
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ direction = direction }))
 end
 
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.workspace.move({ monitor = "DP-3" }))
+-- hl.bind(mainMod .. " + CTRL + H", hl.dsp.workspace.move({ monitor = "DP-3" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.workspace.move({ monitor = "DP-1" }))
 hl.bind(mainMod .. " + Tab",      hl.dsp.window.cycle_next())
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }))
